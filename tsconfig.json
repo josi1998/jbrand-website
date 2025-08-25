@@ -1,27 +1,119 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    // Modern JavaScript target for better performance
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+
+    // Enhanced JavaScript support
     "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true,
+
+    // Strict type checking for better code quality
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Modern module system
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+
+    // JSX configuration
     "jsx": "preserve",
+    "jsxImportSource": "react",
+
+    // Performance optimizations
     "incremental": true,
+    "tsBuildInfoFile": ".next/cache/tsconfig.tsbuildinfo",
+
+    // Next.js plugin
     "plugins": [
       {
         "name": "next"
       }
     ],
+
+    // Enhanced path mapping
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "@/components/*": ["./components/*"],
+      "@/app/*": ["./app/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/utils/*": ["./utils/*"],
+      "@/types/*": ["./types/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/public/*": ["./public/*"],
+      "next-intl": ["./node_modules/next-intl"],
+      "next-intl/*": ["./node_modules/next-intl/*"]
+    },
+
+    // Additional strict checks for better code quality
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Modern features
+    "useDefineForClassFields": true,
+    "verbatimModuleSyntax": false,
+
+    // Declaration and source map settings
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+
+    // Import helpers for smaller bundle size
+    "importHelpers": true,
+
+    // Experimental decorators (if needed)
+    "experimentalDecorators": false,
+    "emitDecoratorMetadata": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+
+  // Comprehensive include patterns
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.ts",
+    "app/**/*",
+    "components/**/*",
+    "lib/**/*",
+    "hooks/**/*",
+    "utils/**/*",
+    "types/**/*",
+    "middleware.ts"
+  ],
+
+  // Exclude unnecessary files
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "dist",
+    "build",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "cypress",
+    "playwright"
+  ],
+
+  // TypeScript 5.0+ options
+  "ts-node": {
+    "esm": true
+  }
 }

@@ -1,0 +1,631 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "getStarted": "Commencer"
+  },
+  "home": {
+    "contactForm": {
+      "subtitle": "Transformez votre vision en réalité avec nos conseils d'experts",
+      "fields": {
+        "name": "Votre nom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "company": "Entreprise",
+        "website": "Site web",
+        "message": "Parlez-nous de votre projet..."
+      },
+      "servicesTitle": "Quels services vous intéressent ?",
+      "services": {
+        "logoDesign": "Création de logo",
+        "webDesign": "Web Design",
+        "webAppDev": "Développement Web & Mobile",
+        "brandStrategy": "Stratégie de marque",
+        "socialMedia": "Réseaux sociaux",
+        "videoEditing": "Montage vidéo",
+        "brandIdentity": "Identité de marque"
+      },
+      "submitButton": "ENVOYER LE MESSAGE",
+      "sendingButton": "Envoi en cours...",
+      "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "heroSection": {
+      "badgeText": "Branding Stratégique & Design Numérique",
+      "mainHeading": {
+        "part1": "Transformez Votre ",
+        "business": "Entreprise",
+        "part2": " avec un Branding Puissant"
+      },
+      "consultationTitle": "Obtenez une Consultation Gratuite"
+    },
+    "hero": {
+      "title": "BRANDING STRATÉGIQUE & DESIGN NUMÉRIQUE QUI TRANSFORME LES ENTREPRISES",
+      "subtitle": "Élevez Votre Identité de Marque sur le Web, l'Impression et les Plateformes Numériques",
+      "description": "Des identités de marque captivantes aux expériences numériques immersives, JBRAND aide les entreprises à se démarquer sur des marchés encombrés. Nos solutions de branding complètes incluent la conception de logos & flyers, le développement web & app, les supports marketing et le positionnement stratégique de la marque avec des résultats mesurables.",
+      "exploreServices": "Découvrir Nos Services",
+      "getCustomPlan": "Obtenir Votre Plan Personnalisé"
+    },
+    "consultation": {
+      "title": "Obtenez Une Consultation Gratuite de Stratégie de Marque",
+      "form": {
+        "name": "Votre Nom",
+        "email": "Adresse Email",
+        "phone": "Numéro de Téléphone",
+        "company": "Entreprise",
+        "website": "Site Web",
+        "message": "Votre message",
+        "services": "Quels Services Vous Intéressent ?",
+        "servicesList": {
+          "logoDesign": "Conception de Logo & Flyer",
+          "webDesign": "Design Web & App",
+          "brandStrategy": "Stratégie de Marque",
+          "softwareDevelopment": "Développement Web & App",
+          "socialMedia": "Réseaux Sociaux",
+          "printDesign": "Design Print",
+          "brandIdentity": "Identité de Marque"
+        },
+        "send": "ENVOYER"
+      }
+    },
+    "whoWeAre": {
+      "title": "Qui Sommes-Nous",
+      "description": "Chez JBrand, nous sommes plus qu'une simple agence de branding - nous sommes vos partenaires dans la transformation numérique. Avec une équipe de stratèges créatifs, de designers et de technologues, nous aidons les entreprises à établir leur identité unique dans le monde numérique.",
+      "discovery": {
+        "title": "Découverte",
+        "description": "Nous commençons par comprendre votre entreprise, votre marché et vos objectifs."
+      },
+      "projects": {
+        "count": "200+",
+        "label": "Projets à réaliser (vision)"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi Choisir JBrand ?",
+      "features": {
+        "innovative": {
+          "title": "Solutions Innovantes",
+          "description": "Nous proposons des stratégies de branding de pointe qui vous distinguent de la concurrence."
+        },
+        "experienced": {
+          "title": "Équipe Expérimentée",
+          "description": "Notre équipe est expérimentée dans les services proposés."
+        },
+        "proven": {
+          "title": "Notre Plan",
+          "description": "Nous avons la vision d'aider des centaines d'entreprises à obtenir des résultats mesurables dans leurs efforts de branding."
+        }
+      }
+    },
+    "visionForTheFuture": {
+      "title": "Vision pour l'Avenir",
+      "description": "Nous envisageons un avenir où chaque entreprise dispose des outils et des stratégies pour prospérer à l'ère numérique. Notre objectif est d'être à la pointe de l'innovation digitale, aidant les marques à créer des liens significatifs avec leur public et à atteindre une croissance durable.",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Repousser continuellement les limites du possible dans le branding digital."
+      },
+      "sustainability": {
+        "title": "Durabilité",
+        "description": "Développer des stratégies qui assurent le succès à long terme de nos clients."
+      },
+      "globalImpact": {
+        "title": "Impact Global",
+        "description": "Étendre notre portée pour aider les entreprises du monde entier à atteindre leurs objectifs."
+      }
+    },
+    "ambitiousGoals": {
+      "title": "Nos Objectifs Ambitieux",
+      "description": "Établir de nouvelles normes en matière de branding digital et d'innovation. Voici ce que nous visons à accomplir :",
+      "stats": {
+        "brandsNumber": "1000+",
+        "brandsLabel": "Marques à Transformer",
+        "solutionsNumber": "100+",
+        "solutionsLabel": "Solutions Digitales",
+        "awardsNumber": "50+",
+        "awardsLabel": "Récompenses de l'Industrie",
+        "marketsNumber": "20+",
+        "marketsLabel": "Marchés Mondiaux"
+      }
+    },
+    "getStartedToday": {
+      "title": "Prêt à Transformer Votre Marque ?",
+      "description": "Créons quelque chose d'incroyable ensemble. Contactez-nous pour commencer la transformation de votre marque.",
+      "contactUs": "Contactez-nous",
+      "exploreServices": "Découvrir les Services"
+    },
+    "ourServices": {
+      "title": "Nos Services",
+      "items": {
+        "brandIdentity": {
+          "title": "Identité de Marque",
+          "description": "Création d'identités visuelles uniques qui résonnent avec votre public cible."
+        },
+        "webDevelopment": {
+          "title": "Développement Web & App",
+          "description": "Construction de sites web responsifs et conviviaux qui génèrent des conversions."
+        },
+        "digitalMarketing": {
+          "title": "Marketing Digital",
+          "description": "Stratégies qui augmentent votre présence en ligne et génèrent des résultats mesurables."
+        },
+        "socialMedia": {
+          "title": "Gestion des Réseaux Sociaux",
+          "description": "Création et gestion de campagnes engageantes sur les réseaux sociaux qui renforcent la fidélité à la marque."
+        },
+        "logoDesign": {
+          "title": "Conception de Logo & Flyer",
+          "description": "Création et gestion de campagnes engageantes sur les réseaux sociaux qui renforcent la fidélité à la marque."
+        }
+      }
+    },
+    "ourGoals": {
+      "title": "Nos Objectifs",
+      "items": {
+        "clientSuccess": {
+          "title": "Succès Client",
+          "description": "Nous mesurons notre succès par celui de nos clients. Votre croissance est notre priorité."
+        },
+        "partnerships": {
+          "title": "Partenariats Durables",
+          "description": "Nous visons à établir des relations durables qui évoluent avec les besoins de votre entreprise."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Nous innovons en permanence pour fournir des solutions de pointe à nos clients."
+        },
+        "growth": {
+          "title": "Innovation Numérique",
+          "description": "Tirer parti des technologies de pointe pour créer des expériences numériques percutantes pour votre public."
+        }
+      },
+      "achievementTimeline": {
+        "title": "Chronologie des Réalisations",
+        "2020": "Création de JBrand et lancement de notre premier projet client.",
+        "2021": "Expansion de notre équipe et de nos services.",
+        "2022": "Atteint plus de 100 projets réussis.",
+        "2023": "Récompensé pour l'excellence en branding et marketing digital."
+      },
+      "futureRoadmap": {
+        "title": "Feuille de Route Future",
+        "2024": "Lancement de nouvelles solutions de branding pilotées par l'IA.",
+        "2025": "Expansion vers les marchés internationaux.",
+        "2026": "Atteindre plus de 500 clients dans le monde.",
+        "2027": "Devenir un leader de la transformation digitale."
+      }
+    },
+    "ourProcess": {
+      "title": "Notre Processus",
+      "steps": {
+        "discovery": {
+          "title": "Découverte & Recherche",
+          "description": "Nous commençons par comprendre votre entreprise, vos objectifs et votre public cible."
+        },
+        "strategy": {
+          "title": "Développement de la Stratégie",
+          "description": "Nous créons une stratégie personnalisée adaptée aux besoins de votre entreprise."
+        },
+        "design": {
+          "title": "Design & Développement",
+          "description": "Nous donnons vie à votre marque avec des designs créatifs et un développement robuste."
+        },
+        "implementation": {
+          "title": "Mise en Œuvre",
+          "description": "Nous mettons en œuvre et testons soigneusement toutes les solutions pour garantir la qualité."
+        },
+        "launch": {
+          "title": "Lancement & Support",
+          "description": "Nous lançons votre projet et fournissons un support continu pour assurer le succès."
+        }
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Création d'Excellence Numérique",
+      "description": "Nous sommes une équipe passionnée de designers, développeurs et stratèges dédiés à transformer les entreprises grâce à des solutions de branding innovantes et des solutions numériques qui génèrent des résultats concrets.",
+      "startProject": "Démarrer Votre Projet",
+      "watchStory": "Voir Notre Histoire"
+    },
+    "story": {
+      "title": "Transformer les Rêves en Réalité Numérique",
+      "paragraph1": "Fondée avec la vision de combler le fossé entre l'imagination créative et l'innovation numérique. Notre parcours a commencé avec une conviction simple : chaque marque a une histoire unique à raconter.",
+      "paragraph2": "Notre équipe multidisciplinaire allie réflexion stratégique et exécution créative pour fournir des solutions qui non seulement sont belles, mais qui génèrent également des résultats commerciaux mesurables.",
+      "projectsCompleted": "Projets à réaliser (vision)",
+      "yearsExperience": "Années d'Expérience"
+    },
+    "team": {
+      "title": "Notre Équipe",
+      "members": {
+        "john": {
+          "name": "John Doe",
+          "position": "PDG & Fondateur",
+          "description": "Leader visionnaire avec plus de 15 ans d'expérience en branding."
+        },
+        "jane": {
+          "name": "Jane Smith",
+          "position": "Directrice Créative",
+          "description": "Maître de la narration visuelle et de l'identité de marque."
+        },
+        "mike": {
+          "name": "Mike Johnson",
+          "position": "Stratège Digital",
+          "description": "Expert en marketing digital et analyse."
+        },
+        "sarah": {
+          "name": "Sarah Lee",
+          "position": "Spécialiste Contenu",
+          "description": "Création de récits captivants qui résonnent."
+        }
+      }
+    },
+    "services": {
+      "title": "Aperçu de Nos Services",
+      "items": {
+        "brandIdentity": {
+          "title": "Identité de Marque",
+          "description": "Création d'identités visuelles uniques qui résonnent avec votre public cible."
+        },
+        "webDevelopment": {
+          "title": "Développement Web & App",
+          "description": "Construction de sites web et applications responsifs et conviviaux qui génèrent des conversions."
+        },
+        "digitalMarketing": {
+          "title": "Marketing Digital",
+          "description": "Stratégies qui augmentent votre présence en ligne et génèrent des résultats mesurables."
+        },
+        "socialMedia": {
+          "title": "Réseaux Sociaux",
+          "description": "Gestion de votre présence sociale pour développer votre marque et engager votre audience."
+        },
+        "VideoProduction": {
+          "title": "Production Vidéo & Photo",
+          "description": "Création et édition de vidéos et photos engageantes qui résonnent avec votre public cible."
+        },
+        "MusicPodcastMixing": {
+          "title": "Mixage de Musique & Podcast",
+          "description": "Mixage et mastering de votre musique et podcasts pour créer un son professionnel."
+        }
+      },
+      "process": {
+        "title": "Notre Processus Éprouvé",
+        "steps": {
+          "discovery": {
+            "title": "Découverte et Recherche",
+            "description": "Nous commençons par comprendre votre entreprise, vos objectifs et votre public cible pour jeter les bases du succès."
+          },
+          "strategy": {
+            "title": "Développement de Stratégie",
+            "description": "Nous élaborons une stratégie sur mesure adaptée à vos besoins uniques, en veillant à ce que chaque étape s'aligne sur votre vision."
+          },
+          "design": {
+            "title": "Conception et Développement",
+            "description": "Notre équipe créative donne vie à votre marque avec des designs époustouflants et un développement robuste."
+          },
+          "implementation": {
+            "title": "Mise en Œuvre",
+            "description": "Nous mettons en œuvre et testons méticuleusement toutes les solutions, garantissant une exécution et une qualité impeccables."
+          },
+          "launch": {
+            "title": "Lancement et Optimisation",
+            "description": "Nous lançons votre projet avec précision et assurons une optimisation continue pour une croissance durable."
+          }
+        }
+      }
+    },
+    "ourGoals": {
+      "title": "Nos Objectifs",
+      "achievementTimeline": {
+        "title": "Chronologie des Réalisations",
+        "2024": "Création de JBrand et lancement de notre premier projet client.",
+        "2025": "Expansion de notre équipe et de nos services.",
+        "2026": "Atteint plus de 100 projets réussis.",
+        "2027": "Récompensé pour l'excellence en branding et marketing digital."
+      },
+      "futureRoadmap": {
+        "title": "Feuille de Route Future",
+        "2028": "Lancement de nouvelles solutions de branding pilotées par l'IA.",
+        "2029": "Expansion vers les marchés internationaux.",
+        "2030": "Atteindre plus de 500 clients dans le monde.",
+        "2031": "Devenir un leader de la transformation digitale."
+      }
+    },
+    "process": {
+      "title": "Notre Processus",
+      "steps": {
+        "discovery": {
+          "title": "Découverte & Recherche",
+          "description": "Nous commençons par comprendre votre entreprise, vos objectifs et votre public cible."
+        },
+        "strategy": {
+          "title": "Développement de la Stratégie",
+          "description": "Nous créons une stratégie personnalisée adaptée aux besoins de votre entreprise."
+        },
+        "design": {
+          "title": "Conception et Développement",
+          "description": "Nous donnons vie à votre marque avec des designs créatifs et un développement robuste."
+        },
+        "implementation": {
+          "title": "Mise en Œuvre",
+          "description": "Nous mettons en œuvre et testons soigneusement toutes les solutions pour garantir la qualité."
+        },
+        "launch": {
+          "title": "Lancement & Support",
+          "description": "Nous lançons votre projet et fournissons un support continu pour assurer le succès."
+        }
+      }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Nos Services",
+      "description": "Explorez notre gamme complète de services conçus pour élever votre marque et stimuler la croissance de votre entreprise.",
+      "getStarted": "Commencer",
+      "backgroundImageAlt": "Image d'arrière-plan des services"
+    },
+    "coreServices": {
+      "title": "Nos Services Principaux",
+      "items": {
+        "brandIdentity": {
+          "title": "Identité de Marque",
+          "description": "Création d'identités visuelles uniques qui résonnent avec votre public cible.",
+          "imageAlt": "Service d'identité de marque"
+        },
+        "webDevelopment": {
+          "title": "Développement Web & App",
+          "description": "Construction de sites web et applications responsifs et conviviaux qui génèrent des conversions.",
+          "imageAlt": "Service de développement web"
+        },
+        "digitalMarketing": {
+          "title": "Marketing Digital",
+          "description": "Stratégies qui augmentent votre présence en ligne et génèrent des résultats mesurables.",
+          "imageAlt": "Service de marketing digital"
+        },
+        "socialMedia": {
+          "title": "Gestion des Réseaux Sociaux",
+          "description": "Création et gestion de campagnes engageantes sur les réseaux sociaux qui renforcent la fidélité à la marque.",
+          "imageAlt": "Service de gestion des réseaux sociaux"
+        },
+        "VideoProduction": {
+          "title": "Production Vidéo & Photo",
+          "description": "Création et édition de vidéos et photos engageantes qui résonnent avec votre public cible.",
+          "imageAlt": "Service de production vidéo"
+        },
+        "MusicPodcastMixing": {
+          "title": "Mixage de Musique & Podcast",
+          "description": "Mixage et mastering de votre musique et podcasts pour créer un son professionnel.",
+          "imageAlt": "Service de mixage de musique et podcast"
+        }
+      }
+    },
+    "process": {
+      "title": "Notre Processus Éprouvé",
+      "steps": {
+        "discovery": {
+          "title": "Découverte & Recherche",
+          "description": "Nous commençons par comprendre votre entreprise, vos objectifs et votre public cible."
+        },
+        "strategy": {
+          "title": "Développement de la Stratégie",
+          "description": "Nous créons une stratégie personnalisée adaptée aux besoins de votre entreprise."
+        },
+        "design": {
+          "title": "Design & Développement",
+          "description": "Nous donnons vie à votre marque avec des designs créatifs et un développement robuste."
+        },
+        "implementation": {
+          "title": "Mise en Œuvre",
+          "description": "Nous mettons en œuvre et testons soigneusement toutes les solutions pour garantir la qualité."
+        },
+        "launch": {
+          "title": "Lancement & Support",
+          "description": "Nous lançons votre projet et fournissons un support continu pour assurer le succès."
+        }
+      },
+      "imageAlt": "Visualisation du processus"
+    },
+    "additionalServices": {
+      "title": "Services Additionnels",
+      "items": {
+        "videoProduction": {
+          "title": "Production Vidéo",
+          "description": "Contenu vidéo professionnel pour votre marque.",
+          "imageAlt": "Service de production vidéo"
+        },
+        "analytics": {
+          "title": "Analytique & Rapports",
+          "description": "Des analyses basées sur les données pour mesurer et améliorer vos performances.",
+          "imageAlt": "Service d'analytique et rapports"
+        },
+        "contentMarketing": {
+          "title": "Marketing de Contenu",
+          "description": "Des stratégies de contenu engageantes pour développer votre audience.",
+          "imageAlt": "Service de marketing de contenu"
+        },
+        "emailMarketing": {
+          "title": "Email Marketing",
+          "description": "Campagnes email ciblées pour augmenter l'engagement et les ventes."
+        }
+      }
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi Nous Choisir",
+      "items": {
+        "awardWinningTeam": {
+          "title": "Équipe Expérimentée",
+          "description": "Notre équipe est expérimentée dans les services proposés."
+        },
+        "clientCentricApproach": {
+          "title": "Approche Client-Centrique",
+          "description": "Nous plaçons nos clients au centre de tout ce que nous faisons."
+        },
+        "provenTrackRecord": {
+          "title": "Des résultats probants",
+          "description": "Nous visons une expérience éprouvée dans la fourniture de solutions d'image de marque réussies."
+        },
+        "measurableResults": {
+          "title": "Résultats Mesurables",
+          "description": "Nous nous concentrons sur des résultats visibles et mesurables."
+        }
+      }
+    }
+  },
+  "contact": {
+    "startYourProject": "Commencez Votre Projet",
+    "contactInfo": "Informations de Contact",
+    "hero": {
+      "title": "Contactez-Nous",
+      "description": "Vous avez une question ou souhaitez travailler avec nous ? Utilisez le formulaire ci-dessous ou le support client pour nous contacter. Nous avons hâte d'avoir de vos nouvelles !",
+      "emailUs": "Envoyez-nous un Email",
+      "callUs": "Appelez-nous"
+    },
+    "form": {
+      "title": "Formulaire de Contact",
+      "getInTouch": "Contactez-nous",
+      "sendUsMessage": "Envoyez-nous un message",
+      "fields": {
+        "name": {
+          "label": "Nom *",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "Email *",
+          "placeholder": "Votre adresse email"
+        },
+        "phone": {
+          "label": "Téléphone",
+          "placeholder": "Votre numéro de téléphone"
+        },
+        "company": {
+          "label": "Entreprise",
+          "placeholder": "Nom de votre entreprise"
+        },
+        "service": {
+          "label": "Service Requis",
+          "placeholder": "Sélectionnez un service",
+          "options": {
+            "brandIdentity": "Identité de Marque",
+            "webDevelopment": "Développement Web & App",
+            "digitalMarketing": "Marketing Digital",
+            "socialMedia": "Gestion des Réseaux Sociaux",
+            "VideoProduction": "Production Vidéo & Photo",
+            "MusicPodcastMixing": "Mixage de Musique & Podcast",
+            "other": "Autre"
+          }
+        },
+        "message": {
+          "label": "Message *",
+          "placeholder": "Parlez-nous de votre projet"
+        },
+        "file": {
+          "label": "Joindre des Fichiers",
+          "button": "Choisir un Fichier",
+          "noFile": "Aucun fichier choisi"
+        }
+      },
+      "submit": "Envoyer le Message",
+      "success": "Merci pour votre message ! Nous vous répondrons bientôt.",
+      "error": "Échec de l'envoi du message. Veuillez réessayer."
+    },
+    "info": {
+      "title": "Informations de Contact",
+      "address": {
+        "title": "Adresse",
+        "value": "China, Jiangsu Province, Zhenjiang City, Jingkou District"
+      },
+      "phone": {
+        "title": "Téléphone",
+        "value": "+86 13275119361"
+      },
+      "email": {
+        "title": "Email",
+        "value": "jtech0576@gmail.com"
+      },
+      "hours": {
+        "title": "Heures d'Ouverture",
+        "value": "Tous les jours: Non Stop"
+      }
+    }
+  },
+  "common": {
+    "readMore": "Lire la suite",
+    "learnMore": "En savoir plus",
+    "contactUs": "Contactez-nous",
+    "send": "Envoyer",
+    "loading": "Chargement...",
+    "sending": "Envoi en cours...",
+    "messageSent": "Message envoyé avec succès !",
+    "errorSending": "Échec de l'envoi du message. Veuillez réessayer.",
+    "aboutUs": "À Propos de Nous",
+    "whoWeAre": "Qui Sommes-Nous",
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "ourServices": "Nos Services",
+    "ourProcess": "Notre Processus",
+    "ourAchievements": "Nos Réalisations",
+    "testimonials": "Témoignages",
+    "whatOurClientsSay": "Ce que Disent Nos Clients",
+    "getFreeConsultation": "Obtenir Une Consultation Gratuite",
+    "transformVision": "Transformez votre vision en réalité avec notre expertise",
+    "yourName": "Votre Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "company": "Entreprise",
+    "website": "Site Web",
+    "tellUsAboutProject": "Parlez-nous de votre projet...",
+    "whatServicesInterested": "Quels Services Vous Intéressent ?",
+    "logoDesign": "Conception de Logo",
+    "webDesign": "Design Web",
+    "webAppDev": "Développement Web & App",
+    "brandStrategy": "Stratégie de Marque",
+    "socialMedia": "Réseaux Sociaux",
+    "videoEditing": "Édition Vidéo",
+    "brandIdentity": "Identité de Marque",
+    "sendMessage": "ENVOYER LE MESSAGE",
+    "somethingWentWrong": "Quelque chose s'est mal passé. Veuillez réessayer.",
+    "successfulProjects": "Projets à réaliser (vision)",
+    "yearsExperience": "Années d'Expérience",
+    "deliverExceptionalResults": "Nous offrons des résultats exceptionnels grâce à l'innovation, l'expertise et des stratégies éprouvées qui transforment votre entreprise.",
+    "comprehensiveSolutions": "Solutions complètes pour élever votre marque et stimuler la croissance de votre entreprise grâce à des stratégies innovantes.",
+    "provenMethodology": "Une méthodologie éprouvée qui offre des résultats exceptionnels à chaque fois grâce à une planification et une exécution stratégiques.",
+    "trustedByForwardThinking": "Notre plateforme est approuvée par des entreprises et institutions visionnaires pour offrir des solutions sécurisées, évolutives et intelligentes.",
+    "strategicBranding": "Branding Stratégique & Design Numérique",
+    "elevateBrandIdentity": "Élevez Votre Identité de Marque sur le Web, l'Impression et les Plateformes Numériques",
+    "fromCaptivatingBrand": "Des identités de marque captivantes aux expériences numériques immersives, JBRAND aide les entreprises à se démarquer sur des marchés encombrés. Nos solutions de branding complètes incluent la conception de logos, le développement web, le développement d'applications, les supports marketing et le positionnement stratégique de la marque avec des résultats mesurables.",
+    "exploreOurServices": "Découvrir Nos Services",
+    "getYourCustomPlan": "Obtenir Votre Plan Personnalisé",
+    "transformYourBusiness": "Transformez Votre Entreprise Avec Un Branding Puissant",
+    "atJBrandWeAre": "Chez JBrand, nous sommes plus qu'une simple agence de branding - nous sommes vos partenaires dans la transformation numérique. Avec une équipe de stratèges créatifs, de designers et de technologues, nous aidons les entreprises à établir leur identité unique dans le monde numérique.",
+    "discovery": "Découverte",
+    "weStartByUnderstanding": "Nous commençons par comprendre votre entreprise, votre marché et vos objectifs.",
+    "projectsToComplete": "Projets à réaliser (vision)",
+    "weWillGetBackToYou": "Nous vous répondrons bientôt pour discuter de vos besoins de projet.",
+    "thanksForSubscribing": "Merci de vous être abonné !",
+    "subscribing": "Abonnement en cours...",
+    "successMessage": "Merci de nous avoir contactés ! Nous avons reçu votre message et vous répondrons dans les 24 heures pour discuter de vos besoins de projet.",
+    "backToHome": "Retour à l'Accueil",
+    "startYourProject": "Commencer Votre Projet",
+    "contactInfo": "Informations de Contact"
+  },
+  "footer": {
+    "brand": "JBrand",
+    "companyDescription": "Donner vie à votre vision de marque grâce à l'excellence créative.",
+    "companyTitle": "Entreprise",
+    "services": "Services",
+    "aboutUs": "À propos",
+    "contact": "Contact",
+    "whatWeDoTitle": "Ce que nous faisons",
+    "softwareDevelopment": "Développement Logiciel",
+    "brandingDesign": "Conception de Marque",
+    "websiteDevelopment": "Développement Web & App",
+    "digitalMarketing": "Marketing Digital",
+    "contactTitle": "Contact",
+    "email": "jtech0576@gmail.com",
+    "phone": "+86 13275119361",
+    "skype": "",
+    "copyright": "Copyright 2025 JBrand Studios - Donnez vie à votre vision de marque grâce à l'excellence créative.",
+    "termsOfServices": "",
+    "enterYourEmail": "Entrez votre adresse e-mail",
+    "subscribeNow": "S'abonner",
+    "byJBrandTeam": "par l'équipe JBrand"
+  }
+}

@@ -1,0 +1,685 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "home": {
+    "contactForm": {
+      "subtitle": "Transform your vision into reality with our expert guidance",
+      "fields": {
+        "name": "Your Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company",
+        "website": "Website",
+        "message": "Tell us about your project..."
+      },
+      "servicesTitle": "What Services Are You Interested In?",
+      "services": {
+        "logoDesign": "Logo Design",
+        "webDesign": "Web Design",
+        "webAppDev": "Web & App Development",
+        "brandStrategy": "Brand Strategy",
+        "socialMedia": "Social Media",
+        "videoEditing": "Video Editing",
+        "brandIdentity": "Brand Identity"
+      },
+      "submitButton": "SEND MESSAGE",
+      "sendingButton": "Sending...",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "heroSection": {
+      "badgeText": "Strategic Branding & Digital Design",
+      "mainHeading": {
+        "part1": "Transform Your ",
+        "business": "Business",
+        "part2": " With Powerful Branding"
+      },
+      "consultationTitle": "Get A Free Consultation"
+    },
+    "hero": {
+      "title": "STRATEGIC BRANDING & DIGITAL DESIGN THAT TRANSFORMS BUSINESSES",
+      "subtitle": "Elevate Your Brand Identity Across Web, Print, and Digital Platforms",
+      "description": "From captivating brand identities to immersive digital experiences, JBRAND helps businesses stand out in crowded markets. Our comprehensive branding solutions include logo & flyer design, web & app development, marketing materials, and strategic brand positioning with measurable results.",
+      "exploreServices": "Explore Our Services",
+      "getCustomPlan": "Get Your Custom Plan"
+    },
+    "consultation": {
+      "title": "Get a Free Brand Strategy Consultation",
+      "form": {
+        "name": "Your Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "company": "Company",
+        "website": "Website",
+        "message": "Message",
+        "services": "What Services Interest You?",
+        "servicesList": {
+          "logoDesign": "Logo & Flyer Design",
+          "webDesign": "Web & App Design",
+          "brandStrategy": "Brand Strategy",
+          "softwareDevelopment": "Web & App Development",
+          "socialMedia": "Social Media",
+          "printDesign": "Print Design",
+          "brandIdentity": "Brand Identity"
+        },
+        "send": "SEND"
+      }
+    },
+    "whoWeAre": {
+      "title": "Who We Are",
+      "description": "At JBrand, we're more than just a branding agency - we're your partners in digital transformation. With a team of creative strategists, designers, and technologists, we help businesses establish their unique identity in the digital.",
+      "discovery": {
+        "title": "Discovery",
+        "description": "We start by understanding your business, market, and goals."
+      },
+      "projects": {
+        "count": "200+",
+        "label": "Projects to complete (vision)"
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose JBrand?",
+      "features": {
+        "innovative": {
+          "title": "Innovative Solutions",
+          "description": "We deliver cutting-edge branding strategies that set you apart from the competition."
+        },
+        "experienced": {
+          "title": "Experienced Team",
+          "description": "Our team are experienced in our proposed services."
+        },
+        "proven": {
+          "title": "Our Plan",
+          "description": "We have vision to help hundreds of businesses achieve measurable success in their branding efforts."
+        }
+      }
+    },
+    "visionForTheFuture": {
+      "title": "Vision for the Future",
+      "description": "We envision a future where every business has the tools and strategies to thrive in the digital age. Our goal is to be at the forefront of digital innovation, helping brands create meaningful connections with their audiences and achieve sustainable growth.",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Continuously pushing the boundaries of what is possible in digital branding."
+      },
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "Developing strategies that ensure long-term success for our clients."
+      },
+      "globalImpact": {
+        "title": "Global Impact",
+        "description": "Expanding our reach to help businesses worldwide achieve their goals."
+      }
+    },
+    "ambitiousGoals": {
+      "title": "Our Ambitious Goals",
+      "description": "Setting new standards in digital branding and innovation. Here's what we aim to achieve:",
+      "stats": {
+        "brandsNumber": "1000+",
+        "brandsLabel": "Brands to Transform",
+        "solutionsNumber": "100+",
+        "solutionsLabel": "Digital Solutions",
+        "awardsNumber": "50+",
+        "awardsLabel": "Industry Awards",
+        "marketsNumber": "20+",
+        "marketsLabel": "Global Markets"
+      }
+    },
+    "getStartedToday": {
+      "title": "Ready to Transform Your Brand?",
+      "description": "Let's create something amazing together. Contact us to start your brand transformation journey.",
+      "contactUs": "Contact Us",
+      "exploreServices": "Explore Services"
+    },
+    "ourServices": {
+      "title": "Our Services",
+      "items": {
+        "brandIdentity": {
+          "title": "Brand Identity",
+          "description": "Crafting unique visual identities that resonate with your target audience."
+        },
+        "webDevelopment": {
+          "title": "Web & App Development",
+          "description": "Building responsive, user-friendly websites and apps that drive conversions."
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategies that increase your online presence and drive measurable results."
+        },
+        "socialMedia": {
+          "title": "Social Media Management",
+          "description": "Creating and managing engaging social media campaigns that build brand loyalty."
+        },
+        "logoDesign": {
+          "title": "Logo & Flyer Design",
+          "description": "Creating and managing engaging social media campaigns that build brand loyalty."
+        }
+      }
+    },
+    "ourGoals": {
+      "title": "Our Goals",
+      "items": {
+        "clientSuccess": {
+          "title": "Client Success",
+          "description": "We measure our success by the success of our clients. Your growth is our priority."
+        },
+        "partnerships": {
+          "title": "Long-term Partnerships",
+          "description": "We aim to build lasting relationships that evolve with your business needs."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "We continuously innovate to provide cutting-edge solutions for our clients."
+        },
+        "growth": {
+          "title": "Digital Innovation",
+          "description": "Leverage cutting-edge technology to create impactful digital experiences for your audience."
+        }
+      },
+      "achievementTimeline": {
+        "title": "Achievement Timeline",
+        "2020": "Founded JBrand and launched our first client project.",
+        "2021": "Expanded our team and service offerings.",
+        "2022": "Reached 100+ successful projects.",
+        "2023": "Awarded for excellence in branding and digital marketing."
+      },
+      "futureRoadmap": {
+        "title": "Future Roadmap",
+        "2024": "Launch new AI-driven branding solutions.",
+        "2025": "Expand to international markets.",
+        "2026": "Reach 500+ clients worldwide.",
+        "2027": "Become a leader in digital transformation."
+      }
+    },
+    "ourProcess": {
+      "title": "Our Process",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We start by understanding your business, goals, and target audience."
+        },
+        "strategy": {
+          "title": "Strategy Development",
+          "description": "We create a customized strategy tailored to your business needs."
+        },
+        "design": {
+          "title": "Design & Development",
+          "description": "We bring your brand to life with creative designs and robust development."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "We carefully implement and test all solutions to ensure quality."
+        },
+        "launch": {
+          "title": "Launch & Support",
+          "description": "We launch your project and provide ongoing support for success."
+        }
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Crafting Digital Excellence",
+      "description": "We are a passionate team of designers, developers, and strategists dedicated to transforming businesses through innovative branding and digital solutions that drive real results.",
+      "startProject": "Start Your Project",
+      "watchStory": "Watch Our Story"
+    },
+    "story": {
+      "title": "Building Dreams Into Digital Reality",
+      "paragraph1": "Founded with a vision to bridge the gap between creative imagination and digital innovation. Our journey began with a simple belief: every brand has a unique story worth telling.",
+      "paragraph2": "Our multidisciplinary team combines strategic thinking with creative execution to deliver solutions that not only look beautiful but drive measurable business results.",
+      "projectsCompleted": "Projects to complete (vision)",
+      "yearsExperience": "Years Experience"
+    },
+    "services": {
+      "title": "Comprehensive Digital Solutions",
+      "description": "From brand identity to digital experiences, we offer end-to-end solutions that transform your business and drive growth.",
+      "items": {
+        "brandIdentity": {
+          "title": "Brand Identity Design",
+          "description": "Complete brand identity packages including logo design, color palettes, and brand guidelines."
+        },
+        "webDevelopment": {
+          "title": "Web Development",
+          "description": "Custom websites and web applications built with modern technologies and best practices."
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategic digital marketing campaigns that drive traffic, engagement, and conversions."
+        },
+        "socialMedia": {
+          "title": "Social Media Management",
+          "description": "Comprehensive social media strategies that build communities and drive engagement."
+        },
+        "videoProduction": {
+          "title": "Video Production",
+          "description": "Professional video content creation from concept to final production."
+        },
+        "audioProduction": {
+          "title": "Audio Production",
+          "description": "Professional audio mixing and mastering for music, podcasts, and multimedia content."
+        }
+      },
+      "learnMore": "Learn More"
+    },
+    "ourGoals": {
+      "title": "Milestones & Future Vision",
+      "description": "Our roadmap to success and ambitious goals for the future of digital innovation.",
+      "achievementTimeline": {
+        "title": "Achievement Timeline",
+        "2024": "Expanded to serve 200+ clients globally with 95% satisfaction rate",
+        "2025": "Launch AI-powered design tools and expand team to 50+ professionals",
+        "2026": "Open international offices and achieve $10M annual revenue",
+        "2027": "Become the leading digital agency in emerging markets"
+      },
+      "futureRoadmap": {
+        "title": "Future Roadmap",
+        "2028": "Pioneer sustainable design practices and carbon-neutral operations",
+        "2029": "Launch JBrand Academy for next-generation designers and developers",
+        "2030": "Establish innovation labs in 5 major cities worldwide",
+        "2031": "Achieve industry leadership in AI-driven creative solutions"
+      }
+    },
+    "process": {
+      "title": "How We Create Magic",
+      "description": "A proven methodology that delivers exceptional results through strategic planning and flawless execution.",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We dive deep into your business, market, and audience to understand your unique challenges and opportunities."
+        },
+        "strategy": {
+          "title": "Strategy & Planning",
+          "description": "We develop a comprehensive strategy that aligns with your goals and creates a roadmap for success."
+        },
+        "design": {
+          "title": "Design & Development",
+          "description": "Our creative team brings your vision to life with stunning designs and robust development."
+        },
+        "implementation": {
+          "title": "Implementation & Testing",
+          "description": "We implement solutions with rigorous testing to ensure everything works perfectly across all platforms."
+        },
+        "launch": {
+          "title": "Launch & Optimization",
+          "description": "We launch your project and provide ongoing optimization to ensure continued success and growth."
+        }
+      },
+      "stepProcess": "5 Step Process",
+      "provenEffective": "Proven & Effective"
+    },
+    "cta": {
+      "title": "Ready to Start?",
+      "heading": "Let's Create Something Amazing Together",
+      "description": "Ready to transform your business with innovative design and strategic thinking? Let's discuss your project and bring your vision to life.",
+      "startProject": "Start Your Project",
+      "viewServices": "View Our Services"
+    },
+
+    "team": {
+      "title": "Our Team",
+      "members": {
+        "john": {
+          "name": "John Doe",
+          "position": "CEO & Founder",
+          "description": "Visionary leader with over 15 years of branding experience."
+        },
+        "jane": {
+          "name": "Jane Smith",
+          "position": "Creative Director",
+          "description": "Master of visual storytelling and brand identity."
+        },
+        "mike": {
+          "name": "Mike Johnson",
+          "position": "Digital Strategist",
+          "description": "Expert in digital marketing and analytics."
+        },
+        "sarah": {
+          "name": "Sarah Lee",
+          "position": "Content Specialist",
+          "description": "Creating compelling narratives that resonate."
+        }
+      }
+    },
+    "services": {
+      "title": "Our Services Overview",
+      "items": {
+        "brandIdentity": {
+          "title": "Brand Identity",
+          "description": "Creating unique visual identities that resonate with your target audience."
+        },
+        "webDevelopment": {
+          "title": "Web & App Development",
+          "description": "Building responsive and user-friendly websites and apps that drive conversions."
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategies that boost your online presence and deliver measurable results."
+        },
+        "socialMedia": {
+          "title": "Social Media",
+          "description": "Managing your social presence to grow your brand and engage your audience."
+        },
+        "VideoProduction": {
+          "title": "Video & Photo Editing",
+          "description": "Creating, and Editing engaging videos and photos that tell your brand's story and connect with your audience."
+        },
+        "MusicPodcastMixing": {
+          "title": "Music & Podcast Mixing",
+          "description": "Mixing and mastering your music and podcasts to create a professional sound."
+        }
+      }
+    },
+    "ourGoals": {
+      "title": "Our Goals",
+      "achievementTimeline": {
+        "title": "Achievement Timeline",
+        "2024": "Founded JBrand and launched our first client project.",
+        "2025": "Expanded our team and service offerings.",
+        "2026": "Reached 100+ successful projects.",
+        "2027": "Awarded for excellence in branding and digital marketing."
+      },
+      "futureRoadmap": {
+        "title": "Future Roadmap",
+        "2028": "Launch new AI-driven branding solutions.",
+        "2029": "Expand to international markets.",
+        "2030": "Reach 500+ clients worldwide.",
+        "2031": "Become a leader in digital transformation."
+      }
+    },
+    "process": {
+      "title": "Our Process",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We start by understanding your business, goals, and target audience."
+        },
+        "strategy": {
+          "title": "Strategy Development",
+          "description": "We create a customized strategy tailored to your business needs."
+        },
+        "design": {
+          "title": "Design & Development",
+          "description": "We bring your brand to life with creative designs and robust development."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "We carefully implement and test all solutions to ensure quality."
+        },
+        "launch": {
+          "title": "Launch & Support",
+          "description": "We launch your project and provide ongoing support for success."
+        }
+      }
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "description": "Explore our comprehensive suite of services designed to elevate your brand and drive business growth.",
+      "getStarted": "Get Started",
+      "backgroundImageAlt": "Services background image"
+    },
+    "coreServices": {
+      "title": "Our Core Services",
+      "items": {
+        "brandIdentity": {
+          "title": "Brand Identity",
+          "description": "Crafting unique visual identities that resonate with your target audience.",
+          "imageAlt": "Brand Identity service"
+        },
+        "webDevelopment": {
+          "title": "Web & App Development",
+          "description": "Building responsive, user-friendly websites and apps that drive conversions.",
+          "imageAlt": "Web Development service"
+        },
+        "digitalMarketing": {
+          "title": "Digital Marketing",
+          "description": "Strategies that increase your online presence and drive measurable results.",
+          "imageAlt": "Digital Marketing service"
+        },
+        "socialMedia": {
+          "title": "Social Media",
+          "description": "Managing your social presence to grow your brand and engage your audience.",
+          "imageAlt": "Social Media service"
+        },
+        "VideoProduction": {
+          "title": "Video & Photo Editing",
+          "description": "Creating, and Editing engaging videos and photos that tell your brand's story and connect with your audience.",
+          "imageAlt": "Video & Photo Editing service"
+        },
+        "MusicPodcastMixing": {
+          "title": "Music & Podcast Mixing",
+          "description": "Mixing and mastering your music and podcasts to create a professional sound.",
+          "imageAlt": "Music & Podcast Mixing service"
+        }
+      }
+    },
+    "process": {
+      "title": "Our Proven Process",
+      "steps": {
+        "discovery": {
+          "title": "Discovery & Research",
+          "description": "We start by understanding your business, goals, and target audience to lay the foundation for success."
+        },
+        "strategy": {
+          "title": "Strategy Development",
+          "description": "We craft a bespoke strategy tailored to your unique needs, ensuring every step aligns with your vision."
+        },
+        "design": {
+          "title": "Design & Development",
+          "description": "Our creative team brings your brand to life with stunning designs and robust development."
+        },
+        "implementation": {
+          "title": "Implementation",
+          "description": "We meticulously implement and test all solutions, ensuring flawless execution and quality."
+        },
+        "launch": {
+          "title": "Launch & Optimization",
+          "description": "We launch your project with precision and provide continuous optimization for sustained growth."
+        }
+      },
+      "imageAlt": "Process visualization"
+    },
+    "additionalServices": {
+      "title": "Additional Services",
+      "items": {
+        "videoProduction": {
+          "title": "Video Production",
+          "description": "Bringing your brand to life with compelling video content.",
+          "imageAlt": "Video Production service"
+        },
+        "analytics": {
+          "title": "Analytics & Reporting",
+          "description": "Data-driven insights to optimize your marketing strategies.",
+          "imageAlt": "Analytics & Reporting service"
+        },
+        "contentMarketing": {
+          "title": "Content Marketing",
+          "description": "Engaging content that attracts, informs, and converts your audience.",
+          "imageAlt": "Content Marketing service"
+        },
+        "emailMarketing": {
+          "title": "Email Marketing",
+          "description": "Targeted campaigns to nurture leads and build customer loyalty."
+        }
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose JBrand?",
+      "items": {
+        "awardWinningTeam": {
+          "title": "Experienced Team",
+          "description": "Our team is experienced in our proposed services."
+        },
+        "clientCentricApproach": {
+          "title": "Client-Centric Approach",
+          "description": "We prioritize your success, working closely with you to achieve your business goals."
+        },
+        "measurableResults": {
+          "title": "Measurable Results",
+          "description": "We deliver tangible results, ensuring a strong return on your investment."
+        },
+        "innovativeSolutions": {
+          "title": "Innovative Solutions",
+          "description": "Leveraging the latest technologies to provide cutting-edge branding solutions."
+        },
+        "provenTrackRecord": {
+          "title": "Convincing results",
+          "description": "We are targeting a proven track record of delivering successful branding solutions."
+        }
+      }
+    }
+  },
+  "contact": {
+    "startYourProject": "Start Your Project",
+    "contactInfo": "Contact Information",
+    "hero": {
+      "title": "Let us Connect",
+      "description": "Have a question or want to work with us? Use the form below or the customer support to get in touch. We look forward to hearing from you!",
+      "emailUs": "Email Us",
+      "callUs": "Call Us"
+    },
+    "form": {
+      "title": "Contact Form",
+      "getInTouch": "Get In Touch",
+      "sendUsMessage": "Send Us a Message",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your email address"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Your phone number"
+        },
+        "company": {
+          "label": "Company",
+          "placeholder": "Your company name"
+        },
+        "service": {
+          "label": "Service Required",
+          "placeholder": "Select a service",
+          "options": {
+            "brandIdentity": "Brand Identity",
+            "webDevelopment": "Web & App Development",
+            "digitalMarketing": "Digital Marketing",
+            "socialMedia": "Social Media",
+            "VideoProduction": "Video & Photo Editing",
+            "MusicPodcastMixing": "Music & Podcast Mixing",
+            "other": "Other"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell us about your project"
+        }
+      },
+      "submit": "Submit Message",
+      "success": "Thank you for your message! We will get back to you soon.",
+      "error": "Failed to send message. Please try again later."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": {
+        "title": "Address",
+        "value": "China, Jiangsu Province, Zhenjiang City, Jingkou District"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "+86 13275119361"
+      },
+      "email": {
+        "title": "Email",
+        "value": "jtech0576@gmail.com"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "value": "Everyday: Non Stop"
+      }
+    }
+  },
+  "footer": {
+    "brand": "JBrand",
+    "companyDescription": "We are a full-service branding and digital design agency dedicated to transforming businesses and helping them stand out in the digital landscape.",
+    "companyTitle": "Company",
+    "services": "Services",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "whatWeDoTitle": "What We Do",
+    "softwareDevelopment": "Software Development",
+    "brandingDesign": "Branding & Design",
+    "websiteDevelopment": "Website Development & App",
+    "digitalMarketing": "Digital Marketing",
+    "contactTitle": "Contact",
+    "email": "jtech0576@gmail.com",
+    "phone": "+86 13275119361",
+    "skype": "",
+    "copyright": " 2025 JBrand. All rights reserved.",
+    "termsOfServices": "",
+    "enterYourEmail": "Enter your email address",
+    "subscribeNow": "Subscribe Now",
+    "byJBrandTeam": "by JBrand Team"
+  },
+  "common": {
+    "sending": "Sending...",
+    "messageSent": "Message sent successfully!",
+    "failedToSend": "Failed to send message. Please try again later.",
+    "aboutUs": "About Us",
+    "whoWeAre": "Who We Are",
+    "whyChooseUs": "Why Choose Us",
+    "ourServices": "Our Services",
+    "ourProcess": "Our Process",
+    "ourAchievements": "Our Achievements",
+    "testimonials": "Testimonials",
+    "whatOurClientsSay": "What Our Clients Say",
+    "getFreeConsultation": "Get A Free Consultation",
+    "transformVision": "Transform your vision into reality with our expert guidance",
+    "yourName": "Your Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "website": "Website",
+    "tellUsAboutProject": "Tell us about your project...",
+    "whatServicesInterested": "What Services Are You Interested In?",
+    "logoDesign": "Logo Design",
+    "webDesign": "Web Design",
+    "webAppDev": "Web & App Development",
+    "brandStrategy": "Brand Strategy",
+    "socialMedia": "Social Media",
+    "videoEditing": "Video Editing",
+    "brandIdentity": "Brand Identity",
+    "sendMessage": "SEND MESSAGE",
+    "somethingWentWrong": "Something went wrong. Please try again.",
+    "successfulProjects": "Projects to complete (vision)",
+    "yearsExperience": "Years Experience",
+    "deliverExceptionalResults": "We deliver exceptional results through innovation, expertise, and proven strategies that transform your business.",
+    "comprehensiveSolutions": "Comprehensive solutions to elevate your brand and drive business growth through innovative strategies.",
+    "provenMethodology": "A proven methodology that delivers exceptional results every time through strategic planning and execution.",
+    "trustedByForwardThinking": "Our platform is trusted by forward-thinking companies and institutions to deliver secure, scalable, and intelligent solutions.",
+    "strategicBranding": "Strategic Branding & Digital Design",
+    "elevateBrandIdentity": "Elevate Your Brand Identity Across Web, Print & Digital Platforms",
+    "fromCaptivatingBrand": "From captivating brand identities to immersive digital experiences, JBRAND helps businesses stand out in crowded markets. Our comprehensive branding solutions include logo design, web development, app development, marketing collateral, and strategic brand positioning with measurable results.",
+    "exploreOurServices": "Explore Our Services",
+    "getYourCustomPlan": "Get Your Custom Plan",
+    "transformYourBusiness": "Transform Your Business With Powerful Branding",
+    "atJBrandWeAre": "At JBrand, we are more than just a branding agency - we are your partners in digital transformation. With a team of creative strategists, designers, and technologists, we help businesses establish their unique identity in the digital world.",
+    "discovery": "Discovery",
+    "weStartByUnderstanding": "We start by understanding your business, market, and goals.",
+    "projectsToComplete": "Projects to complete (vision)",
+    "weWillGetBackToYou": "We'll get back to you shortly to discuss your project requirements.",
+    "thanksForSubscribing": "Thanks for subscribing!",
+    "subscribing": "Subscribing...",
+    "successMessage": "Thank you for reaching out! We've received your message and will get back to you within 24 hours to discuss your project requirements.",
+    "backToHome": "Back to Home",
+    "startYourProject": "Start Your Project",
+    "contactInfo": "Contact Info"
+  }
+} 

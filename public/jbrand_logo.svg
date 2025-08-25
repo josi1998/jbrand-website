@@ -1,0 +1,52 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients and effects -->
+  <defs>
+    <!-- Main gradient for the logo box -->
+    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333EA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Text gradient -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333EA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    
+    <!-- Glow effect filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background glow effect -->
+  <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+        fill="url(#boxGradient)" opacity="0.2" filter="url(#glow)"/>
+  
+  <!-- Main logo container -->
+  <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+        fill="url(#boxGradient)" filter="url(#dropShadow)"/>
+  
+  <!-- Star icon -->
+  <g transform="translate(30, 30)">
+    <path d="M0,-12 L3.5,-3.5 L12,0 L3.5,3.5 L0,12 L-3.5,3.5 L-12,0 L-3.5,-3.5 Z" 
+          fill="white" opacity="1"/>
+  </g>
+  
+  <!-- Main text "JBrand" -->
+  <text x="68" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        fill="url(#textGradient)">JBrand</text>
+  
+  <!-- Subtitle "Creative Studio" -->
+  <text x="68" y="50" font-family="Arial, sans-serif" font-size="10" 
+        fill="#6B7280">Creative Studio</text>
+</svg>
