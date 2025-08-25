@@ -39,3 +39,7 @@ export default function TawkToChat({ locale }: { locale: string }) {
 
   return null; // This component doesn't render anything visible
 } 
+
+
+
+
