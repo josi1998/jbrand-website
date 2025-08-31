@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 // Extend Window interface for Tawk.to globals
 declare global {
   interface Window {
-    Tawk_API?: any;
+    Tawk_API?: unknown;
     Tawk_LoadStart?: Date;
   }
 }

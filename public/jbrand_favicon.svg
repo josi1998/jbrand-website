@@ -1,0 +1,20 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for gradients -->
+  <defs>
+    <!-- Main gradient for the favicon -->
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333EA;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main container with rounded corners -->
+  <rect x="1" y="1" width="14" height="14" rx="3" ry="3" 
+        fill="url(#faviconGradient)"/>
+  
+  <!-- Star icon - simplified for small size -->
+  <g transform="translate(8, 8)">
+    <path d="M0,-4 L1.2,-1.2 L4,0 L1.2,1.2 L0,4 L-1.2,1.2 L-4,0 L-1.2,-1.2 Z" 
+          fill="white"/>
+  </g>
+</svg>

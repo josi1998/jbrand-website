@@ -244,7 +244,7 @@ export default function AboutPage() {
             >
               <Button
                 asChild
-                className="group h-12 md:h-14 px-6 md:px-10 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm md:text-base"
+                className="group h-12 md:h-14 px-6 md:px-10 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 !text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm md:text-base hover:!text-white"
               >
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
@@ -872,10 +872,10 @@ export default function AboutPage() {
               Ready to Start?
             </Badge>
             <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-              Let's Create Something Amazing Together
+              Let us create something amazing together
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
-              Ready to transform your business with innovative design and strategic thinking? Let's discuss your project
+              Ready to transform your business with innovative design and strategic thinking? Let us discuss your project
               and bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

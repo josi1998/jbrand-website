@@ -6,7 +6,6 @@ import { useState, type ReactNode } from "react"
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { motion } from "framer-motion"
-import JBrandStarLogo from "@/components/JBrandStarLogo";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {
@@ -166,7 +165,7 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 pt-24 pb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-            {/* Enhanced Brand Section */}
+            {/* Enhanced Brand Section with SVG Logo */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -182,8 +181,56 @@ export default function Footer() {
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.8 }}
                     >
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                        <JBrandStarLogo size={32} />
+                      <div className="w-16 h-16 relative">
+                        <svg 
+                          width="64" 
+                          height="64" 
+                          viewBox="0 0 60 60" 
+                          className="w-full h-full transition-all duration-500 rounded-3xl"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          {/* Definitions for gradients and effects */}
+                          <defs>
+                            {/* Main gradient for the logo box */}
+                            <linearGradient id="footerBoxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" style={{stopColor:'#3B82F6', stopOpacity:1}} />
+                              <stop offset="100%" style={{stopColor:'#9333EA', stopOpacity:1}} />
+                            </linearGradient>
+                            
+                            {/* Drop shadow filter */}
+                            <filter id="footerDropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                              <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.25"/>
+                            </filter>
+                            
+                            {/* Glow effect filter */}
+                            <filter id="footerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                              <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                              </feMerge>
+                            </filter>
+                          </defs>
+                          
+                          {/* Background glow effect */}
+                          <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                                fill="url(#footerBoxGradient)" opacity="0.2" filter="url(#footerGlow)"/>
+                          
+                          {/* Main logo container */}
+                          <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                                fill="url(#footerBoxGradient)" filter="url(#footerDropShadow)"/>
+                          
+                          {/* Star icon */}
+                          <g transform="translate(30, 30)">
+                            <motion.path 
+                              d="M0,-12 L3.5,-3.5 L12,0 L3.5,3.5 L0,12 L-3.5,3.5 L-12,0 L-3.5,-3.5 Z" 
+                              fill="white" 
+                              opacity="1"
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                            />
+                          </g>
+                        </svg>
                       </div>
                       {/* Glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
@@ -393,7 +440,7 @@ export default function Footer() {
                   >
                     <Sparkles className="w-6 h-6 mr-3 text-yellow-500" />
                   </motion.div> */}
-                  Newsletter Magic
+                  Newsletter
                 </h4>
 
                 {subscriptionStatus === "success" ? (
@@ -482,7 +529,7 @@ export default function Footer() {
                 <motion.p className="text-lg font-medium" whileHover={{ scale: 1.05 }}>
                   © {currentYear} JBrand. All rights reserved.
                 </motion.p>
-                <div className="flex gap-8">
+                {/* <div className="flex gap-8">
                   {[
                     { label: "Privacy Policy", href: "/privacy" },
                     { label: "Terms of Service", href: "/terms" },
@@ -505,7 +552,7 @@ export default function Footer() {
                       </Link>
                     </motion.div>
                   ))}
-                </div>
+                </div> */}
               </div>
               <motion.div
                 className="text-gray-600 dark:text-gray-300 flex items-center text-lg font-medium"

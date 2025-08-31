@@ -70,10 +70,77 @@ export default function Home() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
+    // Comprehensive form validation
+    const requiredFields = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      message: formData.message.trim()
+    }
+
+    // Check for required fields
+    const missingFields = Object.entries(requiredFields)
+      .filter(([key, value]) => !value)
+      .map(([key]) => key)
+
+    if (missingFields.length > 0) {
+      console.error("Missing required fields:", missingFields)
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email.trim())) {
+      console.error("Invalid email format:", formData.email)
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Message length validation (must be at least 10 characters)
+    if (formData.message.trim().length < 10) {
+      console.error("Message too short:", formData.message.length, "characters. Minimum required: 10")
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Message length validation (must not exceed 2000 characters)
+    if (formData.message.trim().length > 2000) {
+      console.error("Message too long:", formData.message.length, "characters. Maximum allowed: 2000")
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Services validation (at least one service should be selected)
+    if (formData.services.length === 0) {
+      console.error("No services selected")
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
     try {
+      // Prepare clean form data
+      const cleanFormData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        company: formData.company.trim() || "",
+        website: formData.website.trim() || "",
+        message: formData.message.trim(),
+        services: formData.services,
+        source: "home_page",
+        locale: locale || "en"
+      }
+
       console.log("Submitting home page form data:", {
-        ...formData,
-        message: formData.message.substring(0, 50) + "...",
+        ...cleanFormData,
+        message: cleanFormData.message.substring(0, 100) + "...",
+        timestamp: new Date().toISOString()
       })
 
       const response = await fetch("/api/send", {
@@ -81,17 +148,35 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          services: formData.services,
-        }),
+        body: JSON.stringify(cleanFormData),
       })
 
-      const result = await response.json()
-      console.log("Home page form response:", result)
+      console.log("API Response status:", response.status, response.statusText)
 
-      if (response.ok && result.success) {
+      let result
+      try {
+        const textResponse = await response.text()
+        console.log("Raw API response:", textResponse)
+        
+        if (textResponse) {
+          result = JSON.parse(textResponse)
+        } else {
+          result = { success: false, error: "Empty response from server" }
+        }
+      } catch (parseError) {
+        console.error("Failed to parse API response:", parseError)
+        result = { success: false, error: "Invalid response format from server" }
+      }
+
+      console.log("Parsed home page form response:", result)
+
+      // Check multiple success conditions
+      const isSuccess = response.ok && (result.success === true || result.message === "Email sent successfully")
+      
+      if (isSuccess) {
+        console.log("Form submission successful")
         setSubmitStatus("success")
+        // Reset form on success
         setFormData({
           name: "",
           email: "",
@@ -102,11 +187,21 @@ export default function Home() {
           services: [],
         })
       } else {
+        console.error("Form submission failed:", {
+          status: response.status,
+          statusText: response.statusText,
+          result: result,
+          responseOk: response.ok
+        })
         setSubmitStatus("error")
-        console.error("Home page form error response:", result)
       }
     } catch (error) {
-      console.error("Home page form submission error:", error)
+      console.error("Home page form submission error:", {
+        error: error,
+        message: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      })
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -131,9 +226,13 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
                 <CheckCircle2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-text-primary">{t("common.messageSent")}</h3>
-              <p className="text-text-secondary mb-6">{t("common.weWillGetBackToYou")}</p>
-              <Button onClick={() => setSubmitStatus("idle")} variant="glow">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{t("common.messageSent")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">{t("common.weWillGetBackToYou")}</p>
+              <Button 
+                onClick={() => setSubmitStatus("idle")} 
+                variant="glow" 
+                className="text-black dark:text-white hover:text-black dark:hover:text-white font-medium"
+              >
                 {t("common.sendAnotherMessage")}
               </Button>
             </CardContent>
@@ -248,16 +347,14 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="space-y-6 lg:space-y-8"
             >
-              
-
-              {/* Badge - Hidden on small screens */}
+              {/* Badge - Now visible on all screens */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="hidden md:block"
+                className="block mt-8 md:mt-0"
               >
-                <Badge variant="shimmer" size="lg" className="mt-8 md:mt-12 mb-0 !text-white">
+                <Badge variant="shimmer" size="lg" className="mb-6 !text-white hover:!text-white">
                   {t("home.heroSection.badgeText")}
                 </Badge>
               </motion.div>
@@ -305,7 +402,7 @@ export default function Home() {
                 <Button
                   size="xl"
                   variant="glow"
-                  className="px-8 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white"
+                  className="px-8 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
                   asChild
                 >
                   <Link href="/services">
@@ -316,7 +413,7 @@ export default function Home() {
                 <Button
                   size="xl"
                   variant="glass"
-                  className="border-white/20 !text-white hover:bg-white/10 bg-transparent backdrop-blur-sm retain-text-color"
+                  className="border-white/20 !text-white hover:bg-white/10 bg-transparent backdrop-blur-sm retain-text-color hover:!text-white"
                   asChild
                 >
                   <Link href="/contact">
@@ -334,7 +431,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Link href="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white active:!text-white focus:!text-white">
+                  <Button size="lg" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
                     {t("home.hero.getCustomPlan")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -343,7 +440,7 @@ export default function Home() {
                   <Button
                     size="lg"
                     variant="glass"
-                    className="w-full !text-white border-white/40 hover:bg-white/10 hover:border-white/60 bg-transparent backdrop-blur-sm retain-text-color hover:!text-white active:!text-white focus:!text-white"
+                    className="w-full text-white border-white/40 hover:bg-white/10 hover:border-white/60 bg-transparent backdrop-blur-sm retain-text-color !text-white hover:!text-white"
                   >
                     {t("home.hero.exploreServices")}
                   </Button>
@@ -360,7 +457,7 @@ export default function Home() {
               <Card variant="glass" className="shadow-modern-2xl">
                 <CardContent className="p-6 lg:p-8">
                   <div className="text-center mb-6 lg:mb-8">
-                    <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
+                    <h3 className="text-xl lg:text-2xl font-bold !text-white mb-2">
                       {t("home.heroSection.consultationTitle")}
                     </h3>
                     <p className="text-text-secondary">{t("home.contactForm.subtitle")}</p>
@@ -368,31 +465,44 @@ export default function Home() {
 
                   <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <Input
-                        placeholder={t("home.contactForm.fields.name")}
-                        value={formData.name}
-                        onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                        className="bg-surface-primary border-border text-text-primary"
-                        required
-                      />
-                      <Input
-                        type="email"
-                        placeholder={t("home.contactForm.fields.email")}
-                        value={formData.email}
-                        onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                        className="bg-surface-primary border-border text-text-primary"
-                        required
-                      />
+                      <div className="space-y-1">
+                        <Input
+                          placeholder={`${t("home.contactForm.fields.name")} *`}
+                          value={formData.name}
+                          onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                          className={`bg-surface-primary border-border text-text-primary ${
+                            !formData.name.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                          }`}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-1">
+                        <Input
+                          type="email"
+                          placeholder={`${t("home.contactForm.fields.email")} *`}
+                          value={formData.email}
+                          onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
+                          className={`bg-surface-primary border-border text-text-primary ${
+                            (!formData.email.trim() || (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) && submitStatus === "error" 
+                              ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                          }`}
+                          required
+                        />
+                      </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <Input
-                        type="tel"
-                        placeholder={t("home.contactForm.fields.phone")}
-                        value={formData.phone}
-                        onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                        className="bg-surface-primary border-border text-text-primary"
-                        required
-                      />
+                      <div className="space-y-1">
+                        <Input
+                          type="tel"
+                          placeholder={`${t("home.contactForm.fields.phone")} *`}
+                          value={formData.phone}
+                          onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
+                          className={`bg-surface-primary border-border text-text-primary ${
+                            !formData.phone.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                          }`}
+                          required
+                        />
+                      </div>
                       <Input
                         placeholder={t("home.contactForm.fields.company")}
                         value={formData.company}
@@ -407,18 +517,62 @@ export default function Home() {
                       onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
                       className="bg-surface-primary border-border text-text-primary"
                     />
-                    <Textarea
-                      placeholder={t("home.contactForm.fields.message")}
-                      value={formData.message}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                      className="min-h-[80px] lg:min-h-[100px] bg-surface-primary border-border text-text-primary"
-                      required
-                    />
-                    <div>
-                      <p className="font-medium mb-3 lg:mb-4 text-text-primary">
-                        {t("home.contactForm.servicesTitle")}
-                      </p>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-text-secondary">Message *</span>
+                        <span className={`text-xs ${
+                          formData.message.length < 10 
+                            ? "text-red-500" 
+                            : formData.message.length > 1800 
+                              ? "text-orange-500" 
+                              : "text-gray-500"
+                        }`}>
+                          {formData.message.length}/2000
+                        </span>
+                      </div>
+                      <Textarea
+                        placeholder={`${t("home.contactForm.fields.message")} (minimum 10 characters)`}
+                        value={formData.message}
+                        onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
+                        className={`min-h-[80px] lg:min-h-[100px] bg-surface-primary border-border text-text-primary ${
+                          (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
+                            ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                        }`}
+                        required
+                      />
+                      {formData.message.length > 0 && formData.message.length < 10 && (
+                        <p className="text-red-500 text-xs flex items-center">
+                          <span className="mr-1">⚠️</span>
+                          Message must be at least 10 characters long ({10 - formData.message.length} more needed)
+                        </p>
+                      )}
+                      {formData.message.length >= 1800 && formData.message.length < 2000 && (
+                        <p className="text-orange-500 text-xs flex items-center">
+                          <span className="mr-1">⚠️</span>
+                          Approaching character limit ({2000 - formData.message.length} characters remaining)
+                        </p>
+                      )}
+                      {formData.message.length >= 2000 && (
+                        <p className="text-red-500 text-xs flex items-center">
+                          <span className="mr-1">❌</span>
+                          Message exceeds maximum length. Please shorten your message.
+                        </p>
+                      )}
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <p className="font-medium text-text-primary">
+                          {t("home.contactForm.servicesTitle")} *
+                        </p>
+                        {formData.services.length === 0 && submitStatus === "error" && (
+                          <span className="text-red-500 text-xs">⚠️ Required</span>
+                        )}
+                      </div>
+                      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-lg border-2 transition-colors ${
+                        formData.services.length === 0 && submitStatus === "error" 
+                          ? "border-red-500 bg-red-50 dark:bg-red-900/10" 
+                          : "border-transparent"
+                      }`}>
                         {Object.entries(t.raw("home.contactForm.services") as Record<string, string>).map(
                           ([key, label]) => (
                             <label key={key} className="flex items-center space-x-2 cursor-pointer">
@@ -436,6 +590,12 @@ export default function Home() {
                           ),
                         )}
                       </div>
+                      {formData.services.length === 0 && submitStatus === "error" && (
+                        <p className="text-red-500 text-xs flex items-center">
+                          <span className="mr-1">⚠️</span>
+                          Please select at least one service
+                        </p>
+                      )}
                     </div>
                     <Button type="submit" disabled={isSubmitting} variant="glow" className="w-full">
                       {isSubmitting ? (
@@ -448,9 +608,35 @@ export default function Home() {
                       )}
                     </Button>
                     {submitStatus === "error" && (
-                      <p className="text-red-500 text-center text-sm font-medium">
-                        {t("home.contactForm.errorMessage")}
-                      </p>
+                      <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg text-sm font-medium space-y-2">
+                        <div className="font-semibold flex items-center">
+                          <span className="mr-2">⚠️</span>
+                          Submission Failed
+                        </div>
+                        <div className="text-xs space-y-1">
+                          <div className="font-semibold mb-1">Requirements checklist:</div>
+                          <div className={`flex items-center ${formData.name.trim() ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                            <span className="mr-2">{formData.name.trim() ? '✓' : '❌'}</span>
+                            Name is required
+                          </div>
+                          <div className={`flex items-center ${formData.email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                            <span className="mr-2">{formData.email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) ? '✓' : '❌'}</span>
+                            Valid email address is required
+                          </div>
+                          <div className={`flex items-center ${formData.phone.trim() ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                            <span className="mr-2">{formData.phone.trim() ? '✓' : '❌'}</span>
+                            Phone number is required
+                          </div>
+                          <div className={`flex items-center ${formData.message.trim().length >= 10 && formData.message.trim().length <= 2000 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                            <span className="mr-2">{formData.message.trim().length >= 10 && formData.message.trim().length <= 2000 ? '✓' : '❌'}</span>
+                            Message must be 10-2000 characters (currently: {formData.message.length})
+                          </div>
+                          <div className={`flex items-center ${formData.services.length > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                            <span className="mr-2">{formData.services.length > 0 ? '✓' : '❌'}</span>
+                            At least one service must be selected ({formData.services.length} selected)
+                          </div>
+                        </div>
+                      </div>
                     )}
                   </form>
                 </CardContent>
@@ -726,7 +912,7 @@ export default function Home() {
               className="relative order-1 lg:order-2"
             >
               {/* Decorative elements */}
-              <div className="absolute -top-8 -right-8 w-16 h-16 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-2xl" />
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-2xl" />
               <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl" />
               <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
@@ -829,28 +1015,29 @@ export default function Home() {
             {[
               {
                 quote:
-                  "Your message",
+                  "Your Message",
                 author: "Your Name",
                 role: "Your Role",
                 rating: 5,
-                avatar: "A",
+                avatar: "AV",
               },
               {
                 quote:
-                  "Your message",
+                  "Your Message",
                 author: "Your Name",
                 role: "Your Role",
                 rating: 5,
-                avatar: "A",
+                avatar: "AV",
               },
               {
                 quote:
-                  "Your message",
+                  "Your Message",
                 author: "Your Name",
                 role: "Your Role",
                 rating: 5,
-                avatar: "A",
+                avatar: "AV",
               },
+              
             ].map((testimonial, index) => (
               <FloatingCard key={index} delay={index * 0.1}>
                 <TestimonialCard
@@ -887,7 +1074,7 @@ export default function Home() {
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">{t("home.getStartedToday.title")}</h2>
             <p className="text-xl text-blue-100 mb-8">{t("home.getStartedToday.description")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" variant="outline" className="border-white !text-white hover:bg-white/10 bg-transparent" asChild>
+              <Button size="xl" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
                 <Link href={`/${locale}/contact`}>
                   {t("home.getStartedToday.contactUs")}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -896,7 +1083,7 @@ export default function Home() {
               <Button
                 size="xl"
                 variant="outline"
-                className="border-white !text-white hover:bg-white/10 bg-transparent"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
                 asChild
               >
                 <Link href={`/${locale}/services`}>{t("home.getStartedToday.exploreServices")}</Link>

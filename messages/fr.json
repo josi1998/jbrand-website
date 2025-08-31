@@ -515,7 +515,7 @@
         },
         "message": {
           "label": "Message *",
-          "placeholder": "Parlez-nous de votre projet"
+          "placeholder": "Parlez-nous de votre projet (10 caractères minimum)"
         },
         "file": {
           "label": "Joindre des Fichiers",
@@ -545,7 +545,10 @@
         "title": "Heures d'Ouverture",
         "value": "Tous les jours: Non Stop"
       }
-    }
+    },
+    "successMessage": "Merci de nous avoir contactés ! Nous vous répondrons dans les 24 heures.",
+    "sendAnotherMessage": "Envoyer un Autre Message",
+    "backToHome": "Retour à l'Accueil"
   },
   "common": {
     "readMore": "Lire la suite",
@@ -571,7 +574,7 @@
     "phone": "Téléphone",
     "company": "Entreprise",
     "website": "Site Web",
-    "tellUsAboutProject": "Parlez-nous de votre projet...",
+    "tellUsAboutProject": "Parlez-nous de votre projet... (10 caractères minimum)",
     "whatServicesInterested": "Quels Services Vous Intéressent ?",
     "logoDesign": "Conception de Logo",
     "webDesign": "Design Web",
@@ -602,6 +605,7 @@
     "thanksForSubscribing": "Merci de vous être abonné !",
     "subscribing": "Abonnement en cours...",
     "successMessage": "Merci de nous avoir contactés ! Nous avons reçu votre message et vous répondrons dans les 24 heures pour discuter de vos besoins de projet.",
+    "sendAnotherMessage": "Envoyer un Autre Message",
     "backToHome": "Retour à l'Accueil",
     "startYourProject": "Commencer Votre Projet",
     "contactInfo": "Informations de Contact"

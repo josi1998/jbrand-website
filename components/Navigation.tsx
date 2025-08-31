@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Menu, X, Home, User, Briefcase, Mail, ArrowRight, Zap, Sun, Moon } from "lucide-react"
-import JBrandStarLogo from "@/components/JBrandStarLogo";
 import { cn } from "@/lib/utils"
 
 // Enhanced Particle component for navigation
@@ -28,6 +27,8 @@ const NavParticle = ({ delay = 0, index = 0 }) => {
   ]
 
   const particle = particleTypes[index % particleTypes.length]
+  
+  if (!particle) return null
 
   return (
     <motion.div
@@ -135,7 +136,6 @@ export default function Navigation() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.25, 0, 1],
       },
     },
   }
@@ -161,30 +161,84 @@ export default function Navigation() {
 
       <nav className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Enhanced Logo */}
+          
+          {/* Enhanced SVG Logo */}
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="flex items-center space-x-3"
+            className="flex items-center"
           >
-            <Link href={`/${locale}`} className="group flex items-center space-x-3">
-              <motion.div className="relative" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+            <Link href={`/${locale}`} className="group flex items-center">
+              <motion.div 
+                className="relative"
+                whileHover={{ scale: 1.05 }} 
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg 
+                  width="200" 
+                  height="60" 
+                  viewBox="0 0 200 60" 
+                  className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:drop-shadow-lg"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <JBrandStarLogo size={40} />
-                </motion.div>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
+                  {/* Definitions for gradients and effects */}
+                  <defs>
+                    {/* Main gradient for the logo box */}
+                    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor:'#3B82F6', stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:'#9333EA', stopOpacity:1}} />
+                    </linearGradient>
+                    
+                    {/* Text gradient */}
+                    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style={{stopColor:'#2563EB', stopOpacity:1}} />
+                      <stop offset="100%" style={{stopColor:'#9333EA', stopOpacity:1}} />
+                    </linearGradient>
+                    
+                    {/* Drop shadow filter */}
+                    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.25"/>
+                    </filter>
+                    
+                    {/* Glow effect filter */}
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                      <feMerge> 
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  
+                  {/* Background glow effect */}
+                  <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                        fill="url(#boxGradient)" opacity="0.2" filter="url(#glow)"/>
+                  
+                  {/* Main logo container */}
+                  <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                        fill="url(#boxGradient)" filter="url(#dropShadow)"/>
+                  
+                  {/* Star icon */}
+                  <g transform="translate(30, 30)">
+                    <motion.path 
+                      d="M0,-12 L3.5,-3.5 L12,0 L3.5,3.5 L0,12 L-3.5,3.5 L-12,0 L-3.5,-3.5 Z" 
+                      fill="white" 
+                      opacity="1"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                    />
+                  </g>
+                  
+                  {/* Main text "JBrand" */}
+                  <text x="68" y="35" fontFamily="Arial, sans-serif" fontSize="32" fontWeight="bold" 
+                        fill="url(#textGradient)">JBrand</text>
+                  
+                  {/* Subtitle "Creative Studio" */}
+                  <text x="68" y="50" fontFamily="Arial, sans-serif" fontSize="14" 
+                        fill={theme === 'dark' ? '#9CA3AF' : '#6B7280'}>Creative Studio</text>
+                </svg>
               </motion.div>
-              <div className="hidden sm:block">
-                <div className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  JBrand
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">Creative Studio</div>
-              </div>
             </Link>
           </motion.div>
 
@@ -302,13 +356,13 @@ export default function Navigation() {
 
             {/* Enhanced CTA Button */}
             <Button
-              className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group"
+              className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 !text-white shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group"
               asChild
             >
               <Link href={`/${locale}/contact`}>
-                <span className="relative z-10 flex items-center retain-text-color group-hover:!text-white !text-white">
+                <span className="relative z-10 flex items-center !text-white">
                   Get Started
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:text-white text-white transition-transform duration-300" />
+                  <ArrowRight className="ml-2 h-4 w-4 !text-white group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 {/* Shine effect */}
                 <motion.div
@@ -412,13 +466,13 @@ export default function Navigation() {
                     className="pt-4 border-t border-gray-200 dark:border-gray-800"
                   >
                     <Button
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 h-12"
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 !text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 h-12"
                       asChild
                       onClick={() => setIsOpen(false)}
                     >
                       <Link href={`/${locale}/contact`}>
-                        <Zap className="mr-2 h-5 w-5" />
-                        Get Started Now
+                        <Zap className="mr-2 h-5 w-5 !text-white" />
+                        <span className="!text-white">Get Started Now</span>
                       </Link>
                     </Button>
                   </motion.div>

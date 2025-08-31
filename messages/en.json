@@ -549,11 +549,11 @@
       "sendUsMessage": "Send Us a Message",
       "fields": {
         "name": {
-          "label": "Name",
+          "label": "Name *",
           "placeholder": "Your name"
         },
         "email": {
-          "label": "Email",
+          "label": "Email *",
           "placeholder": "Your email address"
         },
         "phone": {
@@ -565,7 +565,7 @@
           "placeholder": "Your company name"
         },
         "service": {
-          "label": "Service Required",
+          "label": "Service Required *",
           "placeholder": "Select a service",
           "options": {
             "brandIdentity": "Brand Identity",
@@ -578,8 +578,8 @@
           }
         },
         "message": {
-          "label": "Message",
-          "placeholder": "Tell us about your project"
+          "label": "Message *",
+          "placeholder": "Tell us about your project (10 characters minimum)"
         }
       },
       "submit": "Submit Message",
@@ -604,7 +604,10 @@
         "title": "Business Hours",
         "value": "Everyday: Non Stop"
       }
-    }
+    },
+    "successMessage": "Thank you for reaching out! We'll get back to you within 24 hours.",
+    "sendAnotherMessage": "Send Another Message",
+    "backToHome": "Back to Home"
   },
   "footer": {
     "brand": "JBrand",
@@ -647,7 +650,7 @@
     "phone": "Phone",
     "company": "Company",
     "website": "Website",
-    "tellUsAboutProject": "Tell us about your project...",
+    "tellUsAboutProject": "Tell us about your project... (10 characters minimum)",
     "whatServicesInterested": "What Services Are You Interested In?",
     "logoDesign": "Logo Design",
     "webDesign": "Web Design",
@@ -678,6 +681,7 @@
     "thanksForSubscribing": "Thanks for subscribing!",
     "subscribing": "Subscribing...",
     "successMessage": "Thank you for reaching out! We've received your message and will get back to you within 24 hours to discuss your project requirements.",
+    "sendAnotherMessage": "Send Another Message",
     "backToHome": "Back to Home",
     "startYourProject": "Start Your Project",
     "contactInfo": "Contact Info"

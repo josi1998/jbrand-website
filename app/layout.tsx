@@ -39,7 +39,7 @@ export const metadata: CustomMetadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://jbrand.agency"),
   title: {
     default: "JBrand | Strategic Branding & Digital Design Agency",
-    template: "%s | JBrand - Transform Your Business",
+    template: "",
   },
   description:
     "Transform your business with powerful branding solutions. JBrand offers comprehensive branding, web development, digital marketing, and strategic design services that drive measurable results for businesses worldwide.",
@@ -122,19 +122,19 @@ export const metadata: CustomMetadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/jbrand_favicon.svg", sizes: "16x16", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "32x32", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "48x48", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "any" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-      { url: "/apple-touch-icon-152x152.png", sizes: "152x152", type: "image/png" },
-      { url: "/apple-touch-icon-144x144.png", sizes: "144x144", type: "image/png" },
-      { url: "/apple-touch-icon-120x120.png", sizes: "120x120", type: "image/png" },
+      { url: "/jbrand_favicon.svg", sizes: "180x180", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "152x152", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "144x144", type: "image/svg" },
+      { url: "/jbrand_favicon.svg", sizes: "120x120", type: "image/svg" },
     ],
     other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#2563eb" },
-      { rel: "shortcut icon", url: "/favicon.ico" },
+      { rel: "shortcut icon", url: "/jbrand_favicon.svg" },
     ],
   },
   manifest: "/site.webmanifest",

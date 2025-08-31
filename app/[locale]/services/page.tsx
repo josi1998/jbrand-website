@@ -459,7 +459,7 @@ export default function ServicesPage() {
               </Button>
               <Button
                 variant="outline"
-                className="group h-12 md:h-14 px-6 md:px-10 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base bg-transparent"
+                className="group h-12 md:h-14 px-6 md:px-10 border-2 border-white/30 !text-white hover:bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base bg-transparent hover:!text-white"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
@@ -882,7 +882,7 @@ export default function ServicesPage() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl mb-12 opacity-90 leading-relaxed">
-              Let's discuss your project and create something amazing together. Our team is ready to bring your vision
+              Let us discuss your project and create something amazing together. Our team is ready to bring your vision
               to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

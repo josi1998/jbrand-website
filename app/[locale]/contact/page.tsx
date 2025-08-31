@@ -194,10 +194,70 @@ export default function ContactPage() {
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
+    // Comprehensive form validation
+    const requiredFields = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      service: formData.service,
+      message: formData.message.trim()
+    }
+
+    // Check for required fields
+    const missingFields = Object.entries(requiredFields)
+      .filter(([key, value]) => !value)
+      .map(([key]) => key)
+
+    if (missingFields.length > 0) {
+      console.error("Missing required fields:", missingFields)
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email.trim())) {
+      console.error("Invalid email format:", formData.email)
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Message length validation (must be at least 10 characters)
+    if (formData.message.trim().length < 10) {
+      console.error("Message too short:", formData.message.length, "characters. Minimum required: 10")
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Message length validation (must not exceed 2000 characters)
+    if (formData.message.trim().length > 2000) {
+      console.error("Message too long:", formData.message.length, "characters. Maximum allowed: 2000")
+      setSubmitStatus("error")
+      setIsSubmitting(false)
+      return
+    }
+
     try {
+      // Prepare clean form data
+      const cleanFormData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || "",
+        company: formData.company.trim() || "",
+        service: formData.service,
+        budget: formData.budget || "",
+        timeline: formData.timeline || "",
+        message: formData.message.trim(),
+        source: "contact_page",
+        locale: locale || "en"
+      }
+
       console.log("Submitting contact page form data:", {
-        ...formData,
-        message: formData.message.substring(0, 50) + "...",
+        ...cleanFormData,
+        message: cleanFormData.message.substring(0, 100) + "...",
+        timestamp: new Date().toISOString()
       })
 
       const response = await fetch("/api/send", {
@@ -205,14 +265,35 @@ export default function ContactPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(cleanFormData),
       })
 
-      const result = await response.json()
-      console.log("Contact page form response:", result)
+      console.log("API Response status:", response.status, response.statusText)
 
-      if (response.ok && result.success) {
+      let result
+      try {
+        const textResponse = await response.text()
+        console.log("Raw API response:", textResponse)
+        
+        if (textResponse) {
+          result = JSON.parse(textResponse)
+        } else {
+          result = { success: false, error: "Empty response from server" }
+        }
+      } catch (parseError) {
+        console.error("Failed to parse API response:", parseError)
+        result = { success: false, error: "Invalid response format from server" }
+      }
+
+      console.log("Parsed contact page form response:", result)
+
+      // Check multiple success conditions
+      const isSuccess = response.ok && (result.success === true || result.message === "Email sent successfully")
+      
+      if (isSuccess) {
+        console.log("Form submission successful")
         setSubmitStatus("success")
+        // Reset form on success
         setFormData({
           name: "",
           email: "",
@@ -225,11 +306,21 @@ export default function ContactPage() {
           file: null,
         })
       } else {
+        console.error("Form submission failed:", {
+          status: response.status,
+          statusText: response.statusText,
+          result: result,
+          responseOk: response.ok
+        })
         setSubmitStatus("error")
-        console.error("Contact page form error response:", result)
       }
     } catch (error) {
-      console.error("Contact page form submission error:", error)
+      console.error("Contact page form submission error:", {
+        error: error,
+        message: error instanceof Error ? error.message : "Unknown error",
+        stack: error instanceof Error ? error.stack : undefined,
+        timestamp: new Date().toISOString()
+      })
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -264,11 +355,15 @@ export default function ContactPage() {
                 <Button
                   onClick={() => setSubmitStatus("idle")}
                   variant="gradient"
-                  className="flex-1 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="flex-1 shadow-lg hover:shadow-xl transition-all duration-300 text-white hover:text-white font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                 >
                   {t("contact.sendAnotherMessage") || "Send Another Message"}
                 </Button>
-                <Button variant="glass" onClick={() => (window.location.href = `/${locale}/`)} className="flex-1">
+                <Button 
+                  variant="glass" 
+                  onClick={() => (window.location.href = `/${locale}/`)} 
+                  className="flex-1 text-black dark:text-white hover:text-black dark:hover:text-white font-medium"
+                >
                   {t("contact.backToHome") || "Back to Home"}
                 </Button>
               </div>
@@ -358,7 +453,7 @@ export default function ContactPage() {
             >
               {t("contact.hero.title") || (
                 <>
-                  Let's Create Something{" "}
+                  Let us Create Something{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-300 animate-pulse">
                     Amazing
                   </span>{" "}
@@ -396,7 +491,7 @@ export default function ContactPage() {
                 variant="glass"
                 size="lg"
                 onClick={() => document.getElementById("contact-info")?.scrollIntoView({ behavior: "smooth" })}
-                className="group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                className="group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-white hover:text-white"
               >
                 <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 {t("contact.contactInfo") || "Contact Info"}
@@ -533,7 +628,7 @@ export default function ContactPage() {
                           {t("contact.form.sendUsMessage") || "Send Us a Message"}
                         </CardTitle>
                         <CardDescription className="text-base md:text-lg">
-                          Fill out the form below and we'll get back to you within 24 hours.
+                          Fill out the form below and we will get back to you within 24 hours.
                         </CardDescription>
                       </div>
                     </div>
@@ -543,8 +638,8 @@ export default function ContactPage() {
                       {/* Name/Email Row */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-sm font-semibold">
-                            {t("contact.form.fields.name.label") || "Full Name"} *
+                          <Label htmlFor="name" className="text-sm font-semibold flex items-center">
+                            {t("contact.form.fields.name.label") || "Full Name *"}
                           </Label>
                           <Input
                             id="name"
@@ -552,13 +647,15 @@ export default function ContactPage() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.name.placeholder") || "John Doe"}
-                            className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300"
+                            className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                              !formData.name.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                            }`}
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-sm font-semibold">
-                            {t("contact.form.fields.email.label") || "Email Address"} *
+                          <Label htmlFor="email" className="text-sm font-semibold flex items-center">
+                            {t("contact.form.fields.email.label") || "Email Address *"}
                           </Label>
                           <Input
                             id="email"
@@ -567,7 +664,9 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.email.placeholder") || "john@company.com"}
-                            className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300"
+                            className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                              !formData.email.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                            }`}
                             required
                           />
                         </div>
@@ -607,11 +706,13 @@ export default function ContactPage() {
                       {/* Service/Budget Row */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="service" className="text-sm font-semibold">
-                            {t("contact.form.fields.service.label") || "Service Needed"} *
+                          <Label htmlFor="service" className="text-sm font-semibold flex items-center">
+                            {t("contact.form.fields.service.label") || "Service Needed *"}
                           </Label>
                           <Select value={formData.service} onValueChange={handleSelectChange("service")} required>
-                            <SelectTrigger className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl">
+                            <SelectTrigger className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl ${
+                              !formData.service && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
+                            }`}>
                               <SelectValue
                                 placeholder={t("contact.form.fields.service.placeholder") || "Select a service..."}
                               />
@@ -651,7 +752,7 @@ export default function ContactPage() {
                               <SelectItem value="15k-50k">$15,000 - $50,000</SelectItem>
                               <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
                               <SelectItem value="over-100k">Over $100,000</SelectItem>
-                              <SelectItem value="discuss">Let's Discuss</SelectItem>
+                              <SelectItem value="discuss">Let us discuss</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
@@ -679,8 +780,19 @@ export default function ContactPage() {
 
                       {/* Message */}
                       <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-semibold">
-                          {t("contact.form.fields.message.label") || "Project Details"} *
+                        <Label htmlFor="message" className="text-sm font-semibold flex items-center justify-between">
+                          <span className="flex items-center">
+                            {t("contact.form.fields.message.label") || "Project Details *"}
+                          </span>
+                          <span className={`text-xs ${
+                            formData.message.length < 10 
+                              ? "text-red-500" 
+                              : formData.message.length > 1800 
+                                ? "text-orange-500" 
+                                : "text-gray-500"
+                          }`}>
+                            {formData.message.length}/2000
+                          </span>
                         </Label>
                         <Textarea
                           id="message"
@@ -689,12 +801,34 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder={
                             t("contact.form.fields.message.placeholder") ||
-                            "Tell us about your project, goals, and any specific requirements..."
+                            "Tell us about your project, goals, and any specific requirements... (minimum 10 characters)"
                           }
                           rows={5}
-                          className="border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300"
+                          className={`border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                            (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
+                              ? "border-red-500 bg-red-50 dark:bg-red-900/10" 
+                              : ""
+                          }`}
                           required
                         />
+                        {formData.message.length > 0 && formData.message.length < 10 && (
+                          <p className="text-red-500 text-xs mt-1 flex items-center">
+                            <span className="mr-1">⚠️</span>
+                            Message must be at least 10 characters long ({10 - formData.message.length} more needed)
+                          </p>
+                        )}
+                        {formData.message.length >= 1800 && formData.message.length < 2000 && (
+                          <p className="text-orange-500 text-xs mt-1 flex items-center">
+                            <span className="mr-1">⚠️</span>
+                            Approaching character limit ({2000 - formData.message.length} characters remaining)
+                          </p>
+                        )}
+                        {formData.message.length >= 2000 && (
+                          <p className="text-red-500 text-xs mt-1 flex items-center">
+                            <span className="mr-1">❌</span>
+                            Message exceeds maximum length. Please shorten your message.
+                          </p>
+                        )}
                       </div>
 
                       {/* Submit Button */}
@@ -703,7 +837,7 @@ export default function ContactPage() {
                         disabled={isSubmitting}
                         variant="gradient"
                         size="lg"
-                        className="w-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                        className="w-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-white hover:text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                       >
                         {isSubmitting ? (
                           <div className="flex items-center">
@@ -718,14 +852,39 @@ export default function ContactPage() {
                         )}
                       </Button>
 
-                      {/* Status Messages */}
+                      {/* Enhanced Status Messages */}
                       {submitStatus === "error" && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg md:rounded-xl text-sm font-medium"
+                          className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg md:rounded-xl text-sm font-medium space-y-2"
                         >
-                          {t("common.errorSending") || "Something went wrong. Please try again or contact us directly."}
+                          <div className="font-semibold flex items-center">
+                            <span className="mr-2">⚠️</span>
+                            Submission Failed
+                          </div>
+                          <div>
+                            {t("contact.form.error") || "Please check that all required fields are filled correctly and try again."}
+                          </div>
+                          <div className="text-xs opacity-90 mt-3 space-y-1">
+                            <div className="font-semibold mb-1">Requirements checklist:</div>
+                            <div className={`flex items-center ${formData.name.trim() ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                              <span className="mr-2">{formData.name.trim() ? '✓' : '❌'}</span>
+                              Name is required
+                            </div>
+                            <div className={`flex items-center ${formData.email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                              <span className="mr-2">{formData.email.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) ? '✓' : '❌'}</span>
+                              Valid email address is required
+                            </div>
+                            <div className={`flex items-center ${formData.service ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                              <span className="mr-2">{formData.service ? '✓' : '❌'}</span>
+                              Service selection is required
+                            </div>
+                            <div className={`flex items-center ${formData.message.trim().length >= 10 && formData.message.trim().length <= 2000 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
+                              <span className="mr-2">{formData.message.trim().length >= 10 && formData.message.trim().length <= 2000 ? '✓' : '❌'}</span>
+                              Message must be 10-2000 characters (currently: {formData.message.length})
+                            </div>
+                          </div>
                         </motion.div>
                       )}
                     </form>
@@ -755,7 +914,7 @@ export default function ContactPage() {
               Find Our Location
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Get in touch through any of the contact methods below. We're always excited to meet new clients and
+              Get in touch through any of the contact methods below. We are always excited to meet new clients and
               discuss exciting projects.
             </p>
           </motion.div>
@@ -785,7 +944,7 @@ export default function ContactPage() {
                   <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-white/90 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 shadow-lg">
                     <div className="flex items-center space-x-2 md:space-x-3">
                       <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs md:text-sm font-semibold text-gray-900">We're Here!</span>
+                      <span className="text-xs md:text-sm font-semibold text-gray-900">We are Here!</span>
                     </div>
                   </div>
                 </div>
@@ -926,7 +1085,7 @@ export default function ContactPage() {
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
               Join hundreds of satisfied clients who have transformed their businesses with our innovative solutions.
-              Let's create something extraordinary together.
+              Let us create something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
               <Button
