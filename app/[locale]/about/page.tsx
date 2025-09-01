@@ -93,6 +93,9 @@ const CursorSpotlight = () => {
         window.removeEventListener("mousemove", moveCursor)
       }
     }
+    
+    // Always return a cleanup function
+    return () => {}
   }, [cursorX, cursorY])
 
   if (!mounted) return null

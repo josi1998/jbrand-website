@@ -18,12 +18,12 @@ import {
   Phone,
   MapPin,
   Send,
-  Sparkles,
+  // Sparkles,
   ArrowRight,
   Heart,
   Star,
   Zap,
-  Globe,
+  // Globe,
 } from "lucide-react"
 
 // Floating animation component
@@ -88,7 +88,7 @@ export default function Footer() {
       await new Promise((resolve) => setTimeout(resolve, 2000))
       setSubscriptionStatus("success")
       setEmail("")
-    } catch (error) {
+    } catch {
       setSubscriptionStatus("error")
     } finally {
       setIsSubscribing(false)
@@ -459,7 +459,7 @@ export default function Footer() {
                     <p className="text-green-600 text-lg font-semibold">
                       {t("thanksForSubscribing") || "Thanks for subscribing!"} 🎉
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2">You're now part of our amazing community!</p>
+                    <p className="text-gray-600 dark:text-gray-300 mt-2">You&rsquo;re now part of our amazing community!</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleNewsletterSubmit} className="space-y-5">

@@ -1,4 +1,4 @@
-import { type NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 import { contactSchema } from "../../../utils/validation"
 
@@ -6,13 +6,13 @@ import { contactSchema } from "../../../utils/validation"
 interface ContactFormData {
   name: string
   email: string
-  phone?: string
-  company?: string
-  website?: string
+  phone?: string | undefined
+  company?: string | undefined
+  website?: string | undefined
   services?: string[]
   service?: string
-  budget?: string
-  timeline?: string
+  budget?: string | undefined
+  timeline?: string | undefined
   message: string
 }
 
@@ -338,17 +338,17 @@ const serviceMapping: Record<string, string> = {
 }
 
 // Form data processing and validation
-const processAndValidateData = async (body: any): Promise<ContactFormData> => {
+const processAndValidateData = async (body: Record<string, unknown>): Promise<ContactFormData> => {
   const { name, email, phone, company, website, services, service, budget, timeline, message } = body
 
   // Prepare data for validation
   const formData: ContactFormData = {
-    name: name?.trim(),
-    email: email?.trim().toLowerCase(),
-    phone: phone?.trim(),
-    company: company?.trim(),
-    website: website?.trim(),
-    message: message?.trim(),
+    name: typeof name === 'string' ? name.trim() : '',
+    email: typeof email === 'string' ? email.trim().toLowerCase() : '',
+    phone: typeof phone === 'string' ? phone.trim() : undefined,
+    company: typeof company === 'string' ? company.trim() : undefined,
+    website: typeof website === 'string' ? website.trim() : undefined,
+    message: typeof message === 'string' ? message.trim() : '',
   }
 
   // Handle services (array from hero form or string from contact form)
@@ -359,8 +359,8 @@ const processAndValidateData = async (body: any): Promise<ContactFormData> => {
   }
 
   // Handle budget and timeline
-  formData.budget = budget?.trim()
-  formData.timeline = timeline?.trim()
+  formData.budget = typeof budget === 'string' ? budget.trim() : undefined
+  formData.timeline = typeof timeline === 'string' ? timeline.trim() : undefined
 
   // Validate using Joi schema
   const { error, value } = contactSchema.validate(formData)

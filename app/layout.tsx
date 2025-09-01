@@ -1,7 +1,38 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
+import { Inter, Poppins } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
+
+// Optimized font loading with next/font
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+  fallback: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    "sans-serif"
+  ],
+})
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
+})
 
 // Enhanced metadata for SEO with JBrand branding
 type CustomMetadata = Omit<Metadata, "other"> & {
@@ -412,12 +443,6 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Enhanced font loading with display swap */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-
         {/* Structured data for enhanced SEO */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
@@ -597,7 +622,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-surface-primary text-text-primary dark:bg-dark-surface-primary dark:text-dark-text-primary antialiased">
+      <body className={`min-h-screen bg-surface-primary text-text-primary dark:bg-dark-surface-primary dark:text-dark-text-primary antialiased ${inter.variable} ${poppins.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

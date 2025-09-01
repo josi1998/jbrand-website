@@ -11,7 +11,7 @@ export function Analytics() {
     if (typeof window !== "undefined" && process.env.NODE_ENV === "production") {
       // Google Analytics 4
       if (process.env.NEXT_PUBLIC_GA_ID) {
-        const gtag = (window as any).gtag
+        const gtag = (window as typeof globalThis & { gtag?: (...args: unknown[]) => void }).gtag
         if (gtag) {
           gtag("config", process.env.NEXT_PUBLIC_GA_ID, {
             page_path: pathname + searchParams.toString(),
@@ -21,12 +21,12 @@ export function Analytics() {
 
       // Web Vitals reporting
       if ("web-vital" in window) {
-        import("web-vitals").then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-          getCLS(console.log)
-          getFID(console.log)
-          getFCP(console.log)
-          getLCP(console.log)
-          getTTFB(console.log)
+        import("web-vitals").then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+          onCLS(console.log)
+          onINP(console.log)
+          onFCP(console.log)
+          onLCP(console.log)
+          onTTFB(console.log)
         })
       }
     }

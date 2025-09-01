@@ -18,7 +18,7 @@ function useCounter(end: number, duration = 2000) {
     if (!isInView) return
 
     const startTime = Date.now()
-    const endTime = startTime + duration
+    // Future: const endTime = startTime + duration // For advanced timing
 
     const updateCount = () => {
       const now = Date.now()

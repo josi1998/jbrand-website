@@ -91,6 +91,9 @@ const CursorSpotlight = () => {
         window.removeEventListener("mousemove", moveCursor)
       }
     }
+    
+    // Always return a cleanup function
+    return () => {}
   }, [cursorX, cursorY])
 
   if (!mounted) return null
@@ -204,8 +207,8 @@ export default function ContactPage() {
 
     // Check for required fields
     const missingFields = Object.entries(requiredFields)
-      .filter(([key, value]) => !value)
-      .map(([key]) => key)
+      .filter(([, value]) => !value)
+      .map(([fieldName]) => fieldName)
 
     if (missingFields.length > 0) {
       console.error("Missing required fields:", missingFields)
@@ -383,7 +386,7 @@ export default function ContactPage() {
         {/* Enhanced Background Particles */}
         <div className="absolute inset-0">
           {[...Array(40)].map((_, i) => (
-            <Particle key={i} delay={i * 0.05} index={i} />
+            <Particle key={i} delay={i * 0.05} />
           ))}
         </div>
 

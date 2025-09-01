@@ -20,7 +20,7 @@ export class ErrorBoundary extends React.Component<{ children: React.ReactNode }
     return { hasError: true, error }
   }
 
-  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error("Error caught by boundary:", error, errorInfo)
 
     // Log to error reporting service
@@ -30,7 +30,7 @@ export class ErrorBoundary extends React.Component<{ children: React.ReactNode }
     }
   }
 
-  render() {
+  override render() {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 p-4">
@@ -45,7 +45,7 @@ export class ErrorBoundary extends React.Component<{ children: React.ReactNode }
             </CardHeader>
             <CardContent className="text-center space-y-4">
               <p className="text-gray-600 dark:text-gray-300">
-                We're sorry, but something unexpected happened. Please try refreshing the page.
+                We&rsquo;re sorry, but something unexpected happened. Please try refreshing the page.
               </p>
               {process.env.NODE_ENV === "development" && this.state.error && (
                 <details className="text-left bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">

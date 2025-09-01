@@ -45,6 +45,7 @@ function detectLocale(acceptLanguage: string | null, userAgent: string | null): 
     .split(",")
     .map((lang) => {
       const [fullCode, q = "1"] = lang.trim().split(";q=")
+      if (!fullCode) return null
       const [primaryCode, regionCode] = fullCode.toLowerCase().split("-")
       return {
         primary: primaryCode,
@@ -53,12 +54,13 @@ function detectLocale(acceptLanguage: string | null, userAgent: string | null): 
         quality: Number.parseFloat(q) || 1,
       }
     })
+    .filter((lang): lang is NonNullable<typeof lang> => lang !== null)
     .sort((a, b) => b.quality - a.quality)
 
   // First, try to find exact match (language + region)
   for (const lang of languages) {
-    if (SUPPORTED_LOCALES.includes(lang.primary as any)) {
-      return lang.primary
+    if (SUPPORTED_LOCALES.includes(lang.primary as (typeof SUPPORTED_LOCALES)[number])) {
+      return lang.primary as (typeof SUPPORTED_LOCALES)[number]
     }
   }
 
@@ -186,8 +188,9 @@ export default async function RootPage() {
   const headersList = await headers()
   const acceptLanguage = headersList.get("accept-language")
   const userAgent = headersList.get("user-agent")
-  const xForwardedFor = headersList.get("x-forwarded-for")
-  const cfIpCountry = headersList.get("cf-ipcountry") // Cloudflare country header
+  // Additional headers for future use
+  // const xForwardedFor = headersList.get("x-forwarded-for")
+  // const cfIpCountry = headersList.get("cf-ipcountry") // Cloudflare country header
 
   // Enhanced locale detection
   const detectedLocale = detectLocale(acceptLanguage, userAgent)
@@ -205,6 +208,8 @@ export default async function RootPage() {
 }
 
 // Enhanced fallback component with modern design using new design system
+// Note: This component is kept for potential future use
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function RootPageFallback() {
   const currentYear = new Date().getFullYear()
 
@@ -533,7 +538,7 @@ function RootPageFallback() {
           </div>
 
           <div className="fallback-section">
-            <div className="fallback-title">If you're not redirected automatically, choose your language:</div>
+            <div className="fallback-title">If you&apos;re not redirected automatically, choose your language:</div>
             <div className="language-grid">
               {Object.entries(LOCALE_INFO).map(([code, info]) => (
                 <a key={code} href={`/${code}`} className="language-link">

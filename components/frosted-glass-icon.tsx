@@ -51,9 +51,9 @@ export default function FrostedGlassIcon({
       </div>
       <div className="relative z-10">
         {isValidElement(icon)
-          ? cloneElement(icon as React.ReactElement<any>, {
+          ? cloneElement(icon as React.ReactElement<{ style?: React.CSSProperties }>, {
               ...(icon.props || {}),
-              style: { ...((icon.props && (icon.props as any).style) || {}), color, width: "1.75em", height: "1.75em" },
+              style: { ...((icon.props && (icon.props as { style?: React.CSSProperties }).style) || {}), color, width: "1.75em", height: "1.75em" },
             })
           : icon}
       </div>

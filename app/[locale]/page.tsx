@@ -6,12 +6,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTranslations, useLocale } from "next-intl"
 import { FaCheck } from "react-icons/fa"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, FeatureCard, TestimonialCard, StatsCard } from "@/components/ui/card"
-import NewsletterSignup from "@/components/NewsletterSignup"
+// import NewsletterSignup from "@/components/NewsletterSignup"
 import { Badge } from "@/components/ui/badge"
 import {
   CheckCircle2,
@@ -62,8 +62,9 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  // Future scroll animations
+  // const { scrollYProgress } = useScroll()
+  // const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -80,8 +81,8 @@ export default function Home() {
 
     // Check for required fields
     const missingFields = Object.entries(requiredFields)
-      .filter(([key, value]) => !value)
-      .map(([key]) => key)
+      .filter(([, value]) => !value)
+      .map(([fieldName]) => fieldName)
 
     if (missingFields.length > 0) {
       console.error("Missing required fields:", missingFields)

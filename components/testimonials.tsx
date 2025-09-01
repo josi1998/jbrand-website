@@ -19,7 +19,7 @@ export default function Testimonials() {
     },
     {
       quote:
-        "We've seen a 40% increase in productivity since implementing this solution. The knowledge base integration and custom prompt templates have been game-changers.",
+        "We have seen a 40% increase in productivity since implementing this solution. The knowledge base integration and custom prompt templates have been game-changers.",
       name: "David Rodriguez",
       title: "Head of Innovation, Enterprise Tech",
       avatar: "DR",
@@ -46,7 +46,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="h-full flex flex-col">
               <CardContent className="pt-6 flex-grow">
-                <div className="mb-4 text-4xl">"</div>
+                <div className="mb-4 text-4xl">“</div>
                 <p className="italic text-muted-foreground">{testimonial.quote}</p>
               </CardContent>
               <CardFooter className="border-t pt-4">

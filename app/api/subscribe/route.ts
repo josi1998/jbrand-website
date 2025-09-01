@@ -100,6 +100,8 @@ const generateSubscriberTags = (data: SubscriberData, clientInfo: ReturnType<typ
   return [...new Set(tags)] // Remove duplicates
 }
 
+// Unused function for future engagement scoring
+/*
 const calculateEngagementScore = (subscriber: Partial<SubscriberRecord>): number => {
   let score = 50 // Base score
 
@@ -126,6 +128,7 @@ const calculateEngagementScore = (subscriber: Partial<SubscriberRecord>): number
 
   return Math.max(0, Math.min(100, score)) // Clamp between 0-100
 }
+*/
 
 // Email configuration
 const getEmailTransporter = () => {
@@ -508,13 +511,13 @@ const getSubscriberStats = async () => {
 }
 
 // Validation and processing
-const processAndValidateData = async (body: any): Promise<SubscriberData> => {
+const processAndValidateData = async (body: Record<string, unknown>): Promise<SubscriberData> => {
   // Prepare data for validation
   const subscriberData: SubscriberData = {
-    email: body.email?.trim().toLowerCase(),
-    source: body.source?.trim() || "direct",
+    email: typeof body.email === 'string' ? body.email.trim().toLowerCase() : '',
+    source: typeof body.source === 'string' ? body.source.trim() : "direct",
     tags: Array.isArray(body.tags) ? body.tags : [],
-    preferences: body.preferences || {},
+    preferences: (body.preferences as SubscriberPreferences) || DEFAULT_PREFERENCES,
   }
 
   // Validate using Joi schema

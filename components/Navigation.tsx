@@ -249,7 +249,7 @@ export default function Navigation() {
             initial="hidden"
             animate="visible"
           >
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
                 <motion.div key={item.href} variants={itemVariants}>

@@ -28,6 +28,8 @@ const Particle = ({ delay = 0, index = 0 }) => {
 
   const particle = particleTypes[index % particleTypes.length]
 
+  if (!particle) return null
+
   return (
     <motion.div
       className={`absolute ${particle.size} ${particle.color} ${particle.blur} rounded-full`}
@@ -72,6 +74,9 @@ const CursorSpotlight = () => {
       window.addEventListener("mousemove", moveCursor)
       return () => window.removeEventListener("mousemove", moveCursor)
     }
+    
+    // Always return a cleanup function, even if empty
+    return () => {}
   }, [cursorX, cursorY])
 
   if (!mounted) return null
@@ -197,19 +202,25 @@ export default function HeroWithParticles({
           delay={0}
           duration={12}
           className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-radial from-brand-blue/20 to-transparent rounded-full blur-3xl hidden lg:block"
-        />
+        >
+          <div />
+        </FloatingShape>
 
         <FloatingShape
           delay={2}
           duration={15}
           className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-radial from-brand-purple/15 to-transparent rounded-full blur-3xl hidden lg:block"
-        />
+        >
+          <div />
+        </FloatingShape>
 
         <FloatingShape
           delay={4}
           duration={10}
           className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-radial from-brand-cyan/25 to-transparent rounded-full blur-2xl hidden lg:block"
-        />
+        >
+          <div />
+        </FloatingShape>
 
         {/* Floating Achievement Badges */}
         {showFloatingBadges && (

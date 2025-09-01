@@ -110,7 +110,7 @@ export default function ContactForm() {
     <Card className="w-full shadow-modern">
       <CardHeader>
         <CardTitle className="text-2xl">Get in Touch</CardTitle>
-        <CardDescription>Fill out the form below and we'll get back to you shortly.</CardDescription>
+        <CardDescription>Fill out the form below and we&apos;ll get back to you shortly.</CardDescription>
         {process.env.NODE_ENV === 'development' && (
           <div className="text-xs text-orange-600 bg-orange-50 p-2 rounded">
             🧪 Development Mode: Form submissions will be logged to console

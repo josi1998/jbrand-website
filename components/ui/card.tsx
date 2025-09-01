@@ -192,7 +192,7 @@ const TestimonialCard = React.forwardRef<
       </div>
 
       {/* Quote */}
-      <blockquote className="text-text-primary mb-6 leading-relaxed flex-1">"{quote}"</blockquote>
+      <blockquote className="text-text-primary mb-6 leading-relaxed flex-1">&ldquo;{quote}&rdquo;</blockquote>
 
       {/* Author */}
       <div className="flex items-center mt-auto">

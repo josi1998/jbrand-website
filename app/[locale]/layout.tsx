@@ -219,12 +219,14 @@ export default async function LocaleLayout({ children, params: { locale = "en" }
       <NextIntlClientProvider locale={locale} messages={messages}>
         <ErrorBoundary>
           {/* Progress bar for navigation */}
-          <ProgressBar />
+          <Suspense fallback={null}>
+            <ProgressBar />
+          </Suspense>
 
           {/* Main app structure */}
           <div className="relative flex min-h-screen flex-col">
             {/* Enhanced navigation with locale support */}
-            <Navigation locale={locale} />
+            <Navigation />
 
             {/* Main content area with enhanced accessibility */}
             <main
@@ -249,13 +251,15 @@ export default async function LocaleLayout({ children, params: { locale = "en" }
           </div>
 
           {/* Chat widget */}
-          <TawkToChat />
+          <TawkToChat locale={locale} />
 
           {/* Toast notifications */}
           <Toaster />
 
           {/* Analytics */}
-          <Analytics />
+          <Suspense fallback={null}>
+            <Analytics />
+          </Suspense>
 
           {/* Skip to main content link for accessibility */}
           <a

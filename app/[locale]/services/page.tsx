@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState, useEffect, type ReactNode } from "react"
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, useSpring, type Variants } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -99,6 +99,9 @@ const CursorSpotlight = () => {
         window.removeEventListener("mousemove", moveCursor)
       }
     }
+    
+    // Always return a cleanup function
+    return () => {}
   }, [cursorX, cursorY])
 
   if (!mounted) return null
@@ -148,7 +151,7 @@ export default function ServicesPage() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   // Animation variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -159,14 +162,14 @@ export default function ServicesPage() {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.25, 0, 1],
+        ease: "easeOut",
       },
     },
   }
@@ -553,7 +556,7 @@ export default function ServicesPage() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div key={service.id} variants={itemVariants}>
                 <Card className="h-full bg-white/20 backdrop-blur-sm dark:bg-gray-800/20 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden group">
                   <div className="relative h-48 sm:h-56 overflow-hidden">
