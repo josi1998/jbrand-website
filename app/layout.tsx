@@ -172,11 +172,6 @@ export const metadata: CustomMetadata = {
   category: "Business Services",
   classification: "Creative Agency",
   referrer: "origin-when-cross-origin",
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f172a" },
-  ],
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
     yandex: process.env.YANDEX_VERIFICATION,
@@ -220,8 +215,6 @@ export const metadata: CustomMetadata = {
     "format-detection": "telephone=no",
     HandheldFriendly: "True",
     MobileOptimized: "320",
-    "theme-color": "#2563eb",
-    "color-scheme": "light dark",
     // Enhanced PWA metadata
     "apple-mobile-web-app-orientation": "portrait",
     "mobile-web-app-status-bar-style": "black-translucent",

@@ -1,6 +1,3 @@
-/* Enhanced font imports with better performance */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -129,11 +126,40 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+      padding: 0 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1200px;
+      padding: 0 2rem;
+    }
   }
 
   /* Ensure consistent header width */
   header {
-    width: 100vw;
+    width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
   }
@@ -199,8 +225,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
+    font-size: 1rem;
+    line-height: 1.5;
     overflow-x: hidden;
   }
 
@@ -280,14 +306,14 @@
     @apply font-bold tracking-tight;
     font-family: "Poppins", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     text-wrap: balance;
-    line-height: var(--line-height-tight);
+    line-height: 1.2;
   }
 
   /* Enhanced paragraph styles */
   p {
     text-wrap: pretty;
-    line-height: var(--line-height-relaxed);
-    font-size: var(--font-size-lg);
+    line-height: 1.6;
+    font-size: 1rem;
   }
 
   /* Enhanced code styles */

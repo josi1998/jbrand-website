@@ -157,6 +157,12 @@ const addSubscriberToDatabase = async (
   subscriber?: SubscriberRecord
 }> => {
   try {
+    // Handle case where MongoDB is not configured
+    if (!process.env.MONGODB_URI) {
+      console.warn('⚠️ MongoDB not configured - subscriber feature disabled');
+      throw new Error('Database not configured');
+    }
+    
     const client = await clientPromise
     const db = client.db(DB_NAME)
     const collection = db.collection<SubscriberRecord>(SUBSCRIBERS_COLLECTION)
@@ -421,6 +427,19 @@ Update Preferences: ${process.env.NEXT_PUBLIC_SITE_URL || "https://jbrand.com"}/
 // Get subscriber statistics
 const getSubscriberStats = async () => {
   try {
+    // Handle case where MongoDB is not configured
+    if (!process.env.MONGODB_URI) {
+      console.warn('⚠️ MongoDB not configured - returning default stats');
+      return {
+        total: 0,
+        active: 0,
+        today: 0,
+        statusDistribution: { active: 0, unsubscribed: 0, bounced: 0, pending: 0 },
+        sourceDistribution: { direct: 0 },
+        engagement: { highEngagement: 0, mediumEngagement: 0, lowEngagement: 0 }
+      };
+    }
+    
     const client = await clientPromise
     const db = client.db(DB_NAME)
     const collection = db.collection<SubscriberRecord>(SUBSCRIBERS_COLLECTION)
@@ -591,7 +610,10 @@ export async function POST(req: NextRequest) {
       if (error.message.includes("Validation failed")) {
         statusCode = 400
         errorMessage = "Invalid email address"
-      } else if (error.message.includes("Database operation failed")) {
+      } else if (error.message.includes("Database operation failed") || error.message.includes("Database not configured")) {
+        statusCode = 503
+        errorMessage = "Service temporarily unavailable"
+      } else if (error.message.includes("bad auth") || error.message.includes("authentication failed")) {
         statusCode = 503
         errorMessage = "Service temporarily unavailable"
       }

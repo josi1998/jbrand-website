@@ -159,8 +159,6 @@ export async function generateMetadata({
       "apple-mobile-web-app-status-bar-style": "black-translucent",
       "apple-mobile-web-app-title": messages?.metadata?.appTitle || "JBrand",
       "mobile-web-app-capable": "yes",
-      "theme-color": "#2563eb",
-      "color-scheme": "light dark",
       "format-detection": "telephone=no",
       // Locale-specific metadata
       "content-language": locale,
@@ -168,6 +166,29 @@ export async function generateMetadata({
       "geo.region": getRegionFromLocale(locale),
       "geo.placename": getCityName(locale),
     },
+  }
+}
+
+// Enhanced viewport configuration with proper theme colors
+export function generateViewport({ params: { locale = "en" } }: { params: { locale?: string } }) {
+  // Use locale for future localization features
+  const themeColors = locale === "fr" ? 
+    [
+      { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+      { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    ] :
+    [
+      { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+      { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    ];
+
+  return {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    themeColor: themeColors,
+    colorScheme: "light dark",
   }
 }
 
