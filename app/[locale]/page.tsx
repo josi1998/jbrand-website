@@ -913,7 +913,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="py-16 md:py-20 bg-surface-secondary">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -976,7 +976,7 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-700 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:60px_60px]" />
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
