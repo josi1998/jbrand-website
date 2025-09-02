@@ -246,122 +246,36 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-surface-primary content-loading">
       {/* Enhanced Modern Hero Section */}
-      <section className="relative min-h-[85vh] pt-16 md:pt-20 lg:pt-0 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-800 overflow-hidden">
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-800 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Subtle grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:80px_80px]" />
-
-          {/* Floating geometric shapes */}
-          <motion.div
-            className="absolute top-20 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"
-            animate={{
-              y: [0, -20, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute top-40 right-20 w-24 h-24 bg-purple-500/10 rounded-full blur-xl"
-            animate={{
-              y: [0, 15, 0],
-              scale: [1, 0.9, 1],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          />
-          <motion.div
-            className="absolute bottom-32 left-1/4 w-40 h-40 bg-cyan-500/8 rounded-full blur-2xl"
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -25, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          />
-
-          {/* Animated gradient orbs */}
-          <motion.div
-            className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/15 to-purple-500/10 rounded-full blur-3xl"
-            animate={{
-              rotate: 360,
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              rotate: { duration: 50, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-              scale: { duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
-            }}
-          />
-          <motion.div
-            className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/15 to-blue-500/10 rounded-full blur-3xl"
-            animate={{
-              rotate: -360,
-              scale: [1, 0.8, 1],
-            }}
-            transition={{
-              rotate: { duration: 60, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-              scale: { duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 3 },
-            }}
-          />
-
-          {/* Subtle particle effect */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-white/20 rounded-full"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + i * 10}%`,
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 4 + i,
-                repeat: Number.POSITIVE_INFINITY,
-                delay: i * 0.5,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
         </div>
 
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(85vh-4rem)] py-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Hero Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6 lg:space-y-8"
+              className="space-y-4 lg:space-y-6"
             >
               {/* Badge - Now visible on all screens */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="block mt-8 md:mt-0"
+                className="block"
               >
-                <Badge variant="shimmer" size="lg" className="mb-6 !text-white hover:!text-white">
+                <Badge variant="shimmer" size="lg" className="mb-4 !text-white hover:!text-white">
                   {t("home.heroSection.badgeText")}
                 </Badge>
               </motion.div>
 
               <motion.h1
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight pt-8 md:pt-12"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -376,7 +290,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.h2
-                className="text-xl sm:text-2xl lg:text-3xl font-medium text-blue-300"
+                className="text-lg sm:text-xl lg:text-2xl font-medium text-blue-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -385,7 +299,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.p
-                className="text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed"
+                className="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -395,30 +309,30 @@ export default function Home() {
 
               {/* Buttons - Hidden on small screens */}
               <motion.div
-                className="hidden lg:flex flex-col sm:flex-row gap-4 w-full max-w-2xl mx-auto"
+                className="hidden lg:flex flex-col sm:flex-row gap-3 w-full max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Button
-                  size="xl"
+                  size="lg"
                   variant="glow"
-                  className="px-8 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
+                  className="px-6 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
                   asChild
                 >
                   <Link href="/services">
                     {t("home.hero.exploreServices")}
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button
-                  size="xl"
+                  size="lg"
                   variant="glass"
                   className="border-white/20 !text-white hover:bg-white/10 bg-transparent backdrop-blur-sm retain-text-color hover:!text-white"
                   asChild
                 >
                   <Link href="/contact">
-                    <Play className="mr-2 h-5 w-5" />
+                    <Play className="mr-2 h-4 w-4" />
                     {t("home.hero.getCustomPlan")}
                   </Link>
                 </Button>
@@ -426,20 +340,20 @@ export default function Home() {
 
               {/* Buttons - Visible on small screens */}
               <motion.div
-                className="lg:hidden flex flex-col sm:flex-row gap-4 w-full max-w-2xl mx-auto"
+                className="lg:hidden flex flex-col gap-3 w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button size="lg" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
+                <Link href="/contact" className="w-full">
+                  <Button size="default" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
                     {t("home.hero.getCustomPlan")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/services" className="w-full sm:w-auto">
+                <Link href="/services" className="w-full">
                   <Button
-                    size="lg"
+                    size="default"
                     variant="glass"
                     className="w-full text-white border-white/40 hover:bg-white/10 hover:border-white/60 bg-transparent backdrop-blur-sm retain-text-color !text-white hover:!text-white"
                   >
@@ -454,24 +368,25 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full max-w-lg mx-auto lg:mx-0"
             >
-              <Card variant="glass" className="shadow-modern-2xl">
-                <CardContent className="p-6 lg:p-8">
-                  <div className="text-center mb-6 lg:mb-8">
-                    <h3 className="text-xl lg:text-2xl font-bold !text-white mb-2">
+              <Card variant="glass" className="shadow-modern-xl">
+                <CardContent className="p-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold !text-white mb-2">
                       {t("home.heroSection.consultationTitle")}
                     </h3>
-                    <p className="text-text-secondary">{t("home.contactForm.subtitle")}</p>
+                    <p className="text-text-secondary text-sm">{t("home.contactForm.subtitle")}</p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Input
                           placeholder={`${t("home.contactForm.fields.name")} *`}
                           value={formData.name}
                           onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm ${
                             !formData.name.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
                           required
@@ -483,7 +398,7 @@ export default function Home() {
                           placeholder={`${t("home.contactForm.fields.email")} *`}
                           value={formData.email}
                           onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm ${
                             (!formData.email.trim() || (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) && submitStatus === "error" 
                               ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
@@ -491,14 +406,14 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Input
                           type="tel"
                           placeholder={`${t("home.contactForm.fields.phone")} *`}
                           value={formData.phone}
                           onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm ${
                             !formData.phone.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
                           required
@@ -508,7 +423,7 @@ export default function Home() {
                         placeholder={t("home.contactForm.fields.company")}
                         value={formData.company}
                         onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
-                        className="bg-surface-primary border-border text-text-primary"
+                        className="bg-surface-primary border-border text-text-primary text-sm"
                       />
                     </div>
                     <Input
@@ -516,11 +431,11 @@ export default function Home() {
                       placeholder={t("home.contactForm.fields.website")}
                       value={formData.website}
                       onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
-                      className="bg-surface-primary border-border text-text-primary"
+                      className="bg-surface-primary border-border text-text-primary text-sm"
                     />
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-sm text-text-secondary">Message *</span>
+                        <span className="text-xs text-text-secondary">Message *</span>
                         <span className={`text-xs ${
                           formData.message.length < 10 
                             ? "text-red-500" 
@@ -535,7 +450,7 @@ export default function Home() {
                         placeholder={`${t("home.contactForm.fields.message")} (minimum 10 characters)`}
                         value={formData.message}
                         onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                        className={`min-h-[80px] lg:min-h-[100px] bg-surface-primary border-border text-text-primary ${
+                        className={`min-h-[80px] bg-surface-primary border-border text-text-primary text-sm ${
                           (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
                             ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                         }`}
@@ -648,11 +563,11 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section - Enhanced Design */}
-      <section className="py-24 bg-surface-primary relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-surface-primary relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.03)_50%,transparent_75%)] bg-[length:60px_60px]" />
-        <div className="container mx-auto px-4 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -663,23 +578,23 @@ export default function Home() {
                 <Users className="w-4 h-4 mr-2" />
                 {t("common.aboutUs")}
               </Badge>
-              <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-8">{t("common.whoWeAre")}</h2>
-              <p className="text-xl text-text-secondary leading-relaxed mb-8">{t("common.atJBrandWeAre")}</p>
-              <div className="grid grid-cols-2 gap-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-6">{t("common.whoWeAre")}</h2>
+              <p className="text-lg text-text-secondary leading-relaxed mb-8">{t("common.atJBrandWeAre")}</p>
+              <div className="grid grid-cols-2 gap-4">
                 <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
-                  <Card variant="interactive" className="p-6 shadow-modern">
-                    <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-2">
+                  <Card variant="interactive" className="p-4 shadow-modern">
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-2">
                       200+
                     </h3>
-                    <p className="text-text-primary font-semibold">{t("common.successfulProjects")}</p>
+                    <p className="text-text-primary font-medium text-sm">{t("common.successfulProjects")}</p>
                   </Card>
                 </motion.div>
                 <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
-                  <Card variant="interactive" className="p-6 shadow-modern">
-                    <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 mb-2">
+                  <Card variant="interactive" className="p-4 shadow-modern">
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 mb-2">
                       1+
                     </h3>
-                    <p className="text-text-primary font-semibold">{t("common.yearsExperience")}</p>
+                    <p className="text-text-primary font-medium text-sm">{t("common.yearsExperience")}</p>
                   </Card>
                 </motion.div>
               </div>
@@ -691,15 +606,15 @@ export default function Home() {
               className="relative order-1 lg:order-2"
             >
               {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-500/10 rounded-full blur-xl" />
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500/10 rounded-full blur-xl" />
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+              <div className="absolute -top-4 -left-4 w-20 h-20 bg-blue-500/10 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-purple-500/10 rounded-full blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                 <Image
                   src="/images/who-we-are.jpeg"
                   alt="Our Team"
-                  width={600}
-                  height={700}
-                  className="object-cover w-full h-[600px] transition-transform duration-700 group-hover:scale-105"
+                  width={500}
+                  height={400}
+                  className="object-cover w-full h-[400px] transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Enhanced overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
@@ -718,22 +633,22 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-surface-secondary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-surface-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <Badge variant="gradient" size="lg" className="mb-4">
               <Award className="w-4 h-4 mr-2" />
               {t("common.whyChooseUs")}
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">{t("home.whyChooseUs.title")}</h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">{t("common.deliverExceptionalResults")}</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.whyChooseUs.title")}</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.deliverExceptionalResults")}</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: <Lightbulb className="h-8 w-8" />,
@@ -768,22 +683,22 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-surface-primary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-surface-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <Badge variant="purple" size="lg" className="mb-4">
               <Sparkles className="w-4 h-4 mr-2" />
               {t("common.ourServices")}
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">{t("home.ourServices.title")}</h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">{t("common.comprehensiveSolutions")}</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.ourServices.title")}</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.comprehensiveSolutions")}</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: <Target className="h-8 w-8" />,
@@ -837,24 +752,24 @@ export default function Home() {
       </section>
 
       {/* Process Section - Enhanced Design */}
-      <section className="py-24 bg-surface-secondary relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-surface-secondary relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(59,130,246,0.02)_50%,transparent_75%)] bg-[length:80px_80px]" />
-        <div className="container mx-auto px-4 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <Badge variant="teal" size="lg" className="mb-4">
               <Settings className="w-4 h-4 mr-2" />
               {t("common.ourProcess")}
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">{t("home.ourProcess.title")}</h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">{t("common.provenMethodology")}</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.ourProcess.title")}</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.provenMethodology")}</p>
           </motion.div>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 order-2 lg:order-1">
               {[
                 {
@@ -913,15 +828,15 @@ export default function Home() {
               className="relative order-1 lg:order-2"
             >
               {/* Decorative elements */}
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-2xl" />
-              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl" />
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-xl" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                 <Image
                   src="/images/our-process.jpeg"
                   alt="Process Visualization"
-                  width={700}
-                  height={800}
-                  className="object-cover w-full h-[700px] transition-transform duration-700 group-hover:scale-105"
+                  width={600}
+                  height={500}
+                  className="object-cover w-full h-[500px] transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Enhanced overlay with color coordination */}
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent" />
@@ -946,22 +861,22 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-surface-primary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-surface-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <Badge variant="info" size="lg" className="mb-4">
               <TrendingUp className="w-4 h-4 mr-2" />
               {t("common.ourAchievements")}
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">{t("home.ambitiousGoals.title")}</h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">{t("home.ambitiousGoals.description")}</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.ambitiousGoals.title")}</h2>
+            <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("home.ambitiousGoals.description")}</p>
           </motion.div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: <Users className="w-8 h-8" />,
@@ -997,7 +912,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-surface-secondary">
+      <section className="py-16 md:py-20 bg-surface-secondary">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
