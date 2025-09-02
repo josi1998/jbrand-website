@@ -213,7 +213,7 @@ export default function AboutPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -230,7 +230,7 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
+              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -307,10 +307,10 @@ export default function AboutPage() {
                 <Heart className="w-4 h-4 mr-2 text-red-500" />
                 Our Story
               </Badge>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
                 {t("about.story.title") || "Building Dreams Into Digital Reality"}
               </h2>
-              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-4 text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   {t("about.story.paragraph1") ||
                     "Founded in 2019 with a vision to bridge the gap between creative imagination and digital innovation, JBrand has grown from a small startup to a trusted partner for businesses worldwide. Our journey began with a simple belief: every brand has a unique story worth telling."}
@@ -325,15 +325,15 @@ export default function AboutPage() {
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 md:mb-3">200+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">Projects to complete (vision)</p>
+                  <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">200+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">Projects to complete (vision)</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/20 backdrop-blur-sm dark:bg-green-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 dark:text-green-400 mb-2 md:mb-3">1+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">Years Experience</p>
+                  <h3 className="text-lg font-bold text-green-600 dark:text-green-400 mb-2">1+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">Years Experience</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -392,10 +392,10 @@ export default function AboutPage() {
               <Sparkles className="w-4 h-4 mr-2 text-yellow-500" />
               Our Expertise
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("about.services.title") || "Comprehensive Digital Solutions"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               From brand identity to digital experiences, we offer end-to-end solutions that transform your business and
               drive growth.
             </p>
@@ -483,15 +483,15 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <CardContent className="p-6 lg:p-8">
-                    <h3 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base lg:text-lg">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base">
                       {service.description}
                     </p>
                     <Button
                       variant="ghost"
-                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-base lg:text-lg group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-base group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
                     >
                       Learn More{" "}
                       <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5 transition-transform group-hover/btn:translate-x-1" />
@@ -532,10 +532,10 @@ export default function AboutPage() {
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Our Journey
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("about.ourGoals.title") || "Milestones & Future Vision"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Our roadmap to success and ambitious goals for the future of digital innovation.
             </p>
           </motion.div>
@@ -551,10 +551,10 @@ export default function AboutPage() {
               <Card className="h-full bg-white/20 backdrop-blur-sm dark:bg-gray-900/20 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500">
                 <CardHeader className="pb-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 lg:mr-6 shadow-lg">
-                      <Flag className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 shadow-lg">
+                      <Flag className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl lg:text-2xl font-bold">
+                    <CardTitle className="text-xl font-bold">
                       {t("about.ourGoals.achievementTimeline.title") || "Achievement Timeline"}
                     </CardTitle>
                   </div>
@@ -594,12 +594,12 @@ export default function AboutPage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white/10 backdrop-blur-sm dark:hover:bg-gray-800/20 transition-colors duration-200 border border-white/10"
                     >
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white font-bold shadow-md text-sm lg:text-base">
+                      <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center text-white font-bold shadow-md text-sm">
                         {item.year.slice(-2)}
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-1">{item.year}</h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm lg:text-base">
+                        <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">{item.year}</h4>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">
                           {item.achievement}
                         </p>
                       </div>
@@ -619,10 +619,10 @@ export default function AboutPage() {
               <Card className="h-full bg-white/20 backdrop-blur-sm dark:bg-gray-900/20 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500">
                 <CardHeader className="pb-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center mr-4 lg:mr-6 shadow-lg">
-                      <Rocket className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center mr-4 shadow-lg">
+                      <Rocket className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl lg:text-2xl font-bold">
+                    <CardTitle className="text-xl font-bold">
                       {t("about.ourGoals.futureRoadmap.title") || "Future Roadmap"}
                     </CardTitle>
                   </div>
@@ -662,12 +662,12 @@ export default function AboutPage() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white/10 backdrop-blur-sm dark:hover:bg-gray-800/20 transition-colors duration-200 border border-white/10"
                     >
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center text-white font-bold shadow-md text-sm lg:text-base">
+                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center text-white font-bold shadow-md text-sm">
                         {item.year.slice(-2)}
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-1">{item.year}</h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm lg:text-base">
+                        <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm">{item.year}</h4>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">
                           {item.goal}
                         </p>
                       </div>
@@ -677,6 +677,7 @@ export default function AboutPage() {
               </Card>
             </motion.div>
           </div>
+
         </div>
       </section>
 
@@ -708,10 +709,10 @@ export default function AboutPage() {
               <Settings className="w-4 h-4 mr-2 text-gray-600" />
               Our Process
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("about.process.title") || "How We Create Magic"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results through strategic planning and flawless execution.
             </p>
           </motion.div>
@@ -787,8 +788,8 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base lg:text-lg">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                       {step.description}
                     </p>
                   </div>
@@ -818,7 +819,7 @@ export default function AboutPage() {
                   {/* Process overlay indicators */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center text-white">
-                      <div className="text-3xl lg:text-4xl font-bold mb-2">5</div>
+                      <div className="text-2xl lg:text-3xl font-bold mb-2">5</div>
                       <div className="text-base lg:text-lg font-semibold">Step Process</div>
                       <div className="text-sm opacity-90">Proven & Effective</div>
                     </div>
@@ -874,10 +875,10 @@ export default function AboutPage() {
               <Star className="w-4 h-4 mr-2 text-yellow-400" />
               Ready to Start?
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight">
               Let us create something amazing together
             </h2>
-            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
+            <p className="text-sm lg:text-base mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
               Ready to transform your business with innovative design and strategic thinking? Let us discuss your project
               and bring your vision to life.
             </p>
@@ -885,18 +886,18 @@ export default function AboutPage() {
               <Button
                 asChild
                 size="lg"
-                className="h-14 lg:h-16 px-10 lg:px-12 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-base lg:text-lg font-semibold"
+                className="h-14 px-10 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-base font-semibold"
               >
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-2 lg:ml-3 h-5 w-5 lg:h-6 lg:w-6" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="h-14 lg:h-16 px-10 lg:px-12 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-base lg:text-lg font-semibold bg-transparent"
+                className="h-14 px-10 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-base font-semibold bg-transparent"
               >
                 <Link href={`/${locale}/services`}>View Our Services</Link>
               </Button>

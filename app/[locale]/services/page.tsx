@@ -421,7 +421,7 @@ export default function ServicesPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -438,7 +438,7 @@ export default function ServicesPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
+              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -480,16 +480,16 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, delay: 1 }}
             >
               <div className="text-center">
-                <div className="text-xl md:text-3xl font-bold text-purple-400">500+</div>
-                <div className="text-xs md:text-sm text-white/80">Projects to complete</div>
+                <div className="text-xl font-bold text-purple-400">500+</div>
+                <div className="text-xs text-white/80">Projects to complete</div>
               </div>
               <div className="text-center">
-                <div className="text-xl md:text-3xl font-bold text-blue-400">98%</div>
-                <div className="text-xs md:text-sm text-white/80">Client Satisfaction expected</div>
+                <div className="text-xl font-bold text-blue-400">98%</div>
+                <div className="text-xs text-white/80">Client Satisfaction expected</div>
               </div>
               <div className="text-center">
-                <div className="text-xl md:text-3xl font-bold text-green-400">500+</div>
-                <div className="text-xs md:text-sm text-white/80">Positive Reviews expected</div>
+                <div className="text-xl font-bold text-green-400">500+</div>
+                <div className="text-xs text-white/80">Positive Reviews expected</div>
               </div>
             </motion.div>
           </motion.div>
@@ -540,10 +540,10 @@ export default function ServicesPage() {
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Core Services
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("coreServices.title") || "What We Do Best"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive solutions to elevate your brand and drive business growth through innovative strategies and
               cutting-edge technology.
             </p>
@@ -575,15 +575,15 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <CardContent className="p-6 lg:p-8">
-                    <h3 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base lg:text-lg">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-sm">
                       {service.description}
                     </p>
                     <div className="space-y-2 mb-6">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                        <div key={featureIndex} className="flex items-center text-xs text-gray-600 dark:text-gray-300">
                           <CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
                           {feature}
                         </div>
@@ -591,12 +591,12 @@ export default function ServicesPage() {
                     </div>
                     <Button
                       variant="ghost"
-                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-base lg:text-lg group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-sm group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
                       asChild
                     >
                       <Link href={service.href}>
                         {service.linkText}
-                        <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5 transition-transform group-hover/btn:translate-x-1" />
+                        <ArrowRight className="ml-2 h-3 w-3 lg:h-4 lg:w-4 transition-transform group-hover/btn:translate-x-1" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -635,10 +635,10 @@ export default function ServicesPage() {
               <Rocket className="w-4 h-4 mr-2 text-orange-500" />
               Our Process
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("process.title") || "How We Work"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results every time through strategic planning and flawless
               execution.
             </p>
@@ -670,8 +670,8 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -754,10 +754,10 @@ export default function ServicesPage() {
               <Award className="w-4 h-4 mr-2 text-yellow-500" />
               Why Choose Us
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
               {t("whyChooseUs.title") || "What Sets Us Apart"}
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               What sets us apart from the competition and makes us your ideal creative partner for long-term success.
             </p>
           </motion.div>
@@ -781,13 +781,13 @@ export default function ServicesPage() {
                     <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="w-10 h-10 text-orange-600 dark:text-orange-400" />
                     </div>
-                    <CardTitle className="text-xl font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                    <CardTitle className="text-lg font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
                       {item.title}
                     </CardTitle>
                   </CardHeader>
 
                   <CardContent className="relative z-10 pt-0">
-                    <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-sm">
                       {item.description}
                     </CardDescription>
 
@@ -812,24 +812,24 @@ export default function ServicesPage() {
           >
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
               <Clock className="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" />
-              <h3 className="text-lg font-semibold mb-2">Fast Delivery</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Fast Delivery</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300">
                 Quick turnaround times without compromising quality
               </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
               <Shield className="w-12 h-12 mx-auto mb-4 text-green-600 dark:text-green-400" />
-              <h3 className="text-lg font-semibold mb-2">Quality Guarantee</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Quality Guarantee</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300">
                 100% satisfaction guarantee on all our services
               </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
               <Rocket className="w-12 h-12 mx-auto mb-4 text-purple-600 dark:text-purple-400" />
-              <h3 className="text-lg font-semibold mb-2">Innovation First</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <h3 className="text-base font-semibold mb-2">Innovation First</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-300">
                 Cutting-edge solutions using latest technologies
               </p>
             </div>
@@ -881,10 +881,10 @@ export default function ServicesPage() {
               <Heart className="w-4 h-4 mr-2 text-red-400" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-90 leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg mb-8 md:mb-10 opacity-90 leading-relaxed">
               Let us discuss your project and create something amazing together. Our team is ready to bring your vision
               to life.
             </p>

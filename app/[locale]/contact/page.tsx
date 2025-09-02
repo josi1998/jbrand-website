@@ -348,7 +348,7 @@ export default function ContactPage() {
               >
                 <CheckCircle2 className="h-12 w-12 text-white" />
               </motion.div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t("common.messageSent") || "Message Sent Successfully!"}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-base md:text-lg max-w-md">
@@ -449,7 +449,7 @@ export default function ContactPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -466,7 +466,7 @@ export default function ContactPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
+              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -524,10 +524,10 @@ export default function ContactPage() {
                   <Heart className="w-4 h-4 mr-2" />
                   {t("contact.form.getInTouch") || "Get In Touch"}
                 </Badge>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
                   {t("contact.form.title") || "Ready to Start Your Project?"}
                 </h2>
-                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                   {t("contact.hero.description") ||
                     "We're here to help bring your vision to life. Whether you need branding, web development, or digital marketing, our team is ready to create something extraordinary together."}
                 </p>
@@ -578,10 +578,10 @@ export default function ContactPage() {
                       {item.icon}
                     </motion.div>
                     <div>
-                      <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                         {item.value}
                       </p>
                     </div>
@@ -595,17 +595,17 @@ export default function ContactPage() {
                   whileHover={{ scale: 1.05 }}
                   className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1 md:mb-2">24h</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">Response Time</p>
+                  <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-1">24h</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Response Time</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-green-600 dark:text-green-400 mb-1 md:mb-2">
+                  <h3 className="text-lg font-bold text-green-600 dark:text-green-400 mb-1">
                     100%
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">
                     Satisfaction Rate
                   </p>
                 </motion.div>
@@ -627,7 +627,7 @@ export default function ContactPage() {
                         <Send className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
                       <div>
-                        <CardTitle className="text-xl md:text-2xl font-bold">
+                        <CardTitle className="text-lg md:text-xl font-bold">
                           {t("contact.form.sendUsMessage") || "Send Us a Message"}
                         </CardTitle>
                         <CardDescription className="text-base md:text-lg">
@@ -913,10 +913,10 @@ export default function ContactPage() {
               <Globe className="w-4 h-4 mr-2" />
               Visit Us
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               Find Our Location
             </h2>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get in touch through any of the contact methods below. We are always excited to meet new clients and
               discuss exciting projects.
             </p>
@@ -956,7 +956,7 @@ export default function ContactPage() {
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-3 md:mr-4 shadow-lg">
                       <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
                       {t("contact.info.title") || "Contact Information"}
                     </h3>
                   </div>
@@ -1083,7 +1083,7 @@ export default function ContactPage() {
               <Star className="w-4 h-4 mr-2" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">
               Your Success Story Starts Here
             </h2>
             <p className="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">

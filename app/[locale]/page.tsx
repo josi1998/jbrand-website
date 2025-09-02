@@ -227,7 +227,7 @@ export default function Home() {
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
                 <CheckCircle2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">{t("common.messageSent")}</h3>
+              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t("common.messageSent")}</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">{t("common.weWillGetBackToYou")}</p>
               <Button 
                 onClick={() => setSubmitStatus("idle")} 
@@ -578,12 +578,12 @@ export default function Home() {
                 <Users className="w-4 h-4 mr-2" />
                 {t("common.aboutUs")}
               </Badge>
-              <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-6">{t("common.whoWeAre")}</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-6">{t("common.whoWeAre")}</h2>
               <p className="text-lg text-text-secondary leading-relaxed mb-8">{t("common.atJBrandWeAre")}</p>
               <div className="grid grid-cols-2 gap-4">
                 <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
                   <Card variant="interactive" className="p-4 shadow-modern">
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-2">
+                    <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-2">
                       200+
                     </h3>
                     <p className="text-text-primary font-medium text-sm">{t("common.successfulProjects")}</p>
@@ -591,7 +591,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
                   <Card variant="interactive" className="p-4 shadow-modern">
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 mb-2">
+                    <h3 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 mb-2">
                       1+
                     </h3>
                     <p className="text-text-primary font-medium text-sm">{t("common.yearsExperience")}</p>
@@ -645,7 +645,7 @@ export default function Home() {
               <Award className="w-4 h-4 mr-2" />
               {t("common.whyChooseUs")}
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.whyChooseUs.title")}</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">{t("home.whyChooseUs.title")}</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.deliverExceptionalResults")}</p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -695,7 +695,7 @@ export default function Home() {
               <Sparkles className="w-4 h-4 mr-2" />
               {t("common.ourServices")}
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.ourServices.title")}</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">{t("home.ourServices.title")}</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.comprehensiveSolutions")}</p>
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -766,7 +766,7 @@ export default function Home() {
               <Settings className="w-4 h-4 mr-2" />
               {t("common.ourProcess")}
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary mb-4">{t("home.ourProcess.title")}</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">{t("home.ourProcess.title")}</h2>
             <p className="text-lg text-text-secondary max-w-2xl mx-auto">{t("common.provenMethodology")}</p>
           </motion.div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
