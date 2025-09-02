@@ -382,7 +382,7 @@ export default function ContactPage() {
       <CursorSpotlight />
 
       {/* Enhanced Hero Section */}
-      <section className="relative min-h-[35vh] md:min-h-[45vh] lg:min-h-[50vh] bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 py-12 md:py-20 overflow-hidden">
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 overflow-hidden">
         {/* Enhanced Background Particles */}
         <div className="absolute inset-0">
           {[...Array(40)].map((_, i) => (
@@ -424,7 +424,7 @@ export default function ContactPage() {
           style={{ y: backgroundY }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -449,7 +449,7 @@ export default function ContactPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -466,7 +466,7 @@ export default function ContactPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-xl lg:text-2xl text-blue-200/90 mb-8 md:mb-12 leading-relaxed max-w-4xl px-4"
+              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -507,9 +507,9 @@ export default function ContactPage() {
       {/* Enhanced Contact Form Section */}
       <section
         id="contact-form"
-        className="py-16 md:py-32 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50"
+        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50"
       >
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Enhanced Contact Info Left */}
             <motion.div
@@ -524,10 +524,10 @@ export default function ContactPage() {
                   <Heart className="w-4 h-4 mr-2" />
                   {t("contact.form.getInTouch") || "Get In Touch"}
                 </Badge>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
                   {t("contact.form.title") || "Ready to Start Your Project?"}
                 </h2>
-                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   {t("contact.hero.description") ||
                     "We're here to help bring your vision to life. Whether you need branding, web development, or digital marketing, our team is ready to create something extraordinary together."}
                 </p>
@@ -900,23 +900,23 @@ export default function ContactPage() {
       </section>
 
       {/* Enhanced Map Section */}
-      <section className="py-16 md:py-32 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12 md:mb-20"
+            className="text-center mb-12 md:mb-16"
           >
             <Badge variant="secondary" className="mb-6 md:mb-8 px-4 md:px-6 py-2 md:py-3 text-sm font-semibold">
               <Globe className="w-4 h-4 mr-2" />
               Visit Us
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               Find Our Location
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get in touch through any of the contact methods below. We are always excited to meet new clients and
               discuss exciting projects.
             </p>

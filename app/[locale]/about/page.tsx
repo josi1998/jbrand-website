@@ -148,8 +148,8 @@ export default function AboutPage() {
     <>
       <CursorSpotlight />
 
-      {/* Enhanced Hero Section - Similar to Contact Page */}
-      <section className="relative min-h-[35vh] md:min-h-[45vh] lg:min-h-[50vh] bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 py-12 md:py-20 overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 overflow-hidden">
         {/* Enhanced Background Particles */}
         <div className="absolute inset-0">
           {[...Array(40)].map((_, i) => (
@@ -191,7 +191,7 @@ export default function AboutPage() {
           style={{ y: backgroundY }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -213,7 +213,7 @@ export default function AboutPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -230,7 +230,7 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-xl lg:text-2xl text-blue-200/90 mb-8 md:mb-12 leading-relaxed max-w-4xl px-4"
+              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -267,7 +267,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Company Story Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
           animate={{
@@ -307,10 +307,10 @@ export default function AboutPage() {
                 <Heart className="w-4 h-4 mr-2 text-red-500" />
                 Our Story
               </Badge>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
                 {t("about.story.title") || "Building Dreams Into Digital Reality"}
               </h2>
-              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   {t("about.story.paragraph1") ||
                     "Founded in 2019 with a vision to bridge the gap between creative imagination and digital innovation, JBrand has grown from a small startup to a trusted partner for businesses worldwide. Our journey began with a simple belief: every brand has a unique story worth telling."}
@@ -320,20 +320,20 @@ export default function AboutPage() {
                     "Today, we've helped over 200+ businesses transform their digital presence, from startups finding their voice to established companies reinventing themselves for the digital age. Our multidisciplinary team combines strategic thinking with creative execution to deliver solutions that not only look beautiful but drive measurable business results."}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-6 lg:gap-8 mt-12">
+              <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-8 md:mt-10">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
+                  className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-3">200+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold">Projects to complete (vision)</p>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2 md:mb-3">200+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">Projects to complete (vision)</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/20 backdrop-blur-sm dark:bg-green-900/20 p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
+                  className="bg-white/20 backdrop-blur-sm dark:bg-green-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-3xl lg:text-4xl font-bold text-green-600 dark:text-green-400 mb-3">1+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold">Years Experience</p>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600 dark:text-green-400 mb-2 md:mb-3">1+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm md:text-base">Years Experience</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -365,7 +365,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Services Overview Section */}
-      <section className="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute top-32 right-32 w-72 h-72 bg-gradient-to-br from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"
           animate={{
@@ -380,22 +380,22 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
           >
             <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-6 py-3 text-sm font-semibold">
               <Sparkles className="w-4 h-4 mr-2 text-yellow-500" />
               Our Expertise
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("about.services.title") || "Comprehensive Digital Solutions"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               From brand identity to digital experiences, we offer end-to-end solutions that transform your business and
               drive growth.
             </p>
@@ -505,7 +505,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Goals and Journey Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"
           animate={{
@@ -520,22 +520,22 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
           >
             <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-6 py-3 text-sm font-semibold">
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Our Journey
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("about.ourGoals.title") || "Milestones & Future Vision"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Our roadmap to success and ambitious goals for the future of digital innovation.
             </p>
           </motion.div>
@@ -681,7 +681,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Process Section */}
-      <section className="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute bottom-32 left-32 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl"
           animate={{
@@ -696,22 +696,22 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
           >
             <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-6 py-3 text-sm font-semibold">
               <Settings className="w-4 h-4 mr-2 text-gray-600" />
               Our Process
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("about.process.title") || "How We Create Magic"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results through strategic planning and flawless execution.
             </p>
           </motion.div>
@@ -831,7 +831,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 dark:from-blue-700 dark:via-indigo-700 dark:to-purple-800 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 dark:from-blue-700 dark:via-indigo-700 dark:to-purple-800 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         {/* Enhanced floating elements */}
@@ -862,7 +862,7 @@ export default function AboutPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -874,10 +874,10 @@ export default function AboutPage() {
               <Star className="w-4 h-4 mr-2 text-yellow-400" />
               Ready to Start?
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
               Let us create something amazing together
             </h2>
-            <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-3xl mx-auto opacity-90 leading-relaxed">
               Ready to transform your business with innovative design and strategic thinking? Let us discuss your project
               and bring your vision to life.
             </p>

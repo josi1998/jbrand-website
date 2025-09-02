@@ -356,8 +356,8 @@ export default function ServicesPage() {
     <>
       <CursorSpotlight />
 
-      {/* Enhanced Hero Section - Similar to Contact Page */}
-      <section className="relative min-h-[35vh] md:min-h-[45vh] lg:min-h-[50vh] bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 py-12 md:py-20 overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <section className="relative py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-blue-900/90 to-gray-800 overflow-hidden">
         {/* Enhanced Background Particles */}
         <div className="absolute inset-0">
           {[...Array(40)].map((_, i) => (
@@ -399,7 +399,7 @@ export default function ServicesPage() {
           style={{ y: backgroundY }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -421,7 +421,7 @@ export default function ServicesPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 md:mb-8"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -438,7 +438,7 @@ export default function ServicesPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-xl lg:text-2xl text-blue-200/90 mb-8 md:mb-12 leading-relaxed max-w-4xl px-4"
+              className="text-base md:text-lg lg:text-xl text-blue-200/90 mb-8 md:mb-10 leading-relaxed max-w-3xl px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -499,7 +499,7 @@ export default function ServicesPage() {
       {/* Core Services Section */}
       <section
         id="services-section"
-        className="py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden"
+        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden"
       >
         <motion.div
           className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
@@ -528,9 +528,9 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -540,10 +540,10 @@ export default function ServicesPage() {
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Core Services
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("coreServices.title") || "What We Do Best"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive solutions to elevate your brand and drive business growth through innovative strategies and
               cutting-edge technology.
             </p>
@@ -608,7 +608,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-24 lg:py-32 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute top-32 left-32 w-72 h-72 bg-gradient-to-br from-green-400/15 to-emerald-400/15 rounded-full blur-3xl"
           animate={{
@@ -623,9 +623,9 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -635,10 +635,10 @@ export default function ServicesPage() {
               <Rocket className="w-4 h-4 mr-2 text-orange-500" />
               Our Process
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("process.title") || "How We Work"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results every time through strategic planning and flawless
               execution.
             </p>
@@ -727,7 +727,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute bottom-32 right-32 w-88 h-88 bg-gradient-to-br from-orange-400/15 to-red-400/15 rounded-full blur-3xl"
           animate={{
@@ -742,9 +742,9 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-12 lg:mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -754,10 +754,10 @@ export default function ServicesPage() {
               <Award className="w-4 h-4 mr-2 text-yellow-500" />
               Why Choose Us
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
               {t("whyChooseUs.title") || "What Sets Us Apart"}
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               What sets us apart from the competition and makes us your ideal creative partner for long-term success.
             </p>
           </motion.div>
@@ -838,7 +838,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 lg:py-32 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 relative overflow-hidden">
+      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         {/* Enhanced floating elements */}
@@ -869,7 +869,7 @@ export default function ServicesPage() {
           }}
         />
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
           <motion.div
             className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
@@ -881,10 +881,10 @@ export default function ServicesPage() {
               <Heart className="w-4 h-4 mr-2 text-red-400" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-tight">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl mb-12 opacity-90 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 opacity-90 leading-relaxed">
               Let us discuss your project and create something amazing together. Our team is ready to bring your vision
               to life.
             </p>
