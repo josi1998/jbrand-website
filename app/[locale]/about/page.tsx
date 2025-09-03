@@ -885,19 +885,19 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 asChild
-                size="lg"
-                className="h-14 px-10 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-base font-semibold"
+                size="default"
+                className="h-12 px-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold"
               >
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
                 asChild
-                size="lg"
+                size="default"
                 variant="outline"
-                className="h-14 px-10 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-base font-semibold bg-transparent"
+                className="h-12 px-8 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold bg-transparent"
               >
                 <Link href={`/${locale}/services`}>View Our Services</Link>
               </Button>

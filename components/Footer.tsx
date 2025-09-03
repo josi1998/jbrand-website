@@ -236,16 +236,16 @@ export default function Footer() {
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
                     </motion.div>
                     <div className="flex flex-col">
-                      <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                         JBrand
                       </span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400 font-medium">Creative Studio</span>
+                      <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">Creative Studio</span>
                     </div>
                   </div>
                 </FloatingElement>
 
                 <motion.p
-                  className="text-gray-600 dark:text-gray-300 text-center md:text-left text-lg leading-relaxed max-w-sm"
+                  className="text-gray-600 dark:text-gray-300 text-center md:text-left text-sm leading-relaxed max-w-sm"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -299,7 +299,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold mb-10 text-gray-900 dark:text-white flex items-center">
+              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
                 <Star className="w-6 h-6 mr-3 text-blue-600" />
                 {t("companyTitle") || "Company"}
               </h3>
@@ -316,7 +316,7 @@ export default function Footer() {
                     >
                       <Link
                         href={link.href}
-                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center group text-lg font-medium"
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center group text-base font-medium"
                       >
                         <motion.div
                           className="w-10 h-10 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gradient-to-r group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"
@@ -343,7 +343,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h3 className="text-2xl font-bold mb-10 text-gray-900 dark:text-white flex items-center">
+              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
                 <Zap className="w-6 h-6 mr-3 text-purple-600" />
                 {t("whatWeDoTitle") || "What We Do"}
               </h3>
@@ -355,7 +355,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-gray-600 dark:text-gray-300 flex items-center group cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-lg font-medium"
+                    className="text-gray-600 dark:text-gray-300 flex items-center group cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-base font-medium"
                     whileHover={{ x: 8 }}
                   >
                     <motion.div
@@ -377,7 +377,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <h3 className="text-2xl font-bold mb-10 text-gray-900 dark:text-white flex items-center">
+              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
                 <Mail className="w-6 h-6 mr-3 text-green-600" />
                 {t("contactTitle") || "Contact"}
               </h3>
@@ -420,7 +420,7 @@ export default function Footer() {
                     >
                       <contact.icon size={20} className={contact.color} />
                     </motion.div>
-                    <span className="text-lg font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-base font-medium group-hover:translate-x-2 transition-transform duration-300">
                       {contact.text}
                     </span>
                   </motion.div>
@@ -433,7 +433,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <h4 className="font-bold mb-6 text-gray-900 dark:text-white text-xl flex items-center">
+                <h4 className="font-bold mb-6 text-gray-900 dark:text-white text-lg flex items-center">
                   {/* <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
@@ -456,10 +456,10 @@ export default function Footer() {
                     >
                       <Heart className="w-8 h-8 text-white" />
                     </motion.div>
-                    <p className="text-green-600 text-lg font-semibold">
+                    <p className="text-green-600 text-base font-semibold">
                       {t("thanksForSubscribing") || "Thanks for subscribing!"} 🎉
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2">You&rsquo;re now part of our amazing community!</p>
+                    <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm">You&rsquo;re now part of our amazing community!</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleNewsletterSubmit} className="space-y-5">
@@ -526,7 +526,7 @@ export default function Footer() {
           >
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="flex flex-col md:flex-row items-center gap-8 text-gray-600 dark:text-gray-300">
-                <motion.p className="text-lg font-medium" whileHover={{ scale: 1.05 }}>
+                <motion.p className="text-base font-medium" whileHover={{ scale: 1.05 }}>
                   © {currentYear} JBrand. All rights reserved.
                 </motion.p>
                 {/* <div className="flex gap-8">
@@ -555,7 +555,7 @@ export default function Footer() {
                 </div> */}
               </div>
               <motion.div
-                className="text-gray-600 dark:text-gray-300 flex items-center text-lg font-medium"
+                className="text-gray-600 dark:text-gray-300 flex items-center text-base font-medium"
                 whileHover={{ scale: 1.05 }}
               >
                 Made{" "}

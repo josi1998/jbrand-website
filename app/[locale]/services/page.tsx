@@ -890,23 +890,23 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
-                size="lg"
-                className="h-16 px-12 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-lg font-semibold"
+                size="default"
+                className="h-12 px-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button
                 variant="outline"
-                size="lg"
-                className="h-16 px-12 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-lg font-semibold bg-transparent"
+                size="default"
+                className="h-12 px-8 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold bg-transparent"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
-                  <MessageSquare className="mr-3 h-6 w-6" />
+                  <MessageSquare className="mr-2 h-4 w-4" />
                   Schedule Consultation
                 </Link>
               </Button>

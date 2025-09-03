@@ -924,8 +924,8 @@ export default function Home() {
               <Star className="w-4 h-4 mr-2" />
               {t("common.testimonials")}
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6">{t("common.whatOurClientsSay")}</h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">{t("common.trustedByForwardThinking")}</p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-text-primary mb-6">{t("common.whatOurClientsSay")}</h2>
+            <p className="text-base text-text-secondary max-w-3xl mx-auto">{t("common.trustedByForwardThinking")}</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -987,17 +987,17 @@ export default function Home() {
               <Rocket className="w-4 h-4 mr-2" />
               Ready to Start?
             </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">{t("home.getStartedToday.title")}</h2>
-            <p className="text-xl text-blue-100 mb-8">{t("home.getStartedToday.description")}</p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">{t("home.getStartedToday.title")}</h2>
+            <p className="text-base text-blue-100 mb-8">{t("home.getStartedToday.description")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="xl" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
+              <Button size="lg" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
                 <Link href={`/${locale}/contact`}>
                   {t("home.getStartedToday.contactUs")}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
-                size="xl"
+                size="lg"
                 variant="outline"
                 className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
                 asChild
