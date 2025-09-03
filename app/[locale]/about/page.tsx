@@ -267,7 +267,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Company Story Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
           animate={{
@@ -307,10 +307,10 @@ export default function AboutPage() {
                 <Heart className="w-4 h-4 mr-2 text-red-500" />
                 Our Story
               </Badge>
-              <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
                 {t("about.story.title") || "Building Dreams Into Digital Reality"}
               </h2>
-              <div className="space-y-4 text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   {t("about.story.paragraph1") ||
                     "Founded in 2019 with a vision to bridge the gap between creative imagination and digital innovation, JBrand has grown from a small startup to a trusted partner for businesses worldwide. Our journey began with a simple belief: every brand has a unique story worth telling."}
@@ -320,20 +320,20 @@ export default function AboutPage() {
                     "Today, we've helped over 200+ businesses transform their digital presence, from startups finding their voice to established companies reinventing themselves for the digital age. Our multidisciplinary team combines strategic thinking with creative execution to deliver solutions that not only look beautiful but drive measurable business results."}
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4 md:gap-6 lg:gap-8 mt-8 md:mt-10">
+              <div className="grid grid-cols-2 gap-3 md:gap-5 lg:gap-6 mt-6 md:mt-8">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
+                  className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-3 md:p-4 lg:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-2">200+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">Projects to complete (vision)</p>
+                  <h3 className="text-base font-bold text-blue-600 dark:text-blue-400 mb-1">200+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Projects to complete (vision)</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="bg-white/20 backdrop-blur-sm dark:bg-green-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
                 >
-                  <h3 className="text-lg font-bold text-green-600 dark:text-green-400 mb-2">1+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">Years Experience</p>
+                  <h3 className="text-base font-bold text-green-600 dark:text-green-400 mb-1">1+</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Years Experience</p>
                 </motion.div>
               </div>
             </motion.div>
@@ -365,7 +365,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Services Overview Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute top-32 right-32 w-72 h-72 bg-gradient-to-br from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"
           animate={{
@@ -392,16 +392,16 @@ export default function AboutPage() {
               <Sparkles className="w-4 h-4 mr-2 text-yellow-500" />
               Our Expertise
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("about.services.title") || "Comprehensive Digital Solutions"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               From brand identity to digital experiences, we offer end-to-end solutions that transform your business and
               drive growth.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
               {
                 title: t("about.services.items.brandIdentity.title") || "Brand Identity Design",
@@ -482,11 +482,11 @@ export default function AboutPage() {
                       {service.icon}
                     </div>
                   </div>
-                  <CardContent className="p-6 lg:p-8">
-                    <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+                  <CardContent className="p-4 lg:p-5">
+                    <h3 className="text-base font-bold mb-3 text-gray-900 dark:text-white">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-base">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-xs">
                       {service.description}
                     </p>
                     <Button
@@ -494,7 +494,7 @@ export default function AboutPage() {
                       className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-base group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
                     >
                       Learn More{" "}
-                      <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5 transition-transform group-hover/btn:translate-x-1" />
+                      <ArrowRight className="ml-2 h-3 w-3 lg:h-4 lg:w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
                   </CardContent>
                 </Card>
@@ -505,7 +505,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Goals and Journey Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"
           animate={{
@@ -532,15 +532,15 @@ export default function AboutPage() {
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Our Journey
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("about.ourGoals.title") || "Milestones & Future Vision"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Our roadmap to success and ambitious goals for the future of digital innovation.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 max-w-6xl mx-auto">
             {/* Achievement Timeline */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -549,12 +549,12 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <Card className="h-full bg-white/20 backdrop-blur-sm dark:bg-gray-900/20 border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-500">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center mb-4">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center mb-3">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-4 shadow-lg">
                       <Flag className="w-6 h-6 text-white" />
                     </div>
-                    <CardTitle className="text-xl font-bold">
+                    <CardTitle className="text-base font-bold">
                       {t("about.ourGoals.achievementTimeline.title") || "Achievement Timeline"}
                     </CardTitle>
                   </div>
@@ -682,7 +682,7 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Process Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute bottom-32 left-32 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl"
           animate={{
@@ -709,16 +709,16 @@ export default function AboutPage() {
               <Settings className="w-4 h-4 mr-2 text-gray-600" />
               Our Process
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("about.process.title") || "How We Create Magic"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results through strategic planning and flawless execution.
             </p>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-8 lg:space-y-10">
+            <div className="space-y-6 lg:space-y-8">
               {[
                 {
                   icon: <Search className="w-6 h-6 lg:w-7 lg:h-7" />,
@@ -788,8 +788,8 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
+                    <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">
                       {step.description}
                     </p>
                   </div>

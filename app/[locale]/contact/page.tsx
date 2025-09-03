@@ -507,33 +507,33 @@ export default function ContactPage() {
       {/* Enhanced Contact Form Section */}
       <section
         id="contact-form"
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50"
+        className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Enhanced Contact Info Left */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-8 md:space-y-10"
+              className="space-y-6 md:space-y-8"
             >
               <div>
                 <Badge variant="secondary" className="mb-6 md:mb-8 px-4 py-2 text-sm font-semibold">
                   <Heart className="w-4 h-4 mr-2" />
                   {t("contact.form.getInTouch") || "Get In Touch"}
                 </Badge>
-                <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+                <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
                   {t("contact.form.title") || "Ready to Start Your Project?"}
                 </h2>
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                   {t("contact.hero.description") ||
                     "We're here to help bring your vision to life. Whether you need branding, web development, or digital marketing, our team is ready to create something extraordinary together."}
                 </p>
               </div>
 
-              <div className="space-y-6 md:space-y-8" id="contact-info">
+              <div className="space-y-4 md:space-y-6" id="contact-info">
                 {[
                   {
                     icon: <MapPin className="w-5 h-5 md:w-6 md:h-6" />,
@@ -573,15 +573,15 @@ export default function ContactPage() {
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className={`w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-r ${item.color} flex items-center justify-center text-white shadow-xl flex-shrink-0 group-hover:shadow-2xl transition-shadow duration-300`}
+                      className={`w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center text-white shadow-xl flex-shrink-0 group-hover:shadow-2xl transition-shadow duration-300`}
                     >
                       {item.icon}
                     </motion.div>
                     <div>
-                      <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">
+                      <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-600 dark:text-gray-300 text-xs leading-relaxed">
                         {item.value}
                       </p>
                     </div>
@@ -590,22 +590,22 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 md:gap-6 pt-6 md:pt-8">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-3 md:p-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400 mb-1">24h</h3>
+                  <h3 className="text-base font-bold text-blue-600 dark:text-blue-400 mb-1">24h</h3>
                   <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Response Time</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-4 md:p-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-3 md:p-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-lg font-bold text-green-600 dark:text-green-400 mb-1">
+                  <h3 className="text-base font-bold text-green-600 dark:text-green-400 mb-1">
                     100%
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-sm">
+                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">
                     Satisfaction Rate
                   </p>
                 </motion.div>
@@ -621,27 +621,27 @@ export default function ContactPage() {
             >
               <FloatingElement delay={1} duration={8}>
                 <Card className="bg-white/95 dark:bg-gray-900/95 border-0 shadow-2xl backdrop-blur-xl">
-                  <CardHeader className="pb-6 md:pb-8">
+                  <CardHeader className="pb-4 md:pb-6">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-3 md:mr-4 shadow-lg">
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-2 md:mr-3 shadow-lg">
                         <Send className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg md:text-xl font-bold">
+                        <CardTitle className="text-base md:text-lg font-bold">
                           {t("contact.form.sendUsMessage") || "Send Us a Message"}
                         </CardTitle>
-                        <CardDescription className="text-base md:text-lg">
+                        <CardDescription className="text-sm md:text-base">
                           Fill out the form below and we will get back to you within 24 hours.
                         </CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                       {/* Name/Email Row */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-sm font-semibold flex items-center">
+                          <Label htmlFor="name" className="text-xs font-semibold flex items-center">
                             {t("contact.form.fields.name.label") || "Full Name *"}
                           </Label>
                           <Input
@@ -657,7 +657,7 @@ export default function ContactPage() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-sm font-semibold flex items-center">
+                          <Label htmlFor="email" className="text-xs font-semibold flex items-center">
                             {t("contact.form.fields.email.label") || "Email Address *"}
                           </Label>
                           <Input
@@ -900,7 +900,7 @@ export default function ContactPage() {
       </section>
 
       {/* Enhanced Map Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900">
+      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -913,10 +913,10 @@ export default function ContactPage() {
               <Globe className="w-4 h-4 mr-2" />
               Visit Us
             </Badge>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-5 md:mb-6 text-gray-900 dark:text-white leading-tight">
               Find Our Location
             </h2>
-            <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Get in touch through any of the contact methods below. We are always excited to meet new clients and
               discuss exciting projects.
             </p>
@@ -951,16 +951,16 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-800 dark:to-gray-900 p-6 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center mb-6 md:mb-8">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-3 md:mr-4 shadow-lg">
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-800 dark:to-gray-900 p-4 md:p-6 flex flex-col justify-center">
+                  <div className="flex items-center mb-4 md:mb-6">
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-2 md:mr-3 shadow-lg">
                       <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white">
                       {t("contact.info.title") || "Contact Information"}
                     </h3>
                   </div>
-                  <div className="space-y-4 md:space-y-6">
+                  <div className="space-y-3 md:space-y-4">
                     {[
                       {
                         icon: <MapPin className="w-4 h-4 md:w-5 md:h-5" />,
@@ -994,7 +994,7 @@ export default function ContactPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-start space-x-3 md:space-x-4"
+                        className="flex items-start space-x-2 md:space-x-3"
                       >
                         <div className={`${item.color} mt-1`}>{item.icon}</div>
                         <div>

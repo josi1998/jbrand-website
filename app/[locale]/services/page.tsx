@@ -499,7 +499,7 @@ export default function ServicesPage() {
       {/* Core Services Section */}
       <section
         id="services-section"
-        className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden"
+        className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden"
       >
         <motion.div
           className="absolute top-20 right-20 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
@@ -540,17 +540,17 @@ export default function ServicesPage() {
               <Target className="w-4 h-4 mr-2 text-blue-600" />
               Core Services
             </Badge>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("coreServices.title") || "What We Do Best"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive solutions to elevate your brand and drive business growth through innovative strategies and
               cutting-edge technology.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -574,14 +574,14 @@ export default function ServicesPage() {
                       <service.icon className="w-6 h-6" />
                     </div>
                   </div>
-                  <CardContent className="p-6 lg:p-8">
-                    <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">
+                  <CardContent className="p-4 lg:p-5">
+                    <h3 className="text-base font-bold mb-3 text-gray-900 dark:text-white">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-sm">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-xs">
                       {service.description}
                     </p>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-1 mb-4">
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center text-xs text-gray-600 dark:text-gray-300">
                           <CheckCircle className="w-4 h-4 mr-2 text-green-500 flex-shrink-0" />
@@ -591,7 +591,7 @@ export default function ServicesPage() {
                     </div>
                     <Button
                       variant="ghost"
-                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-sm group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+                      className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-xs group/btn bg-white/10 backdrop-blur-sm px-3 py-1 rounded-lg border border-white/20"
                       asChild
                     >
                       <Link href={service.href}>
@@ -608,7 +608,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute top-32 left-32 w-72 h-72 bg-gradient-to-br from-green-400/15 to-emerald-400/15 rounded-full blur-3xl"
           animate={{
@@ -635,10 +635,10 @@ export default function ServicesPage() {
               <Rocket className="w-4 h-4 mr-2 text-orange-500" />
               Our Process
             </Badge>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("process.title") || "How We Work"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A proven methodology that delivers exceptional results every time through strategic planning and flawless
               execution.
             </p>
@@ -646,7 +646,7 @@ export default function ServicesPage() {
 
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Process Steps */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={index}
@@ -670,8 +670,8 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">{step.description}</p>
+                    <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">{step.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -727,7 +727,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden">
         <motion.div
           className="absolute bottom-32 right-32 w-88 h-88 bg-gradient-to-br from-orange-400/15 to-red-400/15 rounded-full blur-3xl"
           animate={{
@@ -754,16 +754,16 @@ export default function ServicesPage() {
               <Award className="w-4 h-4 mr-2 text-yellow-500" />
               Why Choose Us
             </Badge>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
               {t("whyChooseUs.title") || "What Sets Us Apart"}
             </h2>
-            <p className="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
               What sets us apart from the competition and makes us your ideal creative partner for long-term success.
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -777,17 +777,17 @@ export default function ServicesPage() {
                     className={`absolute inset-0 bg-gradient-to-br ${item.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                   />
 
-                  <CardHeader className="relative z-10 pb-4">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-10 h-10 text-orange-600 dark:text-orange-400" />
+                  <CardHeader className="relative z-10 pb-3">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <item.icon className="w-8 h-8 text-orange-600 dark:text-orange-400" />
                     </div>
-                    <CardTitle className="text-lg font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+                    <CardTitle className="text-base font-bold group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
                       {item.title}
                     </CardTitle>
                   </CardHeader>
 
                   <CardContent className="relative z-10 pt-0">
-                    <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 text-sm">
+                    <CardDescription className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4 text-xs">
                       {item.description}
                     </CardDescription>
 
@@ -811,24 +811,24 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
-              <Clock className="w-12 h-12 mx-auto mb-4 text-blue-600 dark:text-blue-400" />
-              <h3 className="text-base font-semibold mb-2">Fast Delivery</h3>
+              <Clock className="w-10 h-10 mx-auto mb-3 text-blue-600 dark:text-blue-400" />
+              <h3 className="text-sm font-semibold mb-1">Fast Delivery</h3>
               <p className="text-xs text-gray-600 dark:text-gray-300">
                 Quick turnaround times without compromising quality
               </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
-              <Shield className="w-12 h-12 mx-auto mb-4 text-green-600 dark:text-green-400" />
-              <h3 className="text-base font-semibold mb-2">Quality Guarantee</h3>
+              <Shield className="w-10 h-10 mx-auto mb-3 text-green-600 dark:text-green-400" />
+              <h3 className="text-sm font-semibold mb-1">Quality Guarantee</h3>
               <p className="text-xs text-gray-600 dark:text-gray-300">
                 100% satisfaction guarantee on all our services
               </p>
             </div>
 
             <div className="text-center p-6 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-300">
-              <Rocket className="w-12 h-12 mx-auto mb-4 text-purple-600 dark:text-purple-400" />
-              <h3 className="text-base font-semibold mb-2">Innovation First</h3>
+              <Rocket className="w-10 h-10 mx-auto mb-3 text-purple-600 dark:text-purple-400" />
+              <h3 className="text-sm font-semibold mb-1">Innovation First</h3>
               <p className="text-xs text-gray-600 dark:text-gray-300">
                 Cutting-edge solutions using latest technologies
               </p>
@@ -838,7 +838,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 relative overflow-hidden">
+      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
 
         {/* Enhanced floating elements */}
@@ -881,17 +881,17 @@ export default function ServicesPage() {
               <Heart className="w-4 h-4 mr-2 text-red-400" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-5 md:mb-6 leading-tight">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-sm md:text-base lg:text-lg mb-8 md:mb-10 opacity-90 leading-relaxed">
+            <p className="text-xs md:text-sm lg:text-base mb-6 md:mb-8 opacity-90 leading-relaxed">
               Let us discuss your project and create something amazing together. Our team is ready to bring your vision
               to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="default"
-                className="h-12 px-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold"
+                className="h-10 px-6 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-xs font-semibold"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
@@ -902,7 +902,7 @@ export default function ServicesPage() {
               <Button
                 variant="outline"
                 size="default"
-                className="h-12 px-8 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold bg-transparent"
+                className="h-10 px-6 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-xs font-semibold bg-transparent"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
