@@ -163,8 +163,8 @@ export default function Footer() {
 
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             {/* Enhanced Brand Section with SVG Logo */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
@@ -175,18 +175,18 @@ export default function Footer() {
             >
               <div className="flex flex-col items-center md:items-start space-y-8">
                 <FloatingElement delay={0} duration={10}>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-3">
                     <motion.div
                       className="relative group"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      whileHover={{ rotate: 360, scale: 1.05 }}
                       transition={{ duration: 0.8 }}
                     >
-                      <div className="w-16 h-16 relative">
+                      <div className="w-12 h-12 relative">
                         <svg 
-                          width="64" 
-                          height="64" 
-                          viewBox="0 0 60 60" 
-                          className="w-full h-full transition-all duration-500 rounded-3xl"
+                          width="48" 
+                          height="48" 
+                          viewBox="0 0 48 48" 
+                          className="w-full h-full transition-all duration-500 rounded-2xl"
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           {/* Definitions for gradients and effects */}
@@ -213,17 +213,17 @@ export default function Footer() {
                           </defs>
                           
                           {/* Background glow effect */}
-                          <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                          <rect x="4" y="4" width="40" height="40" rx="10" ry="10" 
                                 fill="url(#footerBoxGradient)" opacity="0.2" filter="url(#footerGlow)"/>
                           
                           {/* Main logo container */}
-                          <rect x="6" y="6" width="48" height="48" rx="12" ry="12" 
+                          <rect x="4" y="4" width="40" height="40" rx="10" ry="10" 
                                 fill="url(#footerBoxGradient)" filter="url(#footerDropShadow)"/>
                           
                           {/* Star icon */}
-                          <g transform="translate(30, 30)">
+                          <g transform="translate(24, 24)">
                             <motion.path 
-                              d="M0,-12 L3.5,-3.5 L12,0 L3.5,3.5 L0,12 L-3.5,3.5 L-12,0 L-3.5,-3.5 Z" 
+                              d="M0,-10 L3,-3 L10,0 L3,3 L0,10 L-3,3 L-10,0 L-3,-3 Z" 
                               fill="white" 
                               opacity="1"
                               animate={{ rotate: 360 }}
@@ -233,10 +233,10 @@ export default function Footer() {
                         </svg>
                       </div>
                       {/* Glow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10" />
                     </motion.div>
                     <div className="flex flex-col">
-                      <span className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                         JBrand
                       </span>
                       <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">Creative Studio</span>
@@ -245,7 +245,7 @@ export default function Footer() {
                 </FloatingElement>
 
                 <motion.p
-                  className="text-gray-600 dark:text-gray-300 text-center md:text-left text-sm leading-relaxed max-w-sm"
+                  className="text-gray-600 dark:text-gray-300 text-center md:text-left text-sm leading-relaxed max-w-xs"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
@@ -256,7 +256,7 @@ export default function Footer() {
                 </motion.p>
 
                 {/* Enhanced Social Media */}
-                <div className="flex space-x-4 pt-4">
+                <div className="flex space-x-3 pt-3">
                   {socialLinks.map((social, index) => (
                     <motion.div
                       key={social.label}
@@ -274,15 +274,15 @@ export default function Footer() {
                     >
                       <Link
                         href={social.href}
-                        className={`relative p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl ${social.color} transition-all duration-500 hover:shadow-xl group overflow-hidden border border-gray-200 dark:border-gray-700`}
+                        className={`relative p-3 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-xl ${social.color} transition-all duration-500 hover:shadow-lg group overflow-hidden border border-gray-200/50 dark:border-gray-700/50`}
                         aria-label={social.label}
                       >
                         {/* Background glow */}
                         <div
-                          className={`absolute inset-0 ${social.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl`}
+                          className={`absolute inset-0 ${social.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl`}
                         />
                         <social.icon
-                          size={22}
+                          size={18}
                           className="relative z-10 group-hover:scale-110 transition-transform duration-300 text-gray-700 dark:text-gray-300 group-hover:text-white"
                         />
                       </Link>
@@ -299,12 +299,12 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
-                <Star className="w-6 h-6 mr-3 text-blue-600" />
+              <h3 className="text-base font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                <Star className="w-5 h-5 mr-2 text-blue-600" />
                 {t("companyTitle") || "Company"}
               </h3>
               <nav aria-label="Company Navigation">
-                <ul className="space-y-5">
+                <ul className="space-y-4">
                   {companyLinks.map((link, index) => (
                     <motion.li
                       key={link.label}
@@ -316,19 +316,19 @@ export default function Footer() {
                     >
                       <Link
                         href={link.href}
-                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center group text-base font-medium"
+                        className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 flex items-center group text-sm font-medium"
                       >
                         <motion.div
-                          className="w-10 h-10 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gradient-to-r group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"
+                          className="w-8 h-8 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300"
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.6 }}
                         >
-                          <link.icon className="w-5 h-5 text-blue-600" />
+                          <link.icon className="w-4 h-4 text-blue-600" />
                         </motion.div>
-                        <span className="group-hover:translate-x-2 transition-transform duration-300">
+                        <span className="group-hover:translate-x-1 transition-transform duration-300">
                           {link.label}
                         </span>
-                        <ArrowRight className="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+                        <ArrowRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                       </Link>
                     </motion.li>
                   ))}
@@ -343,11 +343,11 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
-                <Zap className="w-6 h-6 mr-3 text-purple-600" />
+              <h3 className="text-base font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                <Zap className="w-5 h-5 mr-2 text-purple-600" />
                 {t("whatWeDoTitle") || "What We Do"}
               </h3>
-              <ul className="space-y-5">
+              <ul className="space-y-4">
                 {services.map((service, index) => (
                   <motion.li
                     key={service.name}
@@ -355,16 +355,16 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-gray-600 dark:text-gray-300 flex items-center group cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-base font-medium"
-                    whileHover={{ x: 8 }}
+                    className="text-gray-600 dark:text-gray-300 flex items-center group cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors duration-300 text-sm font-medium"
+                    whileHover={{ x: 6 }}
                   >
                     <motion.div
-                      className="w-10 h-10 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mr-4 group-hover:bg-gradient-to-r group-hover:from-purple-500/20 group-hover:to-pink-500/20 transition-all duration-300"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-8 h-8 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg flex items-center justify-center mr-3 group-hover:bg-gradient-to-r group-hover:from-purple-500/20 group-hover:to-pink-500/20 transition-all duration-300"
+                      whileHover={{ scale: 1.05, rotate: 3 }}
                     >
-                      <span className="text-lg">{service.icon}</span>
+                      <span className="text-base">{service.icon}</span>
                     </motion.div>
-                    <span className="group-hover:translate-x-2 transition-transform duration-300">{service.name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{service.name}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -377,13 +377,13 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <h3 className="text-lg font-bold mb-8 text-gray-900 dark:text-white flex items-center">
-                <Mail className="w-6 h-6 mr-3 text-green-600" />
+              <h3 className="text-base font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                <Mail className="w-5 h-5 mr-2 text-green-600" />
                 {t("contactTitle") || "Contact"}
               </h3>
 
               {/* Enhanced Contact Info */}
-              <div className="space-y-6 mb-10">
+              <div className="space-y-4 mb-8">
                 {[
                   {
                     icon: Mail,
@@ -411,16 +411,16 @@ export default function Footer() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-center text-gray-600 dark:text-gray-300 group hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
-                    whileHover={{ x: 8 }}
+                    whileHover={{ x: 6 }}
                   >
                     <motion.div
-                      className={`w-10 h-10 ${contact.bg} rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-all duration-300`}
+                      className={`w-8 h-8 ${contact.bg} rounded-lg flex items-center justify-center mr-3 group-hover:scale-105 transition-all duration-300`}
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <contact.icon size={20} className={contact.color} />
+                      <contact.icon size={16} className={contact.color} />
                     </motion.div>
-                    <span className="text-base font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    <span className="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300">
                       {contact.text}
                     </span>
                   </motion.div>
@@ -450,35 +450,36 @@ export default function Footer() {
                     className="text-center py-8"
                   >
                     <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
+                      animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                      className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                      className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-3"
                     >
-                      <Heart className="w-8 h-8 text-white" />
+                      <Heart className="w-6 h-6 text-white" />
                     </motion.div>
-                    <p className="text-green-600 text-base font-semibold">
+                    <p className="text-green-600 text-sm font-semibold">
                       {t("thanksForSubscribing") || "Thanks for subscribing!"} 🎉
                     </p>
-                    <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm">You&rsquo;re now part of our amazing community!</p>
+                    <p className="text-gray-600 dark:text-gray-300 mt-1.5 text-xs">You&rsquo;re now part of our amazing community!</p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleNewsletterSubmit} className="space-y-5">
+                  <form onSubmit={handleNewsletterSubmit} className="space-y-4">
                     <div className="relative">
                       <Input
                         type="email"
                         placeholder={t("enterYourEmail") || "Enter your email"}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="bg-white/50 dark:bg-gray-800/50 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 h-14 rounded-2xl pl-12 transition-all duration-300 font-medium"
+                        className="bg-white/40 dark:bg-gray-800/40 border-gray-300/50 dark:border-gray-600/50 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 h-11 rounded-xl pl-10 transition-all duration-300 font-medium text-sm"
                         required
                       />
-                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 dark:text-gray-400" />
+                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-500 dark:text-gray-400" />
                     </div>
-                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
                       <Button
                         type="submit"
                         disabled={isSubscribing}
-                        className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-xl transition-all duration-500 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 disabled:transform-none font-semibold text-lg relative overflow-hidden group"
+                        size="sm"
+                        className="w-full h-11 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:shadow-lg transition-all duration-500 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none font-semibold text-sm relative overflow-hidden group"
                       >
                         {/* Button shine effect */}
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -487,15 +488,15 @@ export default function Footer() {
                             <motion.div
                               animate={{ rotate: 360 }}
                               transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                              className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full mr-3"
+                              className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full mr-2"
                             />
                             {t("subscribing") || "Subscribing..."}
                           </div>
                         ) : (
                           <div className="flex items-center relative z-10">
-                            <Send size={20} className="mr-3" />
+                            <Send size={16} className="mr-2" />
                             {t("subscribeNow") || "Subscribe Now"}
-                            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                            <ArrowRight className="ml-1.5 group-hover:translate-x-0.5 transition-transform duration-300" size={16} />
                           </div>
                         )}
                       </Button>
@@ -522,58 +523,19 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="border-t border-gray-200 dark:border-gray-800 pt-12"
+            className="border-t border-gray-200 dark:border-gray-800 pt-8"
           >
-            <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-              <div className="flex flex-col md:flex-row items-center gap-8 text-gray-600 dark:text-gray-300">
-                <motion.p className="text-base font-medium" whileHover={{ scale: 1.05 }}>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex flex-col md:flex-row items-center gap-6 text-gray-600 dark:text-gray-300">
+                <motion.p className="text-sm font-medium" whileHover={{ scale: 1.02 }}>
                   © {currentYear} JBrand. All rights reserved.
                 </motion.p>
-                {/* <div className="flex gap-8">
-                  {[
-                    { label: "Privacy Policy", href: "/privacy" },
-                    { label: "Terms of Service", href: "/terms" },
-                    { label: "Cookie Policy", href: "/cookies" },
-                  ].map((link, index) => (
-                    <motion.div
-                      key={link.label}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      whileHover={{ y: -2 }}
-                    >
-                      <Link
-                        href={link.href}
-                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 relative group font-medium"
-                      >
-                        {link.label}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full rounded-full"></span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div> */}
               </div>
               <motion.div
-                className="text-gray-600 dark:text-gray-300 flex items-center text-base font-medium"
-                whileHover={{ scale: 1.05 }}
+                className="text-gray-600 dark:text-gray-300 flex items-center text-sm font-medium"
+                whileHover={{ scale: 1.02 }}
               >
-                Made{" "}
-                {/* <motion.span
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 10, -10, 0],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                  }}
-                  className="mx-3"
-                >
-                  <Heart className="w-6 h-6 text-red-500 fill-current" />
-                </motion.span> */}
-                by JBrand Team
+                Made by JBrand Team
               </motion.div>
             </div>
           </motion.div>

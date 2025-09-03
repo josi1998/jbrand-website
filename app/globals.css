@@ -125,35 +125,35 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     width: 100%;
   }
 
   @media (min-width: 640px) {
     .container {
       max-width: 640px;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
     }
   }
 
   @media (min-width: 768px) {
     .container {
       max-width: 768px;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
       max-width: 1024px;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
   }
 
   @media (min-width: 1280px) {
     .container {
       max-width: 1200px;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
   }
 
@@ -208,11 +208,11 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 15px;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   body {
@@ -226,8 +226,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.4;
     overflow-x: hidden;
   }
 
@@ -307,14 +307,14 @@
     @apply font-bold tracking-tight;
     font-family: "Poppins", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
     text-wrap: balance;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
   /* Enhanced paragraph styles */
   p {
     text-wrap: pretty;
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.5;
+    font-size: 0.9rem;
   }
 
   /* Enhanced code styles */
