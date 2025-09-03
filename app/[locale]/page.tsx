@@ -246,7 +246,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-surface-primary content-loading">
       {/* Enhanced Modern Hero Section */}
-      <section className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-800 overflow-hidden">
+      <section className="relative py-16 md:py-24 lg:py-28 bg-gradient-to-br from-slate-900 via-blue-900/90 to-slate-800 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {/* Subtle grid pattern */}
@@ -254,13 +254,13 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
             {/* Left Column - Hero Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-3 lg:space-y-5"
+              className="space-y-4 lg:space-y-7"
             >
               {/* Badge - Now visible on all screens */}
               <motion.div
@@ -275,7 +275,7 @@ export default function Home() {
               </motion.div>
 
               <motion.h1
-                className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -290,7 +290,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.h2
-                className="text-base sm:text-lg lg:text-xl font-medium text-blue-300"
+                className="text-lg sm:text-xl lg:text-2xl font-medium text-blue-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -299,7 +299,7 @@ export default function Home() {
               </motion.h2>
 
               <motion.p
-                className="text-sm sm:text-base text-gray-300 max-w-lg leading-relaxed"
+                className="text-base sm:text-lg text-gray-300 max-w-xl leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -309,30 +309,30 @@ export default function Home() {
 
               {/* Buttons - Hidden on small screens */}
               <motion.div
-                className="hidden lg:flex flex-col sm:flex-row gap-2.5 w-full max-w-md"
+                className="hidden lg:flex flex-col sm:flex-row gap-4 w-full max-w-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Button
-                  size="default"
+                  size="lg"
                   variant="glow"
-                  className="px-5 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
+                  className="px-6 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
                   asChild
                 >
                   <Link href="/services">
                     {t("home.hero.exploreServices")}
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button
-                  size="default"
+                  size="lg"
                   variant="glass"
                   className="border-white/20 !text-white hover:bg-white/10 bg-transparent backdrop-blur-sm retain-text-color hover:!text-white"
                   asChild
                 >
                   <Link href="/contact">
-                    <Play className="mr-1.5 h-3.5 w-3.5" />
+                    <Play className="mr-2 h-4 w-4" />
                     {t("home.hero.getCustomPlan")}
                   </Link>
                 </Button>
@@ -340,20 +340,20 @@ export default function Home() {
 
               {/* Buttons - Visible on small screens */}
               <motion.div
-                className="lg:hidden flex flex-col gap-2.5 w-full"
+                className="lg:hidden flex flex-col gap-3 w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
                 <Link href="/contact" className="w-full">
-                  <Button size="default" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
+                  <Button size="lg" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
                     {t("home.hero.getCustomPlan")}
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
                 <Link href="/services" className="w-full">
                   <Button
-                    size="default"
+                    size="lg"
                     variant="glass"
                     className="w-full text-white border-white/40 hover:bg-white/10 hover:border-white/60 bg-transparent backdrop-blur-sm retain-text-color !text-white hover:!text-white"
                   >
@@ -368,18 +368,18 @@ export default function Home() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="w-full max-w-md mx-auto lg:mx-0"
+              className="w-full max-w-lg mx-auto lg:mx-0"
             >
               <Card variant="glass" className="shadow-modern-xl">
-                <CardContent className="p-5">
-                  <div className="text-center mb-5">
-                    <h3 className="text-lg font-bold !text-white mb-2">
+                <CardContent className="p-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold !text-white mb-2">
                       {t("home.heroSection.consultationTitle")}
                     </h3>
                     <p className="text-text-secondary text-sm">{t("home.contactForm.subtitle")}</p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-3.5">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Input
@@ -406,7 +406,7 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="space-y-1">
                         <Input
                           type="tel"
@@ -433,7 +433,7 @@ export default function Home() {
                       onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
                       className="bg-surface-primary border-border text-text-primary text-sm"
                     />
-                    <div className="space-y-1.5">
+                    <div className="space-y-2">
                       <div className="flex justify-between items-center">
                         <span className="text-xs text-text-secondary">Message *</span>
                         <span className={`text-xs ${
@@ -450,7 +450,7 @@ export default function Home() {
                         placeholder={`${t("home.contactForm.fields.message")} (minimum 10 characters)`}
                         value={formData.message}
                         onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                        className={`min-h-[70px] bg-surface-primary border-border text-text-primary text-sm ${
+                        className={`min-h-[80px] bg-surface-primary border-border text-text-primary text-sm ${
                           (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
                             ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                         }`}
@@ -475,16 +475,16 @@ export default function Home() {
                         </p>
                       )}
                     </div>
-                    <div className="space-y-2.5">
+                    <div className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <p className="font-medium text-text-primary text-sm">
+                        <p className="font-medium text-text-primary">
                           {t("home.contactForm.servicesTitle")} *
                         </p>
                         {formData.services.length === 0 && submitStatus === "error" && (
                           <span className="text-red-500 text-xs">⚠️ Required</span>
                         )}
                       </div>
-                      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-2.5 p-2.5 rounded-lg border-2 transition-colors ${
+                      <div className={`grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-lg border-2 transition-colors ${
                         formData.services.length === 0 && submitStatus === "error" 
                           ? "border-red-500 bg-red-50 dark:bg-red-900/10" 
                           : "border-transparent"
@@ -513,10 +513,10 @@ export default function Home() {
                         </p>
                       )}
                     </div>
-                    <Button type="submit" disabled={isSubmitting} variant="glow" size="sm" className="w-full">
+                    <Button type="submit" disabled={isSubmitting} variant="glow" className="w-full">
                       {isSubmitting ? (
                         <>
-                          <div className="animate-spin rounded-full h-3.5 w-3.5 border-b-2 border-white mr-2" />
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
                           {t("home.contactForm.sendingButton")}
                         </>
                       ) : (
