@@ -38,10 +38,10 @@ export default function LanguageSwitcher() {
     <div className="flex items-center space-x-1">
       <motion.button
         onClick={() => handleLanguageChange('en')}
-        className={`px-3 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
+        className={`px-2.5 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
           locale === 'en' 
-            ? 'bg-blue-500 text-white shadow-lg' 
-            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300'
+            ? 'bg-blue-600 text-white shadow-md' 
+            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
         }`}
         disabled={isPending}
         whileHover={{ scale: 1.05 }}
@@ -64,10 +64,10 @@ export default function LanguageSwitcher() {
       </motion.button>
       <motion.button
         onClick={() => handleLanguageChange('fr')}
-        className={`px-3 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
+        className={`px-2.5 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
           locale === 'fr' 
-            ? 'bg-blue-500 text-white shadow-lg' 
-            : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300'
+            ? 'bg-blue-600 text-white shadow-md' 
+            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
         }`}
         disabled={isPending}
         whileHover={{ scale: 1.05 }}

@@ -205,15 +205,15 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="inline-block"
               >
-                <Badge className="mb-6 md:mb-8 bg-gradient-to-r from-blue-600/90 to-blue-400/90 text-white border-blue-400/30 hover:from-blue-700/90 hover:to-blue-500/90 backdrop-blur-sm px-4 md:px-6 py-2 md:py-3 text-xs md:text-sm font-semibold tracking-wider shadow-lg whitespace-nowrap overflow-visible relative z-10">
-                  <Users className="w-3 h-3 md:w-4 md:h-4 mr-2" />
+                <Badge className="mb-4 md:mb-5 bg-gradient-to-r from-blue-600/90 to-blue-400/90 text-white border-blue-400/30 hover:from-blue-700/90 hover:to-blue-500/90 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 text-xs font-semibold tracking-wider shadow-lg whitespace-nowrap overflow-visible relative z-10">
+                  <Users className="w-3 h-3 mr-1.5" />
                   ABOUT JBRAND AGENCY
                 </Badge>
               </motion.div>
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-xl lg:text-2xl font-bold text-white leading-tight mb-4"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -230,7 +230,7 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
+              className="text-sm text-blue-200/90 mb-6 leading-relaxed max-w-xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -239,126 +239,88 @@ export default function AboutPage() {
                 "We are a passionate team of designers, developers, and strategists dedicated to transforming businesses through innovative branding and digital solutions that drive real results."}
             </motion.p>
 
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md sm:max-w-none justify-center items-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <Button
-                asChild
-                className="group h-12 md:h-14 px-6 md:px-10 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 !text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm md:text-base hover:!text-white"
-              >
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="default" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </Button>
-              {/* <Button
-                variant="outline"
-                className="group h-12 md:h-14 px-6 md:px-10 border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base bg-transparent"
-              >
-                <Play className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Watch Our Story
-              </Button> */}
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Enhanced Company Story Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 relative overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-cyan-400/15 to-indigo-400/15 rounded-full blur-3xl"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <section className="py-12 md:py-16 bg-surface-primary relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(59,130,246,0.03)_50%,transparent_75%)] bg-[length:60px_60px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
             >
-              <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-4 py-2 text-sm font-semibold">
-                <Heart className="w-4 h-4 mr-2 text-red-500" />
+              <Badge variant="brand" size="lg" className="mb-5">
+                <Heart className="w-4 h-4 mr-2" />
                 Our Story
               </Badge>
-              <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
+              <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-5">
                 {t("about.story.title") || "Building Dreams Into Digital Reality"}
               </h2>
-              <div className="space-y-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                <p>
-                  {t("about.story.paragraph1") ||
-                    "Founded in 2019 with a vision to bridge the gap between creative imagination and digital innovation, JBrand has grown from a small startup to a trusted partner for businesses worldwide. Our journey began with a simple belief: every brand has a unique story worth telling."}
-                </p>
-                <p>
-                  {t("about.story.paragraph2") ||
-                    "Today, we've helped over 200+ businesses transform their digital presence, from startups finding their voice to established companies reinventing themselves for the digital age. Our multidisciplinary team combines strategic thinking with creative execution to deliver solutions that not only look beautiful but drive measurable business results."}
-                </p>
-              </div>
-              <div className="grid grid-cols-2 gap-3 md:gap-5 lg:gap-6 mt-6 md:mt-8">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white/20 backdrop-blur-sm dark:bg-blue-900/20 p-3 md:p-4 lg:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
-                >
-                  <h3 className="text-base font-bold text-blue-600 dark:text-blue-400 mb-1">200+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Projects to complete (vision)</p>
+              <p className="text-base text-text-secondary leading-relaxed mb-6">
+                {t("about.story.paragraph1") ||
+                  "Founded in 2019 with a vision to bridge the gap between creative imagination and digital innovation, JBrand has grown from a small startup to a trusted partner for businesses worldwide. Our journey began with a simple belief: every brand has a unique story worth telling."}
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
+                  <Card variant="interactive" className="p-3 shadow-modern">
+                    <h3 className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-1.5">
+                      200+
+                    </h3>
+                    <p className="text-text-primary font-medium text-xs">Projects to complete (vision)</p>
+                  </Card>
                 </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-white/20 backdrop-blur-sm dark:bg-green-900/20 p-4 md:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-white/30"
-                >
-                  <h3 className="text-base font-bold text-green-600 dark:text-green-400 mb-1">1+</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Years Experience</p>
+                <motion.div whileHover={{ y: -3, transition: { duration: 0.2 } }}>
+                  <Card variant="interactive" className="p-3 shadow-modern">
+                    <h3 className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-500 mb-1.5">
+                      1+
+                    </h3>
+                    <p className="text-text-primary font-medium text-xs">Years Experience</p>
+                  </Card>
                 </motion.div>
               </div>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative order-1 lg:order-2"
             >
-              <FloatingElement delay={1} duration={10}>
-                <div className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-200/60 to-indigo-200/60 dark:from-blue-800/30 dark:to-indigo-800/30 rounded-3xl -z-10"></div>
-                <div className="absolute -bottom-6 -right-6 sm:-bottom-8 sm:-right-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-200/60 to-pink-200/60 dark:from-purple-800/30 dark:to-pink-800/30 rounded-3xl -z-10"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/building-dreams-into-digital-reality.jpg"
-                    alt="Our Team at Work"
-                    width={700}
-                    height={600}
-                    className="object-cover w-full h-[400px] sm:h-[500px] lg:h-[600px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              {/* Decorative elements */}
+              <div className="absolute -top-3 -left-3 w-16 h-16 bg-blue-500/10 rounded-full blur-xl" />
+              <div className="absolute -bottom-3 -right-3 w-20 h-20 bg-purple-500/10 rounded-full blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                <Image
+                  src="/images/building-dreams-into-digital-reality.jpg"
+                  alt="Our Team at Work"
+                  width={500}
+                  height={350}
+                  className="object-cover w-full h-[350px] transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Enhanced overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-900/20" />
+                {/* Floating badge */}
+                <div className="absolute top-4 left-4 bg-surface-secondary/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-text-primary">Team Collaboration</span>
+                  </div>
                 </div>
-              </FloatingElement>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -682,222 +644,153 @@ export default function AboutPage() {
       </section>
 
       {/* Enhanced Process Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <motion.div
-          className="absolute bottom-32 left-32 w-96 h-96 bg-gradient-to-br from-cyan-400/15 to-blue-400/15 rounded-full blur-3xl"
-          animate={{
-            x: [0, 70, 0],
-            y: [0, -60, 0],
-            scale: [1, 1.25, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-12 md:py-16 bg-surface-secondary relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(59,130,246,0.02)_50%,transparent_75%)] bg-[length:80px_80px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12 lg:mb-16"
+            className="text-center mb-10"
           >
-            <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-6 py-3 text-sm font-semibold">
-              <Settings className="w-4 h-4 mr-2 text-gray-600" />
+            <Badge variant="teal" size="lg" className="mb-3">
+              <Settings className="w-4 h-4 mr-2" />
               Our Process
             </Badge>
-            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
-              {t("about.process.title") || "How We Create Magic"}
-            </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-xl lg:text-2xl font-bold text-text-primary mb-3">{t("about.process.title") || "How We Create Magic"}</h2>
+            <p className="text-base text-text-secondary max-w-xl mx-auto">
               A proven methodology that delivers exceptional results through strategic planning and flawless execution.
             </p>
           </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="space-y-6 lg:space-y-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6 order-2 lg:order-1">
               {[
                 {
-                  icon: <Search className="w-6 h-6 lg:w-7 lg:h-7" />,
+                  icon: <Search className="w-5 h-5" />,
                   title: t("about.process.steps.discovery.title") || "Discovery & Research",
                   description:
                     t("about.process.steps.discovery.description") ||
                     "We dive deep into your business, market, and audience to understand your unique challenges and opportunities.",
-                  color: "from-blue-500 to-cyan-500",
-                  number: "01",
+                  gradient: "from-blue-500 to-cyan-500",
                 },
                 {
-                  icon: <Lightbulb className="w-6 h-6 lg:w-7 lg:h-7" />,
+                  icon: <Lightbulb className="w-5 h-5" />,
                   title: t("about.process.steps.strategy.title") || "Strategy & Planning",
                   description:
                     t("about.process.steps.strategy.description") ||
                     "We develop a comprehensive strategy that aligns with your goals and creates a roadmap for success.",
-                  color: "from-purple-500 to-pink-500",
-                  number: "02",
+                  gradient: "from-purple-500 to-pink-500",
                 },
                 {
-                  icon: <PenTool className="w-6 h-6 lg:w-7 lg:h-7" />,
+                  icon: <PenTool className="w-5 h-5" />,
                   title: t("about.process.steps.design.title") || "Design & Development",
                   description:
                     t("about.process.steps.design.description") ||
                     "Our creative team brings your vision to life with stunning designs and robust development.",
-                  color: "from-green-500 to-emerald-500",
-                  number: "03",
+                  gradient: "from-green-500 to-emerald-500",
                 },
                 {
-                  icon: <Settings className="w-6 h-6 lg:w-7 lg:h-7" />,
+                  icon: <Settings className="w-5 h-5" />,
                   title: t("about.process.steps.implementation.title") || "Implementation & Testing",
                   description:
                     t("about.process.steps.implementation.description") ||
                     "We implement solutions with rigorous testing to ensure everything works perfectly across all platforms.",
-                  color: "from-orange-500 to-red-500",
-                  number: "04",
-                },
-                {
-                  icon: <CheckCircle2 className="w-6 h-6 lg:w-7 lg:h-7" />,
-                  title: t("about.process.steps.launch.title") || "Launch & Optimization",
-                  description:
-                    t("about.process.steps.launch.description") ||
-                    "We launch your project and provide ongoing optimization to ensure continued success and growth.",
-                  color: "from-indigo-500 to-purple-500",
-                  number: "05",
+                  gradient: "from-orange-500 to-red-500",
                 },
               ].map((step, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  whileHover={{ x: 10 }}
-                  className="flex items-start space-x-4 lg:space-x-6 group"
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-start space-x-3 group relative"
                 >
-                  <div className="relative">
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center text-white shadow-xl flex-shrink-0 group-hover:shadow-2xl transition-shadow duration-300`}
-                    >
-                      {step.icon}
-                    </motion.div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 lg:w-8 lg:h-8 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center text-xs lg:text-sm font-bold text-gray-900 dark:text-white shadow-lg">
-                      {step.number}
-                    </div>
+                  <div
+                    className={`w-10 h-10 bg-gradient-to-r ${step.gradient} rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-modern`}
+                  >
+                    {step.icon}
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">
-                      {step.description}
-                    </p>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-text-primary mb-1.5">{step.title}</h3>
+                    <p className="text-text-secondary text-sm">{step.description}</p>
                   </div>
+                  {/* Connection line */}
+                  {index < 3 && (
+                    <div className="absolute left-5 top-12 w-0.5 h-12 bg-gradient-to-b from-border to-transparent" />
+                  )}
                 </motion.div>
               ))}
             </div>
-
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
+              className="relative order-1 lg:order-2"
             >
-              <FloatingElement delay={2} duration={12}>
-                <div className="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-blue-200/60 to-indigo-200/60 dark:from-blue-800/30 dark:to-indigo-800/30 rounded-3xl -z-10"></div>
-                <div className="absolute -bottom-6 -right-6 sm:-bottom-8 sm:-right-8 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-purple-200/60 to-pink-200/60 dark:from-purple-800/30 dark:to-pink-800/30 rounded-3xl -z-10"></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/our-process-about.jpeg"
-                    alt="Process Visualization"
-                    width={600}
-                    height={700}
-                    className="object-cover w-full h-[500px] lg:h-[700px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  {/* Process overlay indicators */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 lg:p-8 text-center text-white">
-                      <div className="text-2xl lg:text-3xl font-bold mb-2">5</div>
-                      <div className="text-base lg:text-lg font-semibold">Step Process</div>
-                      <div className="text-sm opacity-90">Proven & Effective</div>
-                    </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-5 -right-5 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-xl" />
+              <div className="absolute -bottom-5 -left-5 w-28 h-28 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                <Image
+                  src="/images/our-process-about.jpeg"
+                  alt="Process Visualization"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-[400px] transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Enhanced overlay with color coordination */}
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-pink-900/20" />
+                {/* Floating process indicators */}
+                <div className="absolute top-4 right-4 bg-surface-secondary/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-text-primary">Strategy Session</span>
                   </div>
                 </div>
-              </FloatingElement>
+                <div className="absolute bottom-4 left-4 bg-surface-secondary/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-text-primary">Creative Process</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 dark:from-blue-700 dark:via-indigo-700 dark:to-purple-800 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
-
-        {/* Enhanced floating elements */}
-        <motion.div
-          className="absolute top-20 left-20 w-48 h-48 lg:w-64 lg:h-64 bg-white/10 rounded-full blur-3xl hidden lg:block"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-48 h-48 lg:w-64 lg:h-64 bg-white/10 rounded-full blur-3xl hidden lg:block"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:60px_60px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
+            className="max-w-3xl mx-auto"
           >
-            <Badge className="mb-8 bg-white/20 text-white border-white/30 backdrop-blur-sm px-6 py-3 text-sm font-semibold">
-              <Star className="w-4 h-4 mr-2 text-yellow-400" />
+            <Badge variant="glass" size="lg" className="mb-6 text-white border-white/30">
+              <Rocket className="w-4 h-4 mr-2" />
               Ready to Start?
             </Badge>
-            <h2 className="text-2xl lg:text-3xl font-bold mb-6 leading-tight">
-              Let us create something amazing together
-            </h2>
-            <p className="text-sm lg:text-base mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
-              Ready to transform your business with innovative design and strategic thinking? Let us discuss your project
-              and bring your vision to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                asChild
-                size="default"
-                className="h-12 px-8 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold"
-              >
+            <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">Let us create something amazing together</h2>
+            <p className="text-sm text-blue-100 mb-6">Ready to transform your business with innovative design and strategic thinking? Let us discuss your project and bring your vision to life.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="default" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </Button>
               <Button
-                asChild
-                size="default"
+                size="lg"
                 variant="outline"
-                className="h-12 px-8 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-sm font-semibold bg-transparent"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
+                asChild
               >
                 <Link href={`/${locale}/services`}>View Our Services</Link>
               </Button>
