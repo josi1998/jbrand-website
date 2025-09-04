@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, type ReactNode } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
@@ -13,7 +13,6 @@ import {
   Lightbulb,
   PenTool,
   Settings,
-  CheckCircle2,
   Flag,
   Rocket,
   Users,
@@ -26,7 +25,6 @@ import {
   Target,
   Zap,
   Heart,
-  Star,
 } from "lucide-react"
 
 // Enhanced Particle component for background effects
@@ -107,34 +105,6 @@ const CursorSpotlight = () => {
         background: `radial-gradient(600px circle at ${cursorXSpring}px ${cursorYSpring}px, rgba(59, 130, 246, 0.08), transparent 70%)`,
       }}
     />
-  )
-}
-
-// Floating elements for enhanced visual appeal
-const FloatingElement = ({
-  children,
-  delay = 0,
-  duration = 6,
-}: {
-  children: ReactNode
-  delay?: number
-  duration?: number
-}) => {
-  return (
-    <motion.div
-      animate={{
-        y: [-10, 10, -10],
-        rotate: [-2, 2, -2],
-      }}
-      transition={{
-        duration,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut",
-        delay,
-      }}
-    >
-      {children}
-    </motion.div>
   )
 }
 
