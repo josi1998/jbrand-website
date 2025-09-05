@@ -223,16 +223,16 @@ export default function Home() {
       <div className="min-h-screen flex items-center justify-center bg-surface-primary px-4">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="max-w-md w-full">
           <Card variant="glass" className="shadow-modern-xl">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-glow">
-                <CheckCircle2 className="h-8 w-8 text-white" />
+            <CardContent className="p-6 text-center">
+              <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <CheckCircle2 className="h-7 w-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">{t("common.messageSent")}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">{t("common.weWillGetBackToYou")}</p>
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">{t("common.messageSent")}</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm">{t("common.weWillGetBackToYou")}</p>
               <Button 
                 onClick={() => setSubmitStatus("idle")} 
-                variant="glow" 
-                className="text-black dark:text-white hover:text-black dark:hover:text-white font-medium"
+                size="default"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium"
               >
                 {t("common.sendAnotherMessage")}
               </Button>
@@ -386,7 +386,7 @@ export default function Home() {
                           placeholder={`${t("home.contactForm.fields.name")} *`}
                           value={formData.name}
                           onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary text-sm ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs ${
                             !formData.name.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
                           required
@@ -398,7 +398,7 @@ export default function Home() {
                           placeholder={`${t("home.contactForm.fields.email")} *`}
                           value={formData.email}
                           onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary text-sm ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs ${
                             (!formData.email.trim() || (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) && submitStatus === "error" 
                               ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
@@ -413,7 +413,7 @@ export default function Home() {
                           placeholder={`${t("home.contactForm.fields.phone")} *`}
                           value={formData.phone}
                           onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                          className={`bg-surface-primary border-border text-text-primary text-sm ${
+                          className={`bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs ${
                             !formData.phone.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                           }`}
                           required
@@ -423,7 +423,7 @@ export default function Home() {
                         placeholder={t("home.contactForm.fields.company")}
                         value={formData.company}
                         onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
-                        className="bg-surface-primary border-border text-text-primary text-sm"
+                        className="bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs"
                       />
                     </div>
                     <Input
@@ -431,7 +431,7 @@ export default function Home() {
                       placeholder={t("home.contactForm.fields.website")}
                       value={formData.website}
                       onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
-                      className="bg-surface-primary border-border text-text-primary text-sm"
+                      className="bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs"
                     />
                     <div className="space-y-2">
                       <div className="flex justify-between items-center">
@@ -450,7 +450,7 @@ export default function Home() {
                         placeholder={`${t("home.contactForm.fields.message")} (minimum 10 characters)`}
                         value={formData.message}
                         onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))}
-                        className={`min-h-[80px] bg-surface-primary border-border text-text-primary text-sm ${
+                        className={`min-h-[80px] bg-surface-primary border-border text-text-primary text-sm placeholder:text-xs ${
                           (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
                             ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                         }`}
@@ -524,7 +524,7 @@ export default function Home() {
                       )}
                     </Button>
                     {submitStatus === "error" && (
-                      <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg text-sm font-medium space-y-2">
+                      <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg text-xs font-medium space-y-2">
                         <div className="font-semibold flex items-center">
                           <span className="mr-2">⚠️</span>
                           Submission Failed

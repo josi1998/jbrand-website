@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, type ReactNode } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useTranslations, useLocale } from "next-intl"
 import { motion, useScroll, useTransform, useMotionValue, useSpring, type Variants } from "framer-motion"
@@ -116,33 +116,7 @@ const CursorSpotlight = () => {
   )
 }
 
-// Floating elements for enhanced visual appeal
-const FloatingElement = ({
-  children,
-  delay = 0,
-  duration = 6,
-}: {
-  children: ReactNode
-  delay?: number
-  duration?: number
-}) => {
-  return (
-    <motion.div
-      animate={{
-        y: [-10, 10, -10],
-        rotate: [-2, 2, -2],
-      }}
-      transition={{
-        duration,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut",
-        delay,
-      }}
-    >
-      {children}
-    </motion.div>
-  )
-}
+
 
 export default function ServicesPage() {
   const t = useTranslations("services")
@@ -421,7 +395,7 @@ export default function ServicesPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-xl lg:text-2xl font-bold text-white leading-tight mb-4"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -438,7 +412,7 @@ export default function ServicesPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
+              className="text-sm text-blue-200/90 mb-6 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -448,26 +422,28 @@ export default function ServicesPage() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md sm:max-w-none justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 justify-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Button
-                className="group h-12 md:h-14 px-6 md:px-10 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm md:text-base"
+                size="default"
+                className="bg-white/20 backdrop-blur-sm !text-white hover:bg-white/30 border-white/30"
                 onClick={() => document.getElementById("services-section")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Explore Services
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                <ArrowRight className="ml-1.5 h-4 w-4" />
               </Button>
               <Button
+                size="default"
                 variant="outline"
-                className="group h-12 md:h-14 px-6 md:px-10 border-2 border-white/30 !text-white hover:bg-white/10 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm md:text-base bg-transparent hover:!text-white"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
                   Get Started
-                  <ChevronRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                  <ChevronRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </Button>
             </motion.div>
@@ -608,20 +584,8 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
-        <motion.div
-          className="absolute top-32 left-32 w-72 h-72 bg-gradient-to-br from-green-400/15 to-emerald-400/15 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
+      <section className="py-12 md:py-16 bg-surface-secondary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(-45deg,transparent_25%,rgba(59,130,246,0.02)_50%,transparent_75%)] bg-[length:80px_80px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -631,96 +595,81 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <Badge className="mb-8 bg-white/20 backdrop-blur-sm text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-white/30 px-6 py-3 text-sm font-semibold">
+            <Badge variant="brand" size="lg" className="mb-6">
               <Rocket className="w-4 h-4 mr-2 text-orange-500" />
               Our Process
             </Badge>
-            <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-text-primary">
               {t("process.title") || "How We Work"}
             </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-text-secondary max-w-2xl mx-auto">
               A proven methodology that delivers exceptional results every time through strategic planning and flawless
               execution.
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Process Steps */}
-            <div className="space-y-6">
+            <div className="space-y-6 order-2 lg:order-1">
               {processSteps.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start group"
-                  initial={{ opacity: 0, x: -30 }}
+                  className="flex items-start group relative"
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ x: 10 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <div className="relative">
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className={`flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center mr-6 group-hover:shadow-2xl transition-shadow duration-300 shadow-xl`}
-                    >
-                      <step.icon className="w-8 h-8 text-white" />
-                    </motion.div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 backdrop-blur-sm dark:bg-gray-900/20 rounded-full flex items-center justify-center text-sm font-bold text-gray-900 dark:text-white shadow-lg border border-white/30">
-                      {step.number}
-                    </div>
+                  <div
+                    className={`w-10 h-10 bg-gradient-to-r ${step.color} rounded-lg flex items-center justify-center text-white flex-shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-modern`}
+                  >
+                    <step.icon className="w-5 h-5" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-base font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">{step.description}</p>
+                  <div className="flex-1 ml-4">
+                    <h3 className="text-lg font-semibold text-text-primary mb-1.5">{step.title}</h3>
+                    <p className="text-text-secondary text-sm">{step.description}</p>
                   </div>
+                  {/* Connection line */}
+                  {index < processSteps.length - 1 && (
+                    <div className="absolute left-5 top-12 w-0.5 h-12 bg-gradient-to-b from-border to-transparent" />
+                  )}
                 </motion.div>
               ))}
             </div>
-
-            {/* Process Image */}
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              className="relative order-1 lg:order-2"
             >
-              <FloatingElement delay={2} duration={12}>
-                <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-200/60 to-pink-200/60 dark:from-purple-800/30 dark:to-pink-800/30 rounded-3xl -z-10"></div>
-                <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-200/60 to-cyan-200/60 dark:from-blue-800/30 dark:to-cyan-800/30 rounded-3xl -z-10"></div>
-                <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-                  <Image
-                    src="/images/our-process-about.jpeg"
-                    alt={t("process.imageAlt") || "Our Process"}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-
-                  {/* Floating Stats */}
-                  <motion.div
-                    className="absolute top-8 right-8 bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30"
-                    animate={{ y: [-5, 5, -5] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                  >
-                    <div className="text-white text-center">
-                      <div className="text-2xl font-bold">99%</div>
-                      <div className="text-xs opacity-80">Success Rate</div>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    className="absolute bottom-8 left-8 bg-white/20 backdrop-blur-sm rounded-2xl p-4 border border-white/30"
-                    animate={{ y: [5, -5, 5] }}
-                    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
-                  >
-                    <div className="text-white text-center">
-                      <div className="text-2xl font-bold">24/7</div>
-                      <div className="text-xs opacity-80">Support</div>
-                    </div>
-                  </motion.div>
+              {/* Decorative elements */}
+              <div className="absolute -top-5 -right-5 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-purple-500/10 rounded-full blur-xl" />
+              <div className="absolute -bottom-5 -left-5 w-28 h-28 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-xl" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                <Image
+                  src="/images/our-process-about.jpeg"
+                  alt="Process Visualization"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-[400px] transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Enhanced overlay with color coordination */}
+                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-pink-900/20" />
+                {/* Floating process indicators */}
+                <div className="absolute top-4 right-4 bg-surface-secondary/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-text-primary">Strategy Session</span>
+                  </div>
                 </div>
-              </FloatingElement>
+                <div className="absolute bottom-4 left-4 bg-surface-secondary/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-lg border border-border">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-medium text-text-primary">Creative Process</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -838,75 +787,37 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
-
-        {/* Enhanced floating elements */}
-        <motion.div
-          className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:60px_60px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            className="text-center max-w-4xl mx-auto text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            className="max-w-3xl mx-auto"
           >
-            <Badge className="mb-8 bg-white/20 text-white border-white/30 backdrop-blur-sm px-6 py-3 text-sm font-semibold">
+            <Badge variant="glass" size="lg" className="mb-6 text-white border-white/30">
               <Heart className="w-4 h-4 mr-2 text-red-400" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-5 md:mb-6 leading-tight">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xs md:text-sm lg:text-base mb-6 md:mb-8 opacity-90 leading-relaxed">
-              Let us discuss your project and create something amazing together. Our team is ready to bring your vision
-              to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="default"
-                className="h-10 px-6 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 text-xs font-semibold"
-                asChild
-              >
+            <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
+            <p className="text-sm text-blue-100 mb-6">Let us discuss your project and create something amazing together. Our team is ready to bring your vision to life.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button size="default" variant="glass" className="bg-white/20 !text-white hover:bg-white/30 border-white/30" asChild>
                 <Link href={`/${locale}/contact`}>
                   Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-1.5 h-4 w-4" />
                 </Link>
               </Button>
               <Button
+                size="lg"
                 variant="outline"
-                size="default"
-                className="h-10 px-6 border-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 text-xs font-semibold bg-transparent"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
                 asChild
               >
                 <Link href={`/${locale}/contact`}>
-                  <MessageSquare className="mr-2 h-4 w-4" />
+                  <MessageSquare className="mr-1.5 h-4 w-4" />
                   Schedule Consultation
                 </Link>
               </Button>

@@ -344,28 +344,29 @@ export default function ContactPage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                className="w-24 h-24 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mb-8 shadow-lg"
+                className="w-20 h-20 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mb-6 shadow-lg"
               >
-                <CheckCircle2 className="h-12 w-12 text-white" />
+                <CheckCircle2 className="h-10 w-10 text-white" />
               </motion.div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">
                 {t("common.messageSent") || "Message Sent Successfully!"}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-base md:text-lg max-w-md">
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-sm max-w-md">
                 {t("contact.successMessage") || "Thank you for reaching out! We'll get back to you within 24 hours."}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
                 <Button
                   onClick={() => setSubmitStatus("idle")}
-                  variant="gradient"
-                  className="flex-1 shadow-lg hover:shadow-xl transition-all duration-300 text-white hover:text-white font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                  size="default"
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium"
                 >
                   {t("contact.sendAnotherMessage") || "Send Another Message"}
                 </Button>
                 <Button 
-                  variant="glass" 
+                  size="default"
+                  variant="outline" 
                   onClick={() => (window.location.href = `/${locale}/`)} 
-                  className="flex-1 text-black dark:text-white hover:text-black dark:hover:text-white font-medium"
+                  className="flex-1 font-medium"
                 >
                   {t("contact.backToHome") || "Back to Home"}
                 </Button>
@@ -449,7 +450,7 @@ export default function ContactPage() {
             </div>
 
             <motion.h1
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-xl lg:text-2xl font-bold text-white leading-tight mb-4"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
@@ -466,7 +467,7 @@ export default function ContactPage() {
             </motion.h1>
 
             <motion.p
-              className="text-base sm:text-lg text-blue-200/90 mb-8 leading-relaxed max-w-3xl"
+              className="text-sm text-blue-200/90 mb-6 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -476,27 +477,27 @@ export default function ContactPage() {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md sm:max-w-none justify-center items-center"
+              className="flex flex-col sm:flex-row gap-3 justify-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <Button
+                size="default"
+                variant="glass"
+                className="bg-white/20 !text-white hover:bg-white/30 border-white/30"
                 onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
-                variant="gradient"
-                size="lg"
-                className="group shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
               >
                 {t("contact.startYourProject") || "Start Your Project"}
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-1.5 h-4 w-4" />
               </Button>
               <Button
-                variant="glass"
-                size="lg"
+                size="default"
+                variant="outline"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
                 onClick={() => document.getElementById("contact-info")?.scrollIntoView({ behavior: "smooth" })}
-                className="group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-white hover:text-white"
               >
-                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                <Phone className="mr-1.5 h-4 w-4" />
                 {t("contact.contactInfo") || "Contact Info"}
               </Button>
             </motion.div>
@@ -520,20 +521,20 @@ export default function ContactPage() {
               className="space-y-6 md:space-y-8"
             >
               <div>
-                <Badge variant="secondary" className="mb-6 md:mb-8 px-4 py-2 text-sm font-semibold">
-                  <Heart className="w-4 h-4 mr-2" />
+                <Badge variant="secondary" className="mb-4 px-3 py-1.5 text-xs font-semibold">
+                  <Heart className="w-3 h-3 mr-1.5" />
                   {t("contact.form.getInTouch") || "Get In Touch"}
                 </Badge>
-                <h2 className="text-xl lg:text-2xl font-bold mb-5 text-gray-900 dark:text-white leading-tight">
+                <h2 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
                   {t("contact.form.title") || "Ready to Start Your Project?"}
                 </h2>
-                <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                   {t("contact.hero.description") ||
                     "We're here to help bring your vision to life. Whether you need branding, web development, or digital marketing, our team is ready to create something extraordinary together."}
                 </p>
               </div>
 
-              <div className="space-y-4 md:space-y-6" id="contact-info">
+              <div className="space-y-4" id="contact-info">
                 {[
                   {
                     icon: <MapPin className="w-5 h-5 md:w-6 md:h-6" />,
@@ -573,12 +574,12 @@ export default function ContactPage() {
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className={`w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-r ${item.color} flex items-center justify-center text-white shadow-xl flex-shrink-0 group-hover:shadow-2xl transition-shadow duration-300`}
+                      className={`w-8 h-8 rounded-lg bg-gradient-to-r ${item.color} flex items-center justify-center text-white shadow-lg flex-shrink-0 group-hover:shadow-xl transition-shadow duration-300`}
                     >
                       {item.icon}
                     </motion.div>
                     <div>
-                      <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
+                      <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 dark:text-gray-300 text-xs leading-relaxed">
@@ -590,22 +591,22 @@ export default function ContactPage() {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-4 md:pt-6">
+              <div className="grid grid-cols-2 gap-3 pt-4">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-3 md:p-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 p-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-base font-bold text-blue-600 dark:text-blue-400 mb-1">24h</h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">Response Time</p>
+                  <h3 className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">24h</h3>
+                  <p className="text-gray-700 dark:text-gray-300 font-medium text-xs">Response Time</p>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-3 md:p-4 rounded-lg md:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <h3 className="text-base font-bold text-green-600 dark:text-green-400 mb-1">
+                  <h3 className="text-sm font-semibold text-green-600 dark:text-green-400 mb-1">
                     100%
                   </h3>
-                  <p className="text-gray-700 dark:text-gray-300 font-semibold text-xs">
+                  <p className="text-gray-700 dark:text-gray-300 font-medium text-xs">
                     Satisfaction Rate
                   </p>
                 </motion.div>
@@ -621,27 +622,27 @@ export default function ContactPage() {
             >
               <FloatingElement delay={1} duration={8}>
                 <Card className="bg-white/95 dark:bg-gray-900/95 border-0 shadow-2xl backdrop-blur-xl">
-                  <CardHeader className="pb-4 md:pb-6">
-                    <div className="flex items-center mb-4">
-                      <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-2 md:mr-3 shadow-lg">
-                        <Send className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center mb-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center mr-2 shadow-lg">
+                        <Send className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <CardTitle className="text-base md:text-lg font-bold">
+                        <CardTitle className="text-sm font-semibold">
                           {t("contact.form.sendUsMessage") || "Send Us a Message"}
                         </CardTitle>
-                        <CardDescription className="text-sm md:text-base">
+                        <CardDescription className="text-xs">
                           Fill out the form below and we will get back to you within 24 hours.
                         </CardDescription>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-3">
                       {/* Name/Email Row */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name" className="text-xs font-semibold flex items-center">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="name" className="text-xs font-medium flex items-center">
                             {t("contact.form.fields.name.label") || "Full Name *"}
                           </Label>
                           <Input
@@ -650,14 +651,14 @@ export default function ContactPage() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.name.placeholder") || "John Doe"}
-                            className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                            className={`h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg transition-all duration-300 text-sm placeholder:text-xs ${
                               !formData.name.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                             }`}
                             required
                           />
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email" className="text-xs font-semibold flex items-center">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="email" className="text-xs font-medium flex items-center">
                             {t("contact.form.fields.email.label") || "Email Address *"}
                           </Label>
                           <Input
@@ -667,7 +668,7 @@ export default function ContactPage() {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.email.placeholder") || "john@company.com"}
-                            className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                            className={`h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg transition-all duration-300 text-sm placeholder:text-xs ${
                               !formData.email.trim() && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                             }`}
                             required
@@ -676,9 +677,9 @@ export default function ContactPage() {
                       </div>
 
                       {/* Phone/Company Row */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone" className="text-sm font-semibold">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="phone" className="text-xs font-medium">
                             {t("contact.form.fields.phone.label") || "Phone Number"}
                           </Label>
                           <Input
@@ -688,11 +689,11 @@ export default function ContactPage() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.phone.placeholder") || "+1 (555) 123-4567"}
-                            className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300"
+                            className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg transition-all duration-300 text-sm placeholder:text-xs"
                           />
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="company" className="text-sm font-semibold">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="company" className="text-xs font-medium">
                             {t("contact.form.fields.company.label") || "Company Name"}
                           </Label>
                           <Input
@@ -701,19 +702,19 @@ export default function ContactPage() {
                             value={formData.company}
                             onChange={handleChange}
                             placeholder={t("contact.form.fields.company.placeholder") || "Your Company"}
-                            className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300"
+                            className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg transition-all duration-300 text-sm placeholder:text-xs"
                           />
                         </div>
                       </div>
 
                       {/* Service/Budget Row */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="service" className="text-sm font-semibold flex items-center">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="service" className="text-xs font-medium flex items-center">
                             {t("contact.form.fields.service.label") || "Service Needed *"}
                           </Label>
                           <Select value={formData.service} onValueChange={handleSelectChange("service")} required>
-                            <SelectTrigger className={`h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl ${
+                            <SelectTrigger className={`h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm ${
                               !formData.service && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                             }`}>
                               <SelectValue
@@ -741,12 +742,12 @@ export default function ContactPage() {
                             </SelectContent>
                           </Select>
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="budget" className="text-sm font-semibold">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="budget" className="text-xs font-medium">
                             Project Budget
                           </Label>
                           <Select value={formData.budget} onValueChange={handleSelectChange("budget")}>
-                            <SelectTrigger className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl">
+                            <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm">
                               <SelectValue placeholder="Select budget range..." />
                             </SelectTrigger>
                             <SelectContent>
@@ -762,12 +763,12 @@ export default function ContactPage() {
                       </div>
 
                       {/* Timeline */}
-                      <div className="space-y-2">
-                        <Label htmlFor="timeline" className="text-sm font-semibold">
+                      <div className="space-y-1.5">
+                        <Label htmlFor="timeline" className="text-xs font-medium">
                           Project Timeline
                         </Label>
                         <Select value={formData.timeline} onValueChange={handleSelectChange("timeline")}>
-                          <SelectTrigger className="h-10 md:h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl">
+                          <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm">
                             <SelectValue placeholder="When do you need this completed?" />
                           </SelectTrigger>
                           <SelectContent>
@@ -782,8 +783,8 @@ export default function ContactPage() {
                       </div>
 
                       {/* Message */}
-                      <div className="space-y-2">
-                        <Label htmlFor="message" className="text-sm font-semibold flex items-center justify-between">
+                      <div className="space-y-1.5">
+                        <Label htmlFor="message" className="text-xs font-medium flex items-center justify-between">
                           <span className="flex items-center">
                             {t("contact.form.fields.message.label") || "Project Details *"}
                           </span>
@@ -806,8 +807,8 @@ export default function ContactPage() {
                             t("contact.form.fields.message.placeholder") ||
                             "Tell us about your project, goals, and any specific requirements... (minimum 10 characters)"
                           }
-                          rows={5}
-                          className={`border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg md:rounded-xl transition-all duration-300 ${
+                          rows={4}
+                          className={`border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg transition-all duration-300 text-sm placeholder:text-xs ${
                             (!formData.message.trim() || formData.message.length < 10) && submitStatus === "error" 
                               ? "border-red-500 bg-red-50 dark:bg-red-900/10" 
                               : ""
@@ -838,18 +839,17 @@ export default function ContactPage() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        variant="gradient"
-                        size="lg"
-                        className="w-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-white hover:text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                        size="default"
+                        className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                       >
                         {isSubmitting ? (
                           <div className="flex items-center">
-                            <Loader2 className="mr-3 h-4 w-4 md:h-5 md:w-5 animate-spin" />
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             {t("common.sending") || "Sending..."}
                           </div>
                         ) : (
                           <div className="flex items-center">
-                            <Send className="mr-3 h-4 w-4 md:h-5 md:w-5" />
+                            <Send className="mr-2 h-4 w-4" />
                             {t("contact.form.submit") || "Send Message"}
                           </div>
                         )}
@@ -860,7 +860,7 @@ export default function ContactPage() {
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg md:rounded-xl text-sm font-medium space-y-2"
+                          className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg text-xs font-medium space-y-2"
                         >
                           <div className="font-semibold flex items-center">
                             <span className="mr-2">⚠️</span>
@@ -869,7 +869,7 @@ export default function ContactPage() {
                           <div>
                             {t("contact.form.error") || "Please check that all required fields are filled correctly and try again."}
                           </div>
-                          <div className="text-xs opacity-90 mt-3 space-y-1">
+                          <div className="text-xs opacity-90 mt-2 space-y-1">
                             <div className="font-semibold mb-1">Requirements checklist:</div>
                             <div className={`flex items-center ${formData.name.trim() ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                               <span className="mr-2">{formData.name.trim() ? '✓' : '❌'}</span>
@@ -909,14 +909,14 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 md:mb-16"
           >
-            <Badge variant="secondary" className="mb-6 md:mb-8 px-4 md:px-6 py-2 md:py-3 text-sm font-semibold">
+            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm font-semibold">
               <Globe className="w-4 h-4 mr-2" />
               Visit Us
             </Badge>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-5 md:mb-6 text-gray-900 dark:text-white leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
               Find Our Location
             </h2>
-            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
               Get in touch through any of the contact methods below. We are always excited to meet new clients and
               discuss exciting projects.
             </p>
@@ -951,16 +951,16 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-800 dark:to-gray-900 p-4 md:p-6 flex flex-col justify-center">
-                  <div className="flex items-center mb-4 md:mb-6">
-                    <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg md:rounded-xl flex items-center justify-center mr-2 md:mr-3 shadow-lg">
-                      <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-800 dark:to-gray-900 p-4 flex flex-col justify-center">
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center mr-2 shadow-lg">
+                      <MapPin className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white">
                       {t("contact.info.title") || "Contact Information"}
                     </h3>
                   </div>
-                  <div className="space-y-3 md:space-y-4">
+                  <div className="space-y-3">
                     {[
                       {
                         icon: <MapPin className="w-4 h-4 md:w-5 md:h-5" />,
@@ -994,14 +994,14 @@ export default function ContactPage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-start space-x-2 md:space-x-3"
+                        className="flex items-start space-x-2"
                       >
-                        <div className={`${item.color} mt-1`}>{item.icon}</div>
+                        <div className={`${item.color} mt-0.5`}>{item.icon}</div>
                         <div>
-                          <h4 className="font-bold text-gray-900 dark:text-white mb-1 text-sm md:text-base">
+                          <h4 className="font-semibold text-gray-900 dark:text-white mb-0.5 text-sm">
                             {item.title}
                           </h4>
-                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
+                          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs">
                             {item.value}
                           </p>
                         </div>
@@ -1009,22 +1009,22 @@ export default function ContactPage() {
                     ))}
                   </div>
                   {/* Quick Actions */}
-                  <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-200 dark:border-gray-700">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                  <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <Button
                         variant="glass"
                         size="sm"
-                        className="flex items-center justify-center space-x-2 h-10 md:h-12 text-xs md:text-sm"
+                        className="flex items-center justify-center space-x-1.5 h-9 text-xs"
                       >
-                        <Calendar className="w-3 h-3 md:w-4 md:h-4" />
+                        <Calendar className="w-3 h-3" />
                         <span>Schedule Call</span>
                       </Button>
                       <Button
                         variant="glass"
                         size="sm"
-                        className="flex items-center justify-center space-x-2 h-10 md:h-12 text-xs md:text-sm"
+                        className="flex items-center justify-center space-x-1.5 h-9 text-xs"
                       >
-                        <Target className="w-3 h-3 md:w-4 md:h-4" />
+                        <Target className="w-3 h-3" />
                         <span>Get Directions</span>
                       </Button>
                     </div>
@@ -1037,79 +1037,46 @@ export default function ContactPage() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-16 md:py-32 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:80px_80px]" />
-
-        {/* Enhanced floating elements */}
-        <motion.div
-          className="absolute top-10 md:top-20 left-10 md:left-20 w-32 h-32 md:w-64 md:h-64 bg-white/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-10 md:bottom-20 right-10 md:right-20 w-32 h-32 md:w-64 md:h-64 bg-white/10 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-700 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:60px_60px]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
+            className="max-w-3xl mx-auto"
           >
             <Badge
               variant="glass"
-              className="mb-6 md:mb-8 text-white border-white/30 px-4 md:px-6 py-2 md:py-3 text-sm font-semibold"
+              className="mb-6 text-white border-white/30 px-4 py-2 text-sm font-semibold"
             >
               <Star className="w-4 h-4 mr-2" />
               Ready to Begin?
             </Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+            <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">
               Your Success Story Starts Here
             </h2>
-            <p className="text-lg md:text-xl lg:text-2xl mb-8 md:mb-12 max-w-4xl mx-auto opacity-90 leading-relaxed">
+            <p className="text-sm text-blue-100 mb-6">
               Join hundreds of satisfied clients who have transformed their businesses with our innovative solutions.
               Let us create something extraordinary together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
+                size="default"
+                variant="glass"
+                className="bg-white/20 !text-white hover:bg-white/30 border-white/30"
                 onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
-                variant="glow"
-                size="lg"
-                className="shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2"
               >
                 Start Your Project Now
-                <Zap className="ml-2 md:ml-3 h-5 w-5 md:h-6 md:w-6" />
+                <Zap className="ml-1.5 h-4 w-4" />
               </Button>
               <Button
-                asChild
-                variant="glass"
                 size="lg"
-                className="border-2 border-white/40 text-white hover:bg-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                variant="outline"
+                className="border-white !text-white hover:bg-white/10 bg-transparent hover:!text-white"
               >
-                {/* <a href={`tel:${t("contact.info.phone.value") || "+15551234567"}`}>
-                  <Phone className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6" />
-                  Call Us Now
-                </a> */}
+                {/* Call Us Now option could go here */}
               </Button>
             </div>
           </motion.div>

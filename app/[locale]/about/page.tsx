@@ -13,6 +13,7 @@ import {
   Lightbulb,
   PenTool,
   Settings,
+  CheckCircle,
   Flag,
   Rocket,
   Users,
@@ -668,6 +669,14 @@ export default function AboutPage() {
                     "We implement solutions with rigorous testing to ensure everything works perfectly across all platforms.",
                   gradient: "from-orange-500 to-red-500",
                 },
+                {
+                  icon: <CheckCircle className="w-5 h-5" />,
+                  title: t("about.process.steps.launch.title") || "Launch & Optimization",
+                  description:
+                    t("about.process.steps.launch.description") ||
+                    "We launch your project and provide ongoing optimization to ensure continued success and growth.",
+                  gradient: "from-indigo-500 to-purple-500",
+                },
               ].map((step, index) => (
                 <motion.div
                   key={index}
@@ -687,11 +696,12 @@ export default function AboutPage() {
                     <p className="text-text-secondary text-sm">{step.description}</p>
                   </div>
                   {/* Connection line */}
-                  {index < 3 && (
+                  {index < 4 && (
                     <div className="absolute left-5 top-12 w-0.5 h-12 bg-gradient-to-b from-border to-transparent" />
                   )}
                 </motion.div>
-              ))}
+              ))
+            }
             </div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
