@@ -714,11 +714,12 @@ export default function ContactPage() {
                             {t("contact.form.fields.service.label") || "Service Needed *"}
                           </Label>
                           <Select value={formData.service} onValueChange={handleSelectChange("service")} required>
-                            <SelectTrigger className={`h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm ${
+                            <SelectTrigger className={`h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm placeholder:text-xs ${
                               !formData.service && submitStatus === "error" ? "border-red-500 bg-red-50 dark:bg-red-900/10" : ""
                             }`}>
                               <SelectValue
                                 placeholder={t("contact.form.fields.service.placeholder") || "Select a service..."}
+                                className="text-sm placeholder:text-xs"
                               />
                             </SelectTrigger>
                             <SelectContent>
@@ -747,8 +748,8 @@ export default function ContactPage() {
                             Project Budget
                           </Label>
                           <Select value={formData.budget} onValueChange={handleSelectChange("budget")}>
-                            <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm">
-                              <SelectValue placeholder="Select budget range..." />
+                            <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm placeholder:text-xs">
+                              <SelectValue placeholder="Select budget range..." className="text-sm placeholder:text-xs" />
                             </SelectTrigger>
                             <SelectContent>
                               <SelectItem value="under-5k">Under $5,000</SelectItem>
@@ -768,8 +769,8 @@ export default function ContactPage() {
                           Project Timeline
                         </Label>
                         <Select value={formData.timeline} onValueChange={handleSelectChange("timeline")}>
-                          <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm">
-                            <SelectValue placeholder="When do you need this completed?" />
+                          <SelectTrigger className="h-9 border-gray-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-lg text-sm placeholder:text-xs">
+                            <SelectValue placeholder="When do you need this completed?" className="text-sm placeholder:text-xs" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="asap">ASAP</SelectItem>

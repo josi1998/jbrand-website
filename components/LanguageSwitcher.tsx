@@ -38,7 +38,7 @@ export default function LanguageSwitcher() {
     <div className="flex items-center space-x-1">
       <motion.button
         onClick={() => handleLanguageChange('en')}
-        className={`px-2.5 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
+        className={`px-2 py-1 rounded-md text-xs font-medium language-switcher-button ${
           locale === 'en' 
             ? 'bg-blue-600 text-white shadow-md' 
             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
@@ -64,7 +64,7 @@ export default function LanguageSwitcher() {
       </motion.button>
       <motion.button
         onClick={() => handleLanguageChange('fr')}
-        className={`px-2.5 py-1.5 rounded-md text-sm font-medium language-switcher-button ${
+        className={`px-2 py-1 rounded-md text-xs font-medium language-switcher-button ${
           locale === 'fr' 
             ? 'bg-blue-600 text-white shadow-md' 
             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'

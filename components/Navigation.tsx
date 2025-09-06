@@ -323,14 +323,14 @@ export default function Navigation() {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 w-8 p-0 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                className="h-6 w-6 p-0 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-4 h-4 text-yellow-400" />
+                  <Sun className="w-3 h-3 text-yellow-400" />
                 ) : (
-                  <Moon className="w-4 h-4 text-gray-700" />
+                  <Moon className="w-3 h-3 text-gray-700" />
                 )}
               </Button>
             </div>
