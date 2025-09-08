@@ -425,9 +425,12 @@ export default function AboutPage() {
                     <Button
                       variant="ghost"
                       className="p-0 h-auto text-blue-600 hover:text-blue-700 font-semibold text-base group/btn bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20"
+                      asChild
                     >
-                      Learn More{" "}
-                      <ArrowRight className="ml-2 h-3 w-3 lg:h-4 lg:w-4 transition-transform group-hover/btn:translate-x-1" />
+                      <Link href={`/${locale}/contact`}>
+                        Learn More{" "}
+                        <ArrowRight className="ml-2 h-3 w-3 lg:h-4 lg:w-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>

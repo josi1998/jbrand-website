@@ -320,7 +320,7 @@ export default function Home() {
                   className="px-6 shadow-lg hover:shadow-xl transition-all duration-300 retain-text-color !text-white hover:!text-white"
                   asChild
                 >
-                  <Link href="/services">
+                  <Link href={`/${locale}/services`}>
                     {t("home.hero.exploreServices")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -331,7 +331,7 @@ export default function Home() {
                   className="border-white/20 !text-white hover:bg-white/10 bg-transparent backdrop-blur-sm retain-text-color hover:!text-white"
                   asChild
                 >
-                  <Link href="/contact">
+                  <Link href={`/${locale}/contact`}>
                     <Play className="mr-2 h-4 w-4" />
                     {t("home.hero.getCustomPlan")}
                   </Link>
@@ -345,13 +345,13 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                <Link href="/contact" className="w-full">
+                <Link href={`/${locale}/contact`} className="w-full">
                   <Button size="lg" variant="glow" className="w-full shadow-lg retain-text-color !text-white hover:!text-white">
                     {t("home.hero.getCustomPlan")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/services" className="w-full">
+                <Link href={`/${locale}/services`} className="w-full">
                   <Button
                     size="lg"
                     variant="glass"
