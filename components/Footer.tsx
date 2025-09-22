@@ -96,11 +96,11 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook", color: "hover:bg-blue-500", bgColor: "bg-blue-500/10" },
-    { icon: Twitter, href: "#", label: "Twitter", color: "hover:bg-cyan-500", bgColor: "bg-cyan-500/10" },
-    { icon: Instagram, href: "#", label: "Instagram", color: "hover:bg-pink-500", bgColor: "bg-pink-500/10" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:bg-blue-600", bgColor: "bg-blue-600/10" },
-    { icon: Youtube, href: "#", label: "YouTube", color: "hover:bg-red-500", bgColor: "bg-red-500/10" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61580592556679", label: "Facebook", color: "hover:bg-blue-500", bgColor: "bg-blue-500/10" },
+    { icon: Twitter, href: "", label: "Twitter", color: "hover:bg-cyan-500", bgColor: "bg-cyan-500/10" },
+    { icon: Instagram, href: "", label: "Instagram", color: "hover:bg-pink-500", bgColor: "bg-pink-500/10" },
+    { icon: Linkedin, href: "", label: "LinkedIn", color: "hover:bg-blue-600", bgColor: "bg-blue-600/10" },
+    { icon: Youtube, href: "", label: "YouTube", color: "hover:bg-red-500", bgColor: "bg-red-500/10" },
   ]
 
   const companyLinks = [
